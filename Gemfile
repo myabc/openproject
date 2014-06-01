@@ -202,7 +202,7 @@ end
 platforms :jruby do
   gem "jruby-openssl"
 
-  group :mysql do
+  group :mysql2 do
     gem "activerecord-jdbcmysql-adapter"
   end
 
