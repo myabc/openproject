@@ -170,12 +170,14 @@ group :development do
   gem 'quiet_assets'
 end
 
-group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-stack_explorer', platforms: [:mri_20, :mri_21]
-  gem 'pry-rescue'
-  gem 'pry-byebug', :platforms => [:mri_20,:mri_21]
-  gem 'pry-doc'
+platforms :mri_20, :mri_21 do
+  group :development, :test do
+    gem 'pry-rails'
+    gem 'pry-stack_explorer'
+    gem 'pry-rescue'
+    gem 'pry-byebug'
+    gem 'pry-doc'
+  end
 end
 
 # API gems
