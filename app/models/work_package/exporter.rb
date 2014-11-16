@@ -27,8 +27,8 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-require File.join(__FILE__, '../csv_exporter')
-require File.join(__FILE__, '../pdf_exporter')
+require_relative './csv_exporter'
+require_relative './pdf_exporter'
 
 class WorkPackage::Exporter
   extend ::WorkPackage::PdfExporter
