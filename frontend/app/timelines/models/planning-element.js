@@ -37,7 +37,7 @@
 // │ OpenProject timelines module.                                 │
 // ╰───────────────────────────────────────────────────────────────╯
 
-module.exports = function(PathHelper) {
+module.exports = function(Timeline, PathHelper) {
 
   var PlanningElement = {
     objectType: 'PlanningElement',
