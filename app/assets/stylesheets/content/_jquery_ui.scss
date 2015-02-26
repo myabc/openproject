@@ -39,6 +39,52 @@
  * To view and modify this theme, visit http://jqueryui.com/themeroller/
  */
 
+.ui-datepicker {
+  padding: 0;
+}
+
+.ui-datepicker-header {
+
+}
+
+.ui-datepicker-calendar {
+  tr {
+    padding: 0.5rem 0rem;
+  }
+
+  thead tr {
+    background-color: $gray-light;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  @extend .form--select;
+  background-color: white;
+  line-height: 1.5;
+  font-size: 1em;
+  //text-transform: uppercase;
+  display: inline-block;
+}
+
+.ui-datepicker-buttonpane {
+  background-color: $gray-light;
+}
+
+.ui-datepicker-current,
+.ui-datepicker-close {
+  //background: transparent;
+}
+
+
+
+// .ui-datepicker .ui-priority-secondary {
+//   opacity: 1
+//   filter: Alpha(Opacity = 100)
+//   font-weight: bold
+// }
 
 /* Component containers
 ----------------------------------*/
@@ -65,8 +111,8 @@
   color: #222222/*{fcContent}*/;
 }
 .ui-widget-header {
-  border: 1px solid #aaaaaa/*{borderColorHeader}*/;
-  background: #cccccc/*{bgColorHeader}*/;
+  //border: 1px solid #aaaaaa/*{borderColorHeader}*/;
+  //background: #cccccc/*{bgColorHeader}*/;
   color: #222222/*{fcHeader}*/;
   font-weight: bold;
 }
@@ -80,7 +126,7 @@
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid #d3d3d3/*{borderColorDefault}*/;
-  background: #e6e6e6/*{bgColorDefault}*/;
+  //background: #e6e6e6/*{bgColorDefault}*/;
   font-weight: normal/*{fwDefault}*/;
   color: #555555/*{fcDefault}*/;
 }
