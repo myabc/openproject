@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'features/work_packages/work_packages_page'
 
-feature 'Query menu items' do
+RSpec.feature 'Query menu items' do
   let(:user) { FactoryGirl.create :admin }
   let(:project) { FactoryGirl.create :project }
   let(:work_packages_page) { WorkPackagesPage.new(project) }

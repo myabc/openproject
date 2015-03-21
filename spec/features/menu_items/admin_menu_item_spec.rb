@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-feature 'Admin menu items' do
+RSpec.feature 'Admin menu items' do
   let(:user) { FactoryGirl.create :admin }
 
   before do
