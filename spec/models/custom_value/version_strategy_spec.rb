@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::VersionStrategy do
+RSpec.describe CustomValue::VersionStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value,

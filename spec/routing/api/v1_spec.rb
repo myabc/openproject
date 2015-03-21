@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'rack/test'
 
-describe 'removed api v1', type: :request do
+RSpec.describe 'removed api v1', type: :request do
   include Rack::Test::Methods
 
   subject(:response) { last_response }

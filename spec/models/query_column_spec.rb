@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::QueryColumn, type: :model do
+RSpec.describe ::QueryColumn, type: :model do
   let(:instance) { QueryColumn.new(:query_column) }
 
   describe '#groupable' do

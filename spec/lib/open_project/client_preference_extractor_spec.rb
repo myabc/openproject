@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe OpenProject::ClientPreferenceExtractor do
+RSpec.describe OpenProject::ClientPreferenceExtractor do
   let(:extractor) { (Class.new { include OpenProject::ClientPreferenceExtractor }).new }
 
   describe 'user preferences' do

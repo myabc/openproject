@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'open_project/passwords'
 
-describe OpenProject::Passwords::Generator do
+RSpec.describe OpenProject::Passwords::Generator do
   describe '#random_password' do
     it 'should create a valid password' do
       with_settings password_active_rules: ['lowercase', 'uppercase', 'numeric', 'special'],
@@ -42,7 +42,7 @@ describe OpenProject::Passwords::Generator do
   end
 end
 
-describe OpenProject::Passwords::Evaluator do
+RSpec.describe OpenProject::Passwords::Evaluator do
   it 'should correctly evaluate passwords' do
     with_settings password_active_rules: ['lowercase', 'uppercase', 'numeric'],
                   password_min_adhered_rules: 3,

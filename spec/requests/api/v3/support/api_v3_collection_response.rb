@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-shared_examples_for 'API V3 collection response' do |total, count, type|
+RSpec.shared_examples_for 'API V3 collection response' do |total, count, type|
   subject { response.body }
 
   it { expect(response.status).to eql(200) }

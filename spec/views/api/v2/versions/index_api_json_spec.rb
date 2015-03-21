@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe 'api/v2/versions/index.api.rabl', type: :view do
+RSpec.describe 'api/v2/versions/index.api.rabl', type: :view do
   let(:shared_with) { [42, 1, 2, 3] }
   let(:version) {
     Api::V2::VersionsController::Version.new(42,

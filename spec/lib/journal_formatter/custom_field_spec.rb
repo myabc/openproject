@@ -28,7 +28,7 @@
 
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper.rb')
 
-describe OpenProject::JournalFormatter::CustomField do
+RSpec.describe OpenProject::JournalFormatter::CustomField do
 
   include CustomFieldsHelper
   include ActionView::Helpers::TagHelper

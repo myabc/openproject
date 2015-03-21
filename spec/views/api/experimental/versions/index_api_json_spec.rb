@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../../spec_helper', __FILE__)
 
-describe 'api/experimental/versions/index.api.rabl', type: :view do
+RSpec.describe 'api/experimental/versions/index.api.rabl', type: :view do
   let(:project_a) { FactoryGirl.build_stubbed(:project) }
   let(:project_b) { FactoryGirl.build_stubbed(:project) }
   let(:version_1)   { FactoryGirl.build_stubbed(:version, project: project_a) }

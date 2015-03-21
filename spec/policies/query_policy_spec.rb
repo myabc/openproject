@@ -28,7 +28,7 @@
 
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe QueryPolicy, type: :controller do
+RSpec.describe QueryPolicy, type: :controller do
   let(:user)    { FactoryGirl.build_stubbed(:user) }
   let(:project) { FactoryGirl.build_stubbed(:project) }
   let(:query)   { FactoryGirl.build_stubbed(:query, project: project, user: user) }

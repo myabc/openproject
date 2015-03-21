@@ -30,7 +30,7 @@
 require 'spec_helper'
 require 'support/shared/previews'
 
-describe WorkPackagesController, type: :controller do
+RSpec.describe WorkPackagesController, type: :controller do
 
   before do
     allow(User).to receive(:current).and_return current_user

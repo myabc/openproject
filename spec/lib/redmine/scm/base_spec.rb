@@ -29,7 +29,7 @@
 
 require 'spec_helper'
 
-describe Redmine::Scm::Base do
+RSpec.describe Redmine::Scm::Base do
   describe '.configured' do
     subject { described_class.configured }
 

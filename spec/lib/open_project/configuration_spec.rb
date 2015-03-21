@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe OpenProject::Configuration do
+RSpec.describe OpenProject::Configuration do
   describe '.load_config_from_file' do
     let(:config) { Hash.new }
 

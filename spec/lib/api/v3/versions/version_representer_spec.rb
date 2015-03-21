@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Versions::VersionRepresenter do
+RSpec.describe ::API::V3::Versions::VersionRepresenter do
   let(:version) { FactoryGirl.build_stubbed(:version) }
   let(:user) { FactoryGirl.build_stubbed(:user) }
   let(:context) { { current_user: user } }

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::BoolStrategy do
+RSpec.describe CustomValue::BoolStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value)

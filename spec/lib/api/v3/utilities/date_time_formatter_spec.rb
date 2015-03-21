@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe :DateTimeFormatter do
+RSpec.describe :DateTimeFormatter do
   subject { ::API::V3::Utilities::DateTimeFormatter }
   let(:date) { Date.today }
   let(:datetime) { DateTime.now }

@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'rack/test'
 
-describe 'API v3 Version resource' do
+RSpec.describe 'API v3 Version resource' do
   include Rack::Test::Methods
   include API::V3::Utilities::PathHelper
 

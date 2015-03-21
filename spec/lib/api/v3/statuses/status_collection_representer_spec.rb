@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'lib/api/v3/statuses/shared/status_collection_representer'
 
-describe ::API::V3::Statuses::StatusCollectionRepresenter do
+RSpec.describe ::API::V3::Statuses::StatusCollectionRepresenter do
   include_context 'status collection representer', '/api/v3/statuses'
 
   context 'generation' do

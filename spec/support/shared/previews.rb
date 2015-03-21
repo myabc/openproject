@@ -26,7 +26,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-shared_examples_for 'valid preview' do
+RSpec.shared_examples_for 'valid preview' do
   render_views
 
   before do
@@ -42,7 +42,7 @@ shared_examples_for 'valid preview' do
   end
 end
 
-shared_examples_for 'authorizes object access' do
+RSpec.shared_examples_for 'authorizes object access' do
   let(:unauthorized_user) { FactoryGirl.create(:user) }
 
   before do

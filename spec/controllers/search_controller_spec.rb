@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe SearchController, type: :controller do
+RSpec.describe SearchController, type: :controller do
   let!(:project) {
     FactoryGirl.create(:project,
                        name: 'eCookbook')

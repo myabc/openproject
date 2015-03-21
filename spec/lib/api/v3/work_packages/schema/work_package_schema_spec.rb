@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::WorkPackages::Schema::WorkPackageSchema do
+RSpec.describe ::API::V3::WorkPackages::Schema::WorkPackageSchema do
   let(:project) { FactoryGirl.build(:project) }
   let(:type) { FactoryGirl.build(:type) }
   let(:work_package) {

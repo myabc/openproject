@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Projects::ProjectCollectionRepresenter do
+RSpec.describe ::API::V3::Projects::ProjectCollectionRepresenter do
   let(:self_link) { '/api/v3/versions/1/projects' }
   let(:projects) { FactoryGirl.build_list(:project, 3) }
   let(:representer) { described_class.new(projects, 42, self_link) }

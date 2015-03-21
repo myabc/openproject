@@ -30,7 +30,7 @@ require 'spec_helper'
 
 require 'support/shared/acts_as_watchable'
 
-describe WorkPackage, type: :model do
+RSpec.describe WorkPackage, type: :model do
   let(:project) { FactoryGirl.create(:project) }
   let(:work_package) {
     FactoryGirl.create(:work_package,

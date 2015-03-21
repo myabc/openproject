@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Types::TypeRepresenter do
+RSpec.describe ::API::V3::Types::TypeRepresenter do
   let(:type) { FactoryGirl.build_stubbed(:type, color: FactoryGirl.build(:color)) }
   let(:representer) { described_class.new(type) }
 

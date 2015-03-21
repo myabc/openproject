@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-shared_examples_for 'has ISO 8601 date only' do
+RSpec.shared_examples_for 'has ISO 8601 date only' do
   it 'exists' do
     is_expected.to have_json_path(json_path)
   end
@@ -44,7 +44,7 @@ shared_examples_for 'has ISO 8601 date only' do
   end
 end
 
-shared_examples_for 'has UTC ISO 8601 date and time' do
+RSpec.shared_examples_for 'has UTC ISO 8601 date and time' do
   it 'exists' do
     is_expected.to have_json_path(json_path)
   end

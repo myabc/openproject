@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'rack/test'
 
-describe API::V3::WorkPackages::WorkPackagesAPI, type: :request do
+RSpec.describe API::V3::WorkPackages::WorkPackagesAPI, type: :request do
   include API::V3::Utilities::PathHelper
 
   let(:admin) { FactoryGirl.create(:admin) }

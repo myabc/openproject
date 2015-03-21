@@ -28,7 +28,7 @@
 
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe ProjectAssociationsController, type: :controller do
+RSpec.describe ProjectAssociationsController, type: :controller do
   let(:current_user) { FactoryGirl.create(:admin) }
 
   before do

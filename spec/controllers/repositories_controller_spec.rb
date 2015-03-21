@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe RepositoriesController, type: :controller do
+RSpec.describe RepositoriesController, type: :controller do
   let(:project) do
     project = FactoryGirl.create(:project)
     allow(Project).to receive(:find).and_return(project)

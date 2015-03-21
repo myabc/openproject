@@ -28,7 +28,7 @@
 
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper.rb')
 
-describe OpenProject::JournalFormatter::Diff do
+RSpec.describe OpenProject::JournalFormatter::Diff do
 
   include ActionView::Helpers::TagHelper
   # WARNING: the order of the modules is important to ensure that url_for of

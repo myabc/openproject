@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe AccountController, type: :controller do
+RSpec.describe AccountController, type: :controller do
   render_views
 
   after do

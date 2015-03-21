@@ -29,7 +29,7 @@
 require 'spec_helper'
 
 module OpenProject
-  describe Themes do
+  RSpec.describe Themes do
     before { Themes.clear_themes }
 
     describe '.new_theme' do

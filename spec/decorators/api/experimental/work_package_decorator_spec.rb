@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../spec_helper', __FILE__)
 
-describe API::Experimental::WorkPackageDecorator, type: :model do
+RSpec.describe API::Experimental::WorkPackageDecorator, type: :model do
   let(:wp1) { FactoryGirl.build_stubbed(:work_package) }
   let(:wp2) { FactoryGirl.build_stubbed(:work_package) }
   let(:dwp1) { described_class.new(wp1) }

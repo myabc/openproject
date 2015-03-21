@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::StringObjects::StringObjectRepresenter do
+RSpec.describe ::API::V3::StringObjects::StringObjectRepresenter do
   let(:value) { 'foo bar' }
   let(:representer) { described_class.new(value) }
 

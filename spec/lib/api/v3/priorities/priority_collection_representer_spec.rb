@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Priorities::PriorityCollectionRepresenter do
+RSpec.describe ::API::V3::Priorities::PriorityCollectionRepresenter do
   let(:priorities)  { FactoryGirl.build_list(:priority, 3) }
   let(:representer) { described_class.new(priorities, 42, '/api/v3/priorities') }
 

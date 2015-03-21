@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::WorkPackages::WorkPackageContract do
+RSpec.describe ::API::V3::WorkPackages::WorkPackageContract do
   let(:work_package) do
     FactoryGirl.create(:work_package,
                        done_ratio: 50,

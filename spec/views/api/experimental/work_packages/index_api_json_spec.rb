@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../../spec_helper', __FILE__)
 
-describe 'api/experimental/work_packages/index.api.rabl', type: :view do
+RSpec.describe 'api/experimental/work_packages/index.api.rabl', type: :view do
   let(:work_package) do
     FactoryGirl.build_stubbed(:work_package,
                               created_at: DateTime.now,

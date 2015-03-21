@@ -34,7 +34,7 @@ require 'spec_helper'
 # that none are sent but the job finishes nontheless in cases were necessary
 # records are missing (e.g. the user to be notified), and that jobs with any other
 # sort of error fail as expected in order to be rescheduled.
-describe 'mail notification jobs', type: :model do
+RSpec.describe 'mail notification jobs', type: :model do
   ##
   # Shared example expecting #mail_subject and #job to be defined where
   # the former is looked for in the sent email's subject and the latter is

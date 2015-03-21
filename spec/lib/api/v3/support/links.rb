@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-shared_examples_for 'action link' do
+RSpec.shared_examples_for 'action link' do
   let(:role) { FactoryGirl.create(:role, permissions: [:view_work_packages, :edit_work_packages]) }
   let(:user) {
     FactoryGirl.create(:user, member_in_project: project,
@@ -49,17 +49,17 @@ shared_examples_for 'action link' do
   end
 end
 
-shared_examples_for 'has a titled link' do
+RSpec.shared_examples_for 'has a titled link' do
   it { is_expected.to be_json_eql(href.to_json).at_path("_links/#{link}/href") }
   it { is_expected.to be_json_eql(title.to_json).at_path("_links/#{link}/title") }
 end
 
-shared_examples_for 'has an untitled link' do
+RSpec.shared_examples_for 'has an untitled link' do
   it { is_expected.to be_json_eql(href.to_json).at_path("_links/#{link}/href") }
   it { is_expected.not_to have_json_path("_links/#{link}/title") }
 end
 
-shared_examples_for 'has an empty link' do
+RSpec.shared_examples_for 'has an empty link' do
   it { is_expected.to be_json_eql(nil.to_json).at_path("_links/#{link}/href") }
 
   it 'has no embedded resource' do
@@ -67,7 +67,7 @@ shared_examples_for 'has an empty link' do
   end
 end
 
-shared_examples_for 'has no link' do
+RSpec.shared_examples_for 'has no link' do
   it { is_expected.not_to have_json_path("_links/#{link}") }
 
   it 'has no embedded resource' do

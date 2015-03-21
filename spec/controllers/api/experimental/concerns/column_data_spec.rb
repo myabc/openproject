@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../../spec_helper', __FILE__)
 
-describe 'ColumnData', type: :controller do
+RSpec.describe 'ColumnData', type: :controller do
   include Api::Experimental::Concerns::ColumnData
 
   let(:field_format) { 'user' }

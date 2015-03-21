@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-shared_examples_for 'API V3 collection decorated' do |total, count, self_link, type|
+RSpec.shared_examples_for 'API V3 collection decorated' do |total, count, self_link, type|
   it { expect(collection).to be_json_eql('Collection'.to_json).at_path('_type') }
 
   describe 'elements' do

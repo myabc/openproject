@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'features/work_packages/work_packages_page'
 
-describe 'Query selection', type: :feature do
+RSpec.describe 'Query selection', type: :feature do
   let(:project) { FactoryGirl.create :project, identifier: 'test_project', is_public: false }
   let(:role) { FactoryGirl.create :role, permissions: [:view_work_packages] }
   let(:current_user) {

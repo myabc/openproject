@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Users::UserCollectionRepresenter do
+RSpec.describe ::API::V3::Users::UserCollectionRepresenter do
   let(:users) {
     FactoryGirl.build_list(:user,
                            3,

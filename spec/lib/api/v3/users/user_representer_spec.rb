@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Users::UserRepresenter do
+RSpec.describe ::API::V3::Users::UserRepresenter do
   let(:user)             {
     FactoryGirl.build_stubbed(:user,
                               created_on: Time.now,

@@ -29,7 +29,7 @@
 
 require 'spec_helper'
 
-describe WorkPackagesController, type: :controller do
+RSpec.describe WorkPackagesController, type: :controller do
   let(:user)    { FactoryGirl.create :admin }
   let(:project) { FactoryGirl.create :public_project }
 

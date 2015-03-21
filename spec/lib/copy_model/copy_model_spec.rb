@@ -97,7 +97,7 @@ end
 class Relation4 < Tableless
 end
 
-describe 'Copying Models' do
+RSpec.describe 'Copying Models' do
   before do
     # supress warnings
     I18n.backend.store_translations :en, activerecord: {

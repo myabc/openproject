@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe User::Authorization, type: :model do
+RSpec.describe User::Authorization, type: :model do
   let(:project) { FactoryGirl.create(:project) }
   let(:role) { FactoryGirl.create(:role) }
   let(:user1) do

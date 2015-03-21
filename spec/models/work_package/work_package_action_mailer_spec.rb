@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe WorkPackage, type: :model do
+RSpec.describe WorkPackage, type: :model do
   describe ActionMailer::Base do
     let(:user_1) {
       FactoryGirl.create(:user,

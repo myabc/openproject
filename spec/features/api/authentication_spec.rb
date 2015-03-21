@@ -27,7 +27,7 @@
 
 require 'spec_helper'
 
-describe 'Login', type: :feature do
+RSpec.describe 'Login', type: :feature do
   after do
     User.current = nil
     enable_test_auth_protection

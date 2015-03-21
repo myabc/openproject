@@ -27,7 +27,7 @@
 #++
 
 require 'spec_helper'
-describe Redmine::AccessControl do
+RSpec.describe Redmine::AccessControl do
   describe '.remove_modules_permissions' do
     let!(:all_former_permissions) { Redmine::AccessControl.permissions }
     let!(:former_repository_permissions) do

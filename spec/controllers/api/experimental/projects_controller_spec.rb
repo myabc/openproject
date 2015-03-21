@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../spec_helper', __FILE__)
 
-describe Api::Experimental::ProjectsController, type: :controller do
+RSpec.describe Api::Experimental::ProjectsController, type: :controller do
   let(:current_user) do
     FactoryGirl.create(:user, member_in_project: project,
                               member_through_role: role)

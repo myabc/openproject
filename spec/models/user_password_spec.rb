@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe UserPassword, type: :model do
+RSpec.describe UserPassword, type: :model do
   let(:old_password) { FactoryGirl.create(:old_user_password) }
   let(:password) { FactoryGirl.create(:user_password) }
 

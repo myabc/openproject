@@ -11,7 +11,7 @@
 
 require 'spec_helper'
 
-describe RedCloth3 do
+RSpec.describe RedCloth3 do
   describe '#to_html', 'with one full heading tree starting at h1' do
     before(:each) do
       @text = <<-RAW

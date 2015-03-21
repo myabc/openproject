@@ -28,7 +28,7 @@
 
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe Timeline, type: :model do
+RSpec.describe Timeline, type: :model do
   describe 'helper methods for creation' do
     describe 'available_responsibles' do
       it 'is sorted according to general setting' do

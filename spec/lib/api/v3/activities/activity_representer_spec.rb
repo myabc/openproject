@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Activities::ActivityRepresenter do
+RSpec.describe ::API::V3::Activities::ActivityRepresenter do
   let(:current_user) { FactoryGirl.create(:user,  member_in_project: project, member_through_role: role) }
   let(:work_package) { FactoryGirl.build(:work_package) }
   let(:journal) { FactoryGirl.build(:work_package_journal, journable: work_package, user: current_user) }

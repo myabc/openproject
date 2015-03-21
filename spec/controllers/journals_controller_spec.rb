@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe JournalsController, type: :controller do
+RSpec.describe JournalsController, type: :controller do
   let(:user) { FactoryGirl.create(:user, member_in_project: project, member_through_role: role) }
   let(:project) { FactoryGirl.create(:project_with_types) }
   let(:role) { FactoryGirl.create(:role, permissions: permissions) }

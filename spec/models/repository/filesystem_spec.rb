@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe Repository::Filesystem, type: :model do
+RSpec.describe Repository::Filesystem, type: :model do
   before do
     allow(Setting).to receive(:enabled_scm).and_return(['Filesystem'])
   end

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe Api::V2::PlanningElementPrioritiesController, type: :routing do
+RSpec.describe Api::V2::PlanningElementPrioritiesController, type: :routing do
 
   describe 'index' do
     it {

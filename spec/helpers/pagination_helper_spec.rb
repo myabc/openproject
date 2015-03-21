@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe PaginationHelper, type: :helper do
+RSpec.describe PaginationHelper, type: :helper do
 
   let(:paginator) do
     # creating a mock pagination object

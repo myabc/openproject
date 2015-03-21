@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe RepositoriesController, type: :routing do
+RSpec.describe RepositoriesController, type: :routing do
   describe 'show' do
     it {
       expect(get('/projects/testproject/repository')).to route_to(controller: 'repositories',

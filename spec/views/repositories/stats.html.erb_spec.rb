@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe 'repositories/stats', type: :view do
+RSpec.describe 'repositories/stats', type: :view do
   let(:project) { FactoryGirl.create(:project) }
 
   before do

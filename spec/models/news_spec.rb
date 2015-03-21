@@ -31,7 +31,7 @@ require File.expand_path('../../support/shared/become_member', __FILE__)
 
 require 'support/shared/acts_as_watchable'
 
-describe News, type: :model do
+RSpec.describe News, type: :model do
   include BecomeMember
 
   let(:project) {

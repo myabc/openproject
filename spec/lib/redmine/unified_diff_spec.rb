@@ -29,7 +29,7 @@
 require 'spec_helper'
 
 module Redmine
-  describe UnifiedDiff do
+  RSpec.describe UnifiedDiff do
     before do
       @diff = Redmine::UnifiedDiff.new(<<-DIFF
 --- old.js Thu May 11 14:24:58 2014

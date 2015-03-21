@@ -28,7 +28,7 @@
 
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe WorkPackagePolicy, type: :controller do
+RSpec.describe WorkPackagePolicy, type: :controller do
   let(:user)         { FactoryGirl.build_stubbed(:user) }
   let(:project)      { FactoryGirl.build_stubbed(:project) }
   let(:work_package) { FactoryGirl.build_stubbed(:work_package, project: project) }

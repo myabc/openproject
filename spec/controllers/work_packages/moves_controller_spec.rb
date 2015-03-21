@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe WorkPackages::MovesController, type: :controller do
+RSpec.describe WorkPackages::MovesController, type: :controller do
 
   let(:user) { FactoryGirl.create(:user) }
   let(:role) {

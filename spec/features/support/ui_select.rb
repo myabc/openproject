@@ -26,7 +26,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-shared_context 'ui-select helpers' do
+RSpec.shared_context 'ui-select helpers' do
   def ui_select_choose(select2_element, option_name)
     select2_element.find('.select2-choice').click
     select2_element.find('ul.select2-result-single li', text: option_name).click

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::UserStrategy do
+RSpec.describe CustomValue::UserStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value,

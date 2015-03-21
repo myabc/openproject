@@ -29,7 +29,7 @@
 
 require 'spec_helper'
 
-describe AvatarHelper, type: :helper do
+RSpec.describe AvatarHelper, type: :helper do
   let(:user) { FactoryGirl.build_stubbed(:user) }
 
   def expected_image_tag(digest, options = {})

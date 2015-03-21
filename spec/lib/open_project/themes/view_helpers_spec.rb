@@ -30,7 +30,7 @@ require 'spec_helper'
 
 module OpenProject
   module Themes
-    describe ViewHelpers do
+    RSpec.describe ViewHelpers do
       let(:helpers) { ApplicationController.helpers }
 
       it "is mixed into application controller's helper chain" do

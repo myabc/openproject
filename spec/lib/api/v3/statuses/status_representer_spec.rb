@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Statuses::StatusRepresenter do
+RSpec.describe ::API::V3::Statuses::StatusRepresenter do
   let(:status) { FactoryGirl.build(:status, id: 42) }
   let(:representer) { described_class.new(status) }
 

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Utilities::CustomFieldInjector do
+RSpec.describe ::API::V3::Utilities::CustomFieldInjector do
   include API::V3::Utilities::PathHelper
 
   let(:cf_path) { "customField#{custom_field.id}" }

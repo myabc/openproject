@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe WorkPackage, type: :model do
+RSpec.describe WorkPackage, type: :model do
   let(:work_package) {
     FactoryGirl.create(:work_package, project: project,
                                       status: status)

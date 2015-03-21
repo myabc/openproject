@@ -30,7 +30,7 @@ require 'spec_helper'
 
 module OpenProject
   module Themes
-    describe DefaultTheme do
+    RSpec.describe DefaultTheme do
       let(:theme) { DefaultTheme.instance }
 
       describe '#name' do
@@ -106,7 +106,7 @@ module OpenProject
       end
     end
 
-    describe ViewHelpers do
+    RSpec.describe ViewHelpers do
       let(:theme)   { DefaultTheme.instance }
       let(:helpers) { ApplicationController.helpers }
 

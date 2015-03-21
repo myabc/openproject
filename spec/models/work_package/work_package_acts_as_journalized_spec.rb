@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe WorkPackage, type: :model do
+RSpec.describe WorkPackage, type: :model do
   describe '#journal' do
     let(:type) { FactoryGirl.create :type }
     let(:project) {

@@ -57,7 +57,7 @@
 
 require 'spec_helper'
 
-describe OpenProject::Files do
+RSpec.describe OpenProject::Files do
   describe 'create_uploaded_file' do
     context 'without parameters' do
       let(:file) { OpenProject::Files.create_uploaded_file }

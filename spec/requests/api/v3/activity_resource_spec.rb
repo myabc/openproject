@@ -29,7 +29,7 @@
 require 'spec_helper'
 require 'rack/test'
 
-describe 'API v3 Activity resource', type: :request do
+RSpec.describe 'API v3 Activity resource', type: :request do
   include Rack::Test::Methods
   include API::V3::Utilities::PathHelper
 

@@ -26,7 +26,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-shared_context 'work package table helpers' do
+RSpec.shared_context 'work package table helpers' do
   def remove_wp_table_column(column_name)
     click_button('Settings')
     click_link('Columns ...')

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::DateStrategy do
+RSpec.describe CustomValue::DateStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value)

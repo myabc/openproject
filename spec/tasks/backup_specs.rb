@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe 'mysql' do
+RSpec.describe 'mysql' do
   let(:database_config) do
     { 'adapter' => 'mysql2',
       'database' => 'openproject-database',
@@ -117,7 +117,7 @@ describe 'mysql' do
   end
 end
 
-describe 'postgresql' do
+RSpec.describe 'postgresql' do
   let(:database_config) do
     { 'adapter' => 'postgresql',
       'database' => 'openproject-database',

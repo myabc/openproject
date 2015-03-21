@@ -30,7 +30,7 @@ require 'spec_helper'
 
 module OpenProject
   module Themes
-    describe ThemeFinder do
+    RSpec.describe ThemeFinder do
       before { ThemeFinder.clear_themes }
       # clear theme state after we are finished so that we do not disturb following tests
       after(:all) { ThemeFinder.clear_themes }

@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe 'users/edit', type: :view do
+RSpec.describe 'users/edit', type: :view do
   let(:current_user) { FactoryGirl.build :admin }
 
   context 'authentication provider' do

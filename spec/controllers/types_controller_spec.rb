@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe TypesController, type: :controller do
+RSpec.describe TypesController, type: :controller do
 
   let(:project) {
     FactoryGirl.create(:project,

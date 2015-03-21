@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ProjectsController, type: :controller do
+RSpec.describe ProjectsController, type: :controller do
   before do
     Role.delete_all
     User.delete_all

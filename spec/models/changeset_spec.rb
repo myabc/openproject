@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe Changeset, type: :model do
+RSpec.describe Changeset, type: :model do
   let(:email) { 'bob@bobbit.org' }
 
   with_created_filesystem_repository do

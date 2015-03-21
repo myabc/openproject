@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::IntStrategy do
+RSpec.describe CustomValue::IntStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value)

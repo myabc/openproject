@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-shared_examples_for 'handling anonymous user' do |type, path|
+RSpec.shared_examples_for 'handling anonymous user' do |type, path|
   context 'anonymous user' do
     let(:get_path) { path % [id] }
 

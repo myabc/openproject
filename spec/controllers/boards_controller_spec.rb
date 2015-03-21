@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe BoardsController, type: :controller do
+RSpec.describe BoardsController, type: :controller do
   let(:user) { FactoryGirl.build(:user) }
   let(:project) { FactoryGirl.build(:project) }
   let!(:board) {

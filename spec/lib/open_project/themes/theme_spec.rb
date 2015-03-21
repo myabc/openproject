@@ -32,7 +32,7 @@ module OpenProject
   module Themes
     GoofyTheme = Class.new(Theme)
 
-    describe Theme do
+    RSpec.describe Theme do
       before { ThemeFinder.clear_themes }
 
       # class methods
@@ -240,7 +240,7 @@ module OpenProject
       end
     end
 
-    describe ViewHelpers do
+    RSpec.describe ViewHelpers do
       let(:theme)   { Theme.new_theme { |t| t.identifier = :new_theme } }
       let(:helpers) { ApplicationController.helpers }
 

@@ -31,7 +31,7 @@ require 'spec_helper'
 
 ##
 # Tests that email notifications will be sent upon creating or changing a work package.
-describe WorkPackage, type: :model do
+RSpec.describe WorkPackage, type: :model do
   describe 'email notifications' do
     let(:user) { FactoryGirl.create :admin }
     let!(:work_package) do

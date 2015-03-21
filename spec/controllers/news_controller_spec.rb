@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe NewsController, type: :controller do
+RSpec.describe NewsController, type: :controller do
   render_views
 
   include BecomeMember

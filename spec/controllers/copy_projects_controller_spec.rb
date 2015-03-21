@@ -28,7 +28,7 @@
 
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe CopyProjectsController, type: :controller do
+RSpec.describe CopyProjectsController, type: :controller do
   let(:current_user) { FactoryGirl.create(:admin) }
   let(:redirect_path) { 'source_project_settings' }
   let(:permission) { :copy_projects }

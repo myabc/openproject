@@ -29,7 +29,7 @@
 
 require 'spec_helper'
 
-describe Api::Experimental::VersionsController, type: :routing do
+RSpec.describe Api::Experimental::VersionsController, type: :routing do
   it 'should connect GET ' +
     '/api/experimental/projects/:project_id/versions.json to versions#index' do
     expect(get('/api/experimental/projects/blubs/versions.json'))

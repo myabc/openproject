@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe ::API::V3::Projects::ProjectRepresenter do
+RSpec.describe ::API::V3::Projects::ProjectRepresenter do
   let(:project) { FactoryGirl.build(:project) }
   let(:representer) { described_class.new(project) }
 

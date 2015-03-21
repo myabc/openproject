@@ -28,7 +28,7 @@
 
 require File.expand_path('../../../../spec_helper', __FILE__)
 
-describe Api::V2::PlanningElementTypesController, type: :controller do
+RSpec.describe Api::V2::PlanningElementTypesController, type: :controller do
   let (:admin) { FactoryGirl.create(:admin) }
   let(:project) { FactoryGirl.create(:project, is_public: false, no_types: true) }
   let(:role) { FactoryGirl.create(:role, permissions: [:view_work_packages]) }

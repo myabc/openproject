@@ -26,7 +26,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-shared_examples_for 'acts_as_watchable included' do
+RSpec.shared_examples_for 'acts_as_watchable included' do
   before do
     unless defined?(model_instance) &&
            defined?(watch_permission) &&

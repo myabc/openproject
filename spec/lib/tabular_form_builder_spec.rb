@@ -31,7 +31,7 @@ require 'ostruct'
 
 TestViewHelper = Class.new(ActionView::Base)
 
-describe TabularFormBuilder do
+RSpec.describe TabularFormBuilder do
   include Capybara::RSpecMatchers
 
   let(:helper)   { TestViewHelper.new }

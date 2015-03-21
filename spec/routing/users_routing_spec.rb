@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe UsersController, type: :routing do
+RSpec.describe UsersController, type: :routing do
   describe 'routing' do
     describe 'users' do
       it {

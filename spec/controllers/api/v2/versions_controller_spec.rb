@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe Api::V2::VersionsController, type: :controller do
+RSpec.describe Api::V2::VersionsController, type: :controller do
   let(:project) { FactoryGirl.create(:project) }
   let(:version) { FactoryGirl.create(:version, project: project) }
   let(:admin_user) { FactoryGirl.create(:admin) }

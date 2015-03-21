@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe 'Journalized Objects' do
+RSpec.describe 'Journalized Objects' do
   before(:each) do
     @type ||= FactoryGirl.create(:type_feature)
     @project ||= FactoryGirl.create(:project_with_types)

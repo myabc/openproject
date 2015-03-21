@@ -29,7 +29,7 @@
 require 'spec_helper'
 
 module OpenProjectRepositoryAuthenticationSpecs
-  describe SysController, type: :controller do
+  RSpec.describe SysController, type: :controller do
     let(:commit_role) {
       FactoryGirl.create(:role, permissions: [:commit_access,
                                               :browse_repository])

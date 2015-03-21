@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe Role, type: :model do
+RSpec.describe Role, type: :model do
   describe '#by_permission' do
     it 'returns roles with given permission' do
       edit_project_role = FactoryGirl.create :role, permissions: [:edit_project]

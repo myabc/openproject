@@ -28,7 +28,7 @@
 
 require 'spec_helper'
 
-describe CustomValue::FloatStrategy do
+RSpec.describe CustomValue::FloatStrategy do
   let(:custom_value) {
     double('CustomValue',
            value: value)

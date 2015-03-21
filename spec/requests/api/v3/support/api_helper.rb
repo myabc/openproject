@@ -26,11 +26,11 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-shared_examples_for 'safeguarded API' do
+RSpec.shared_examples_for 'safeguarded API' do
   it { expect(response.response_code).to eq(404) }
 end
 
-shared_examples_for 'valid activity request' do
+RSpec.shared_examples_for 'valid activity request' do
   let(:status_code) { 200 }
 
   before { allow(User).to receive(:current).and_return(admin) }
@@ -46,7 +46,7 @@ shared_examples_for 'valid activity request' do
   end
 end
 
-shared_examples_for 'invalid activity request' do
+RSpec.shared_examples_for 'invalid activity request' do
   before { allow(User).to receive(:current).and_return(admin) }
 
   it { expect(response.response_code).to eq(422) }
