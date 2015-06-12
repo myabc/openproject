@@ -573,8 +573,6 @@ OpenProject::Application.routes.draw do
   # precedence when creating routes (possibly via helpers).
   get 'roles/new' => 'roles#new', as: 'deprecated_roles_new'
 
-  # Install the default route as the lowest priority.
-  get '/:controller(/:action(/:id))'
   get '/robots' => 'welcome#robots', defaults: { format: :txt }
 
   root to: 'account#login'
