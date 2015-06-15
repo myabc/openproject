@@ -46,7 +46,7 @@ describe Repository::Filesystem, type: :model do
       @repository.reload
 
       assert_equal 0, @repository.changesets.count
-      assert_equal 0, @repository.changes.count
+      assert_equal 0, @repository.file_changes.count
     end
   end
 

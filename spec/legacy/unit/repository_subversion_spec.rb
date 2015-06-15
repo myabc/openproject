@@ -45,7 +45,7 @@ describe Repository::Subversion, type: :model do
     @repository.reload
 
     assert_equal 11, @repository.changesets.count
-    assert_equal 20, @repository.changes.count
+    assert_equal 20, @repository.file_changes.count
     assert_equal 'Initial import.', @repository.changesets.find_by(revision: '1').comments
   end
 
@@ -97,7 +97,7 @@ describe Repository::Subversion, type: :model do
     @repository.reload
 
     assert_equal 1, @repository.changesets.count, 'Expected to see 1 revision'
-    assert_equal 2, @repository.changes.count, 'Expected to see 2 changes, dir add and file add'
+    assert_equal 2, @repository.file_changes.count, 'Expected to see 2 changes, dir add and file add'
 
     entries = @repository.entries('')
     assert_not_nil entries, 'Expect to find entries'
