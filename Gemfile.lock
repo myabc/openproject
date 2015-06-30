@@ -1,18 +1,18 @@
 GIT
-  remote: git://github.com/finnlabs/awesome_nested_set.git
-  revision: 47a2febba6b371bd7daec7087f8ea86444370c90
-  branch: v2.1.6-rails4
-  specs:
-    awesome_nested_set (2.1.6)
-      activerecord (>= 3.0.0)
-
-GIT
   remote: git://github.com/goodwill/capybara-select2.git
   revision: c0826f33707b85fd39a838c6909ee12d0bff64a1
   specs:
     capybara-select2 (1.0.1)
       capybara
       rspec
+
+GIT
+  remote: git://github.com/marutosi/awesome_nested_set.git
+  revision: 4c4fdfe80f7451b66401f88cb5120ab1fec21661
+  branch: v2.1.6.merged
+  specs:
+    awesome_nested_set (2.1.6)
+      activerecord (>= 3.0.0)
 
 GIT
   remote: https://github.com/finnlabs/rack-protection.git
@@ -219,7 +219,7 @@ GEM
     hashie (3.4.1)
     hike (1.2.3)
     htmldiff (0.0.1)
-    i18n (0.6.11)
+    i18n (0.7.0)
     ice_nine (0.11.1)
     inflecto (0.0.2)
     interception (0.5)
@@ -240,7 +240,7 @@ GEM
     mime-types (2.5)
     mini_portile (0.6.2)
     minitest (4.7.5)
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multi_test (0.1.2)
     multi_xml (0.5.5)
     mysql2 (0.3.18)
@@ -543,6 +543,3 @@ DEPENDENCIES
   warden (~> 1.2)
   warden-basic_auth (~> 0.2.0)
   will_paginate (~> 3.0)
-
-BUNDLED WITH
-   1.10.5
