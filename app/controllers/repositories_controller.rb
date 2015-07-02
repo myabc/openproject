@@ -55,7 +55,7 @@ class RepositoriesController < ApplicationController
       @repository.project = @project if @repository
     end
     if request.post? && @repository
-      @repository.attributes = params[:repository]
+      @repository.attributes = params[:repository] || {}
       @repository.save
     end
 
