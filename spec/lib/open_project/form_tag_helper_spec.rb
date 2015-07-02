@@ -248,7 +248,7 @@ Words are important</textarea>
 
     it 'should output element' do
       expect(output).to be_html_eql %{
-        <button class="button">Don&#x27;t save!</button>
+        <button class="button" name="button" type="submit">Don&#x27;t save!</button>
       }
     end
   end
