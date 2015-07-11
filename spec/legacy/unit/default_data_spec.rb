@@ -49,8 +49,8 @@ describe Redmine::DefaultData do
       begin
         delete_loaded_data!
         assert Redmine::DefaultData::Loader::load(lang)
-        assert_not_nil IssuePriority.first
-        assert_not_nil TimeEntryActivity.first
+        refute_nil IssuePriority.first
+        refute_nil TimeEntryActivity.first
       rescue ActiveRecord::RecordInvalid => e
         assert false, ":#{lang} default data is invalid (#{e.message})."
       end

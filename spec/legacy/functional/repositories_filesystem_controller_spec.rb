@@ -58,9 +58,9 @@ describe RepositoriesController, 'Filesystem', type: :controller do
       get :show, project_id: PRJ_ID
       assert_response :success
       assert_template 'show'
-      assert_not_nil assigns(:entries)
+      refute_nil assigns(:entries)
       assert assigns(:entries).size > 0
-      assert_not_nil assigns(:changesets)
+      refute_nil assigns(:changesets)
       assert assigns(:changesets).size == 0
     end
   end

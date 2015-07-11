@@ -37,7 +37,7 @@ describe EnabledModule do
     project.enabled_module_names = ['wiki']
     wiki = FactoryGirl.create :wiki, project: project
     project.reload
-    assert_not_nil project.wiki
+    refute_nil project.wiki
     assert_equal 'Wiki', project.wiki.start_page
   end
 
@@ -45,12 +45,12 @@ describe EnabledModule do
     project = FactoryGirl.create :project
     wiki = FactoryGirl.create :wiki, project: project
     project.reload
-    assert_not_nil project.wiki
+    refute_nil project.wiki
     project.enabled_module_names = []
     project.reload
     assert_no_difference 'Wiki.count' do
       project.enabled_module_names = ['wiki']
     end
-    assert_not_nil project.wiki
+    refute_nil project.wiki
   end
 end
