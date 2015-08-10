@@ -32,6 +32,8 @@ describe EnabledModule do
   it 'should enabling_wiki_should_create_a_wiki' do
     CustomField.delete_all
     FactoryGirl.create(:type_standard)
+    Setting.default_projects_modules -= %w(wiki)
+
     project = Project.create!(name: 'Project with wiki', identifier: 'wikiproject')
     assert_nil project.wiki
     project.enabled_module_names = ['wiki']
