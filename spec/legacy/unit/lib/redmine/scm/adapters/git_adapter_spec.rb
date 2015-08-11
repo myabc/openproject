@@ -148,7 +148,7 @@ describe Redmine::Scm::Adapters::GitAdapter, type: :model do
     assert_equal '4a07fe31bffcf2888791f3e6cbc9c4545cefe3e8', last_rev.scmid
     assert_equal '4a07fe31bffcf2888791f3e6cbc9c4545cefe3e8', last_rev.identifier
     assert_equal 'Adam Soltys <asoltys@gmail.com>', last_rev.author
-    assert_equal '2009-06-24 05:27:38'.to_time, last_rev.time
+    assert_equal '2009-06-24 05:27:38 +0000'.to_time, last_rev.time
   end
 
   it 'should last rev with spaces in filename' do
@@ -166,7 +166,7 @@ describe Redmine::Scm::Adapters::GitAdapter, type: :model do
                  last_rev.author
     assert_equal "#{str_felix_hex} <felix@fachschaften.org>",
                  last_rev.author
-    assert_equal '2010-09-18 19:59:46'.to_time, last_rev.time
+    assert_equal '2010-09-18 19:59:46 +0000'.to_time, last_rev.time
   end
 
   # TODO: need to handle edge cases of non-binary content that isn't UTF-8
