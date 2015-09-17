@@ -63,7 +63,7 @@ module OpenProject
     # delivered (although it is not at the moment), so don't count on object equality
     # for the payload.
     def self.send(name, payload)
-      ActiveSupport::Notifications.instrument(name, payload)
+      ActiveSupport::Notifications.instrument(name.to_s, payload)
     end
 
     def self.subscriptions
