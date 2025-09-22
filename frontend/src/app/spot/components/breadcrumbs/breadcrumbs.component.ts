@@ -34,12 +34,13 @@ import {
 } from '@angular/core';
 
 import { BreadcrumbsContent } from 'core-app/spot/components/breadcrumbs/breadcrumbs-content';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'spot-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass, NgTemplateOutlet],
 })
 export class SpotBreadcrumbsComponent {
   @HostBinding('class.spot-breadcrumbs') className = true;

@@ -38,6 +38,11 @@ import {
 import { RecentItemsService } from 'core-app/core/recent-items.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
+import { OpAutocompleterComponent as OpAutocompleterComponent_1 } from '../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
+import { OpAutocompleterHeaderTemplateDirective } from '../../../shared/components/autocompleter/op-autocompleter/directives/op-autocompleter-header-template.directive';
+import { OpAutocompleterOptionTemplateDirective } from '../../../shared/components/autocompleter/op-autocompleter/directives/op-autocompleter-option-template.directive';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 interface SearchResultItem {
   id:string;
@@ -70,7 +75,14 @@ interface SearchResultItems {
   ],
   // Necessary because of ng-select
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    OpAutocompleterComponent_1,
+    OpAutocompleterHeaderTemplateDirective,
+    OpAutocompleterOptionTemplateDirective,
+    NgClass,
+    AsyncPipe,
+  ],
 })
 export class GlobalSearchInputComponent implements AfterViewInit, OnDestroy {
   @Input() public placeholder:string;

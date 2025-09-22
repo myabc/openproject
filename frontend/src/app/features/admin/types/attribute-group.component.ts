@@ -3,12 +3,14 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { TypeFormAttribute, TypeGroup } from 'core-app/features/admin/types/type-form-configuration.component';
+import { GroupEditInPlaceComponent } from './group-edit-in-place.component';
+import { DragulaModule } from 'ng2-dragula';
 
 @Component({
   selector: 'op-type-form-attribute-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './attribute-group.component.html',
-  standalone: false,
+  imports: [GroupEditInPlaceComponent, DragulaModule],
 })
 export class TypeFormAttributeGroupComponent {
   @Input() public group:TypeGroup;

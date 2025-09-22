@@ -32,12 +32,19 @@ import {
 import {
   StorageInformationBox,
 } from 'core-app/shared/components/storages/storage-information/storage-information-box';
+import { AlertFillIconComponent, InfoIconComponent, QuestionIconComponent } from '@openproject/octicons-angular';
+import { StorageLoginButtonComponent } from '../storage-login-button/storage-login-button.component';
 
 @Component({
   selector: 'op-storage-information',
   templateUrl: './storage-information.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    AlertFillIconComponent,
+    InfoIconComponent,
+    QuestionIconComponent,
+    StorageLoginButtonComponent,
+  ],
 })
 export class StorageInformationComponent {
   @Input() content:StorageInformationBox;

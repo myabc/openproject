@@ -51,10 +51,7 @@ import {
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
 import { HalError } from "core-app/features/hal/services/hal-error";
 
-@Directive({
-  selector: '[wpStatusDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[wpStatusDropdown]' })
 export class WorkPackageStatusDropdownDirective extends OpContextMenuTrigger {
   @Input('wpStatusDropdown-workPackage') public workPackage:WorkPackageResource;
 

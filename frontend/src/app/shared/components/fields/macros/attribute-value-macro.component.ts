@@ -50,6 +50,7 @@ import {
 } from 'core-app/shared/components/fields/macros/attribute-model-loader.service';
 import { firstValueFrom } from 'rxjs';
 import { ISchemaProxy } from 'core-app/features/hal/schemas/schema-proxy';
+import { DisplayFieldComponent } from '../display/display-field.component';
 
 export const ATTRIBUTE_MACRO_CLASS = 'op-attribute-value-macro';
 
@@ -60,7 +61,7 @@ export const ATTRIBUTE_MACRO_CLASS = 'op-attribute-value-macro';
   providers: [
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [DisplayFieldComponent],
 })
 export class AttributeValueMacroComponent implements OnInit {
   @ViewChild('displayContainer') private displayContainer:ElementRef<HTMLSpanElement>;

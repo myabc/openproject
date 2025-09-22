@@ -5,7 +5,6 @@ import { DynamicModule } from 'ng-dynamic-component';
 import { CommonModule } from '@angular/common';
 import { DragulaModule } from 'ng2-dragula';
 
-import { InviteUserButtonModule } from 'core-app/features/invite-user-modal/button/invite-user-button.module';
 import { OpenprojectPrincipalRenderingModule } from 'core-app/shared/components/principal/principal-rendering.module';
 
 import {
@@ -91,12 +90,10 @@ export const OPENPROJECT_AUTOCOMPLETE_COMPONENTS = [
     DragulaModule,
     FormsModule,
     ReactiveFormsModule,
-
     DynamicModule,
     OpenprojectPrincipalRenderingModule,
-    InviteUserButtonModule,
+    ...OPENPROJECT_AUTOCOMPLETE_COMPONENTS,
   ],
   exports: OPENPROJECT_AUTOCOMPLETE_COMPONENTS,
-  declarations: OPENPROJECT_AUTOCOMPLETE_COMPONENTS,
 })
 export class OpenprojectAutocompleterModule {}

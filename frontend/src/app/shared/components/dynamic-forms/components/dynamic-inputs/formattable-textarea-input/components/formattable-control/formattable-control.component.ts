@@ -7,6 +7,7 @@ import {
   ICKEditorInstance,
 } from 'core-app/shared/components/editor/components/ckeditor/ckeditor.types';
 import { IOPFormlyTemplateOptions } from 'core-app/shared/components/dynamic-forms/typings';
+import { OpCkeditorComponent as OpCkeditorComponent_1 } from '../../../../../../editor/components/ckeditor/op-ckeditor.component';
 
 @Component({
   selector: 'op-formattable-control',
@@ -19,7 +20,7 @@ import { IOPFormlyTemplateOptions } from 'core-app/shared/components/dynamic-for
       multi: true,
     },
   ],
-  standalone: false,
+  imports: [OpCkeditorComponent_1],
 })
 export class FormattableControlComponent implements ControlValueAccessor, OnInit {
   @Input() templateOptions:IOPFormlyTemplateOptions;

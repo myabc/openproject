@@ -36,12 +36,14 @@ import { Highlighting } from 'core-app/features/work-packages/components/wp-fast
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { SchemaCacheService } from 'core-app/core/schemas/schema-cache.service';
+import { NgClass } from '@angular/common';
+import { WorkPackageStatusDropdownDirective } from '../../../../../shared/components/op-context-menu/handlers/wp-status-dropdown-menu.directive';
 
 @Component({
   selector: 'wp-status-button',
   styleUrls: ['./wp-status-button.component.sass'],
   templateUrl: './wp-status-button.html',
-  standalone: false,
+  imports: [NgClass, WorkPackageStatusDropdownDirective],
 })
 export class WorkPackageStatusButtonComponent extends UntilDestroyedMixin implements OnInit {
   @Input('workPackage') public workPackage:WorkPackageResource;

@@ -28,11 +28,18 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractWidgetComponent } from 'core-app/shared/components/grids/widgets/abstract-widget.component';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { WorkPackageOverviewGraphComponent } from '../../../work-package-graphs/overview/wp-overview-graph.component';
 
 @Component({
   templateUrl: './wp-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    WorkPackageOverviewGraphComponent,
+  ],
 })
 export class WidgetWpOverviewComponent extends AbstractWidgetComponent {
 }

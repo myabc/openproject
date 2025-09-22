@@ -35,11 +35,12 @@ import {
 } from '@angular/core';
 
 import { ConfirmDialogModalComponent } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.modal';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './password-confirmation.modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FormsModule],
 })
 export class PasswordConfirmationModalComponent extends ConfirmDialogModalComponent implements OnInit {
   public password_confirmation:string|null = null;

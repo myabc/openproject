@@ -44,6 +44,10 @@ import { QueryResource } from 'core-app/features/hal/resources/query-resource';
 import { HalEventsService } from 'core-app/features/hal/services/hal-events.service';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
+import { NgClass } from '@angular/common';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { WorkPackageSingleCardComponent } from './wp-single-card/wp-single-card.component';
+import { NoResultsComponent } from '../../../../shared/components/no-results/no-results.component';
 
 export type CardViewOrientation = 'horizontal'|'vertical';
 
@@ -52,7 +56,13 @@ export type CardViewOrientation = 'horizontal'|'vertical';
   styleUrls: ['./styles/wp-card-view.component.sass', './styles/wp-card-view-horizontal.sass', './styles/wp-card-view-vertical.sass'],
   templateUrl: './wp-card-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    DynamicComponent,
+    DynamicIoDirective,
+    WorkPackageSingleCardComponent,
+    NoResultsComponent,
+  ],
 })
 export class WorkPackageCardViewComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit, WorkPackageViewOutputs {
   @Input('dragOutOfHandler') public canDragOutOf:(wp:WorkPackageResource) => boolean;

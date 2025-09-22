@@ -33,11 +33,17 @@ import { WorkPackageResource } from 'core-app/features/hal/resources/work-packag
 import { WorkPackageRelationsHierarchyService } from 'core-app/features/work-packages/components/wp-relations/wp-relations-hierarchy/wp-relations-hierarchy.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { WorkPackageNotificationService } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
+import { AnchorUISref, UISref } from '@uirouter/angular';
+import { WorkPackageRelationsAutocompleteComponent } from '../wp-relations/wp-relations-create/wp-relations-autocomplete/wp-relations-autocomplete.component';
 
 @Component({
   templateUrl: './wp-breadcrumb-parent.html',
   selector: 'wp-breadcrumb-parent',
-  standalone: false,
+  imports: [
+    AnchorUISref,
+    UISref,
+    WorkPackageRelationsAutocompleteComponent,
+  ],
 })
 export class WorkPackageBreadcrumbParentComponent {
   @Input('workPackage') workPackage:WorkPackageResource;

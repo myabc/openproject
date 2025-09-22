@@ -68,11 +68,18 @@ import { onClickOrEnter } from '../wp-fast-table/handlers/click-or-enter-handler
 import {
   HalResourceEditingService,
 } from 'core-app/shared/components/fields/edit/services/hal-resource-editing.service';
+import { AutofocusDirective } from '../../../../shared/directives/focus/autofocus.directive';
+import { NgComponentOutlet } from '@angular/common';
+import { ComponentOutletInjectorDirective } from 'ng-dynamic-component';
 
 @Component({
   selector: '[wpInlineCreate]',
   templateUrl: './wp-inline-create.component.html',
-  standalone: false,
+  imports: [
+    AutofocusDirective,
+    NgComponentOutlet,
+    ComponentOutletInjectorDirective,
+  ],
 })
 export class WorkPackageInlineCreateComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit {
   @Input() colspan:number;

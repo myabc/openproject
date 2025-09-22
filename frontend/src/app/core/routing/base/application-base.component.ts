@@ -27,6 +27,7 @@
 //++
 
 import { Component } from '@angular/core';
+import { UIView } from '@uirouter/angular';
 
 export const appBaseSelector = 'openproject-base';
 
@@ -37,7 +38,7 @@ export const appBaseSelector = 'openproject-base';
       <ui-view />
     </div>
   `,
-  standalone: false,
+  imports: [UIView],
 })
 export class ApplicationBaseComponent {
 }

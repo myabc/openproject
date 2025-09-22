@@ -67,9 +67,14 @@ export function createDynamicInputFixture(fields:IOPFormlyFieldSettings[], model
                      [model]="model"
                      [fields]="fields">
         </formly-form>
-      </form>      
+      </form>
     `,
-    standalone: false,
+    imports: [
+      CommonModule,
+      ReactiveFormsModule,
+      NgSelectModule,
+      NgOptionHighlightDirective,
+    ],
   })
   class DynamicInputsTestingComponent {
     form = new UntypedFormGroup({});
@@ -108,19 +113,17 @@ export function createDynamicInputFixture(fields:IOPFormlyFieldSettings[], model
         }),
         NgSelectModule,
         NgOptionHighlightDirective,
-      ],
-      declarations: [
         TextInputComponent,
         IntegerInputComponent,
         SelectInputComponent,
         SelectProjectStatusInputComponent,
         BooleanInputComponent,
-        SpotFormFieldComponent,
         DateInputComponent,
         OpCkeditorComponent,
         FormattableControlComponent,
         FormattableTextareaInputComponent,
         DynamicInputsTestingComponent,
+        SpotFormFieldComponent,
       ],
       providers: [],
     })

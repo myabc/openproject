@@ -49,12 +49,13 @@ import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/q
 import { WorkPackageCollectionResource } from 'core-app/features/hal/resources/wp-collection-resource';
 import { TablePaginationComponent } from 'core-app/shared/components/table-pagination/table-pagination.component';
 import { PaginationService } from 'core-app/shared/components/table-pagination/pagination-service';
+import { NgClass } from '@angular/common';
 
 @Component({
   templateUrl: '../../../../../shared/components/table-pagination/table-pagination.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'wp-table-pagination',
-  standalone: false,
+  imports: [NgClass],
 })
 export class WorkPackageTablePaginationComponent extends TablePaginationComponent implements OnInit, OnDestroy {
   constructor(

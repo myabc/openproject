@@ -47,13 +47,38 @@ import { CurrentProjectService } from 'core-app/core/current-project/current-pro
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { QueryFilterResource } from 'core-app/features/hal/resources/query-filter-resource';
 import { WorkPackageViewBaselineService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-baseline.service';
+import { FormsModule } from '@angular/forms';
+import { FilterBooleanValueComponent } from '../filter-boolean-value/filter-boolean-value.component';
+import { FilterIntegerValueComponent } from '../filter-integer-value/filter-integer-value.component';
+import { FilterDateValueComponent } from '../filter-date-value/filter-date-value.component';
+import { FilterDatesValueComponent } from '../filter-dates-value/filter-dates-value.component';
+import { FilterDateTimeValueComponent } from '../filter-date-time-value/filter-date-time-value.component';
+import { FilterDateTimesValueComponent } from '../filter-date-times-value/filter-date-times-value.component';
+import { FilterStringValueComponent } from '../filter-string-value/filter-string-value.component';
+import { FilterProjectComponent } from '../filter-project/filter-project.component';
+import { FilterToggledMultiselectValueComponent } from '../filter-toggled-multiselect-value/filter-toggled-multiselect-value.component';
+import { FilterSearchableMultiselectValueComponent } from '../filter-searchable-multiselect-value/filter-searchable-multiselect-value.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   selector: '[query-filter]',
   styleUrls: ['./query-filter.component.sass'],
   templateUrl: './query-filter.component.html',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    FormsModule,
+    FilterBooleanValueComponent,
+    FilterIntegerValueComponent,
+    FilterDateValueComponent,
+    FilterDatesValueComponent,
+    FilterDateTimeValueComponent,
+    FilterDateTimesValueComponent,
+    FilterStringValueComponent,
+    FilterProjectComponent,
+    FilterToggledMultiselectValueComponent,
+    FilterSearchableMultiselectValueComponent,
+  ],
 })
 export class QueryFilterComponent implements OnInit {
   @HostBinding('class.op-query-filter') className = true;

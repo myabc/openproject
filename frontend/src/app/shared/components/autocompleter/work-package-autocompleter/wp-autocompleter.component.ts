@@ -28,11 +28,21 @@
 
 import { AfterViewInit, Component } from '@angular/core';
 import { CreateAutocompleterComponent } from 'core-app/shared/components/autocompleter/create-autocompleter/create-autocompleter.component';
+import { NgSelectComponent, NgTagTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   templateUrl: '../create-autocompleter/create-autocompleter.component.html',
   selector: 'wp-autocompleter',
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgTagTemplateDirective,
+    NgOptionTemplateDirective,
+    NgStyle,
+  ],
 })
 export class WorkPackageAutocompleterComponent extends CreateAutocompleterComponent implements AfterViewInit {
 }

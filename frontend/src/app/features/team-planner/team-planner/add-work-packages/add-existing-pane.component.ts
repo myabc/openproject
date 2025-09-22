@@ -39,13 +39,22 @@ import { teamPlannerEventRemoved } from 'core-app/features/team-planner/team-pla
 import { WorkPackageViewFiltersService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-filters.service';
 import { OpCalendarService } from 'core-app/features/calendar/op-calendar.service';
 import { OpWorkPackagesCalendarService } from 'core-app/features/calendar/op-work-packages-calendar.service';
+import { SpotTextFieldComponent } from '../../../../spot/components/text-field/text-field.component';
+import { FormsModule } from '@angular/forms';
+import { WorkPackageSingleCardComponent } from '../../../work-packages/components/wp-card-view/wp-single-card/wp-single-card.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-add-existing-pane',
   templateUrl: './add-existing-pane.component.html',
   styleUrls: ['./add-existing-pane.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    SpotTextFieldComponent,
+    FormsModule,
+    WorkPackageSingleCardComponent,
+    AsyncPipe,
+  ],
 })
 export class AddExistingPaneComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @HostBinding('class.op-add-existing-pane') className = true;

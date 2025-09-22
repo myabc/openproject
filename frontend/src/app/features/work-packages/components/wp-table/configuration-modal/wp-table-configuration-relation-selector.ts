@@ -11,11 +11,12 @@ import { QueryOperatorResource } from 'core-app/features/hal/resources/query-ope
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { SchemaCacheService } from 'core-app/core/schemas/schema-cache.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './wp-table-configuration-relation-selector.html',
   selector: 'wp-table-configuration-relation-selector',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpTableConfigurationRelationSelectorComponent implements OnInit {
   private relationFilterIds:string[] = [

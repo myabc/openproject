@@ -8,7 +8,7 @@ xdescribe('FormattableControlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FormattableControlComponent],
+      imports: [FormattableControlComponent],
     })
       .compileComponents();
   });

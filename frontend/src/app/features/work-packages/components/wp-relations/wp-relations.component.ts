@@ -30,6 +30,7 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Input,
   OnDestroy,
@@ -45,12 +46,14 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
 import { renderStreamMessage } from '@hotwired/turbo';
 import { HalEventsService } from 'core-app/features/hal/services/hal-events.service';
+import { OpContentLoaderComponent } from 'core-app/shared/components/op-content-loader/op-content-loader.component';
 
 @Component({
   selector: 'wp-relations',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './wp-relations.template.html',
-  standalone: false,
+  imports: [OpContentLoaderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WorkPackageRelationsComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit, OnDestroy {
   @Input() public workPackage:WorkPackageResource;

@@ -32,8 +32,6 @@ import { registerCustomElement } from 'core-app/shared/helpers/angular/custom-el
 @NgModule({
   imports: [
     CommonModule,
-  ],
-  declarations: [
     AvatarUploadFormComponent,
   ],
 })

@@ -78,6 +78,12 @@ import { firstValueFrom } from 'rxjs';
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { NgClass } from '@angular/common';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { EditableToolbarTitleComponent } from '../../../../shared/components/editable-toolbar-title/editable-toolbar-title.component';
+import { BoardListMenuComponent as BoardListMenuComponent_1 } from './board-list-menu.component';
+import { AddCardDropdownMenuDirective } from '../add-card-dropdown/add-card-dropdown-menu.directive';
+import { WorkPackageCardViewComponent as WorkPackageCardViewComponent_1 } from '../../../work-packages/components/wp-card-view/wp-card-view.component';
 
 export interface DisabledButtonPlaceholder {
   text:string;
@@ -95,7 +101,15 @@ export interface DisabledButtonPlaceholder {
     BoardListMenuComponent,
     WorkPackageCardDragAndDropService,
   ],
-  standalone: false,
+  imports: [
+    NgClass,
+    DynamicComponent,
+    DynamicIoDirective,
+    EditableToolbarTitleComponent,
+    BoardListMenuComponent_1,
+    AddCardDropdownMenuDirective,
+    WorkPackageCardViewComponent_1,
+  ],
 })
 export class BoardListComponent extends AbstractWidgetComponent implements OnInit, OnDestroy {
   /** Output fired upon query removal */

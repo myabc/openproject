@@ -6,7 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 
 export interface IOpOptionListOption<T> {
   value:T;
@@ -26,7 +26,7 @@ export type IOpOptionListValue<T> = T|null;
     useExisting: forwardRef(() => OpOptionListComponent),
     multi: true,
   }],
-  standalone: false,
+  imports: [FormsModule],
 })
 export class OpOptionListComponent<T> implements ControlValueAccessor {
   @HostBinding('class.op-option-list') className = true;

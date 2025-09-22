@@ -37,6 +37,7 @@ import {
 } from '@angular/core';
 
 import { setBodyCursor } from 'core-app/shared/helpers/dom/set-window-cursor.helper';
+import { NgClass } from '@angular/common';
 
 export interface ResizeDelta {
   origin:UIEvent;
@@ -58,7 +59,7 @@ export interface ResizeDelta {
   selector: 'op-resizer',
   templateUrl: './resizer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass],
 })
 export class ResizerComponent implements OnDestroy {
   private startX:number;

@@ -48,6 +48,7 @@ import {
 } from 'core-app/shared/components/fields/macros/attribute-model-loader.service';
 import { capitalize } from 'core-app/shared/helpers/string-helpers';
 import { firstValueFrom } from 'rxjs';
+import { AttributeHelpTextComponent } from '../../attribute-help-texts/attribute-help-text.component';
 
 @Component({
   templateUrl: './attribute-label-macro.html',
@@ -56,7 +57,7 @@ import { firstValueFrom } from 'rxjs';
   providers: [
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [AttributeHelpTextComponent],
 })
 export class AttributeLabelMacroComponent implements OnInit {
   // Whether the value could not be loaded

@@ -54,11 +54,24 @@ import {
 } from 'core-app/shared/components/storages/file-picker-base-modal/file-picker-base-modal.component';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { XIconComponent, FileDirectoryFillIconComponent, XCircleIconComponent } from '@openproject/octicons-angular';
+import { OpSpotModule } from '../../../../spot/spot.module';
+import { StorageFileListItemComponent } from '../storage-file-list-item/storage-file-list-item.component';
+import { LoadingFileListComponent } from '../loading-file-list/loading-file-list.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: 'location-picker-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    XIconComponent,
+    OpSpotModule,
+    StorageFileListItemComponent,
+    FileDirectoryFillIconComponent,
+    XCircleIconComponent,
+    LoadingFileListComponent,
+    AsyncPipe,
+  ],
 })
 export class LocationPickerModalComponent extends FilePickerBaseModalComponent {
   public submitted = false;

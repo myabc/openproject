@@ -91,7 +91,6 @@ import {
 import {
   WorkPackageActivityTabComponent,
 } from 'core-app/features/work-packages/components/wp-single-view-tabs/activity-panel/activity-tab.component';
-import { OpenprojectAttachmentsModule } from 'core-app/shared/components/attachments/openproject-attachments.module';
 import {
   WpCustomActionComponent,
 } from 'core-app/features/work-packages/components/wp-custom-actions/wp-custom-actions/wp-custom-action.component';
@@ -262,7 +261,6 @@ import {
 import {
   OpenprojectAutocompleterModule,
 } from 'core-app/shared/components/autocompleter/openproject-autocompleter.module';
-import { OpWpTabsModule } from 'core-app/features/work-packages/components/wp-tabs/wp-tabs.module';
 import {
   EditFieldControlsModule,
 } from 'core-app/shared/components/fields/edit/field-controls/edit-field-controls.module';
@@ -310,7 +308,6 @@ import {
 import {
   WorkPackageCopyFullViewComponent,
 } from 'core-app/features/work-packages/components/wp-copy/wp-copy-full-view.component';
-import { OpenprojectTabsModule } from 'core-app/shared/components/tabs/openproject-tabs.module';
 import { TimeEntryChangeset } from 'core-app/features/work-packages/helpers/time-entries/time-entry-changeset';
 
 import { OpAttachmentsComponent } from 'core-app/shared/components/attachments/attachments.component';
@@ -417,107 +414,46 @@ import {
     OpenprojectFieldsModule,
     // CKEditor
     OpenprojectEditorModule,
-
-    OpenprojectAttachmentsModule,
-
     OpenprojectBcfModule,
-
     OpenprojectModalModule,
-
     OpenprojectAutocompleterModule,
-
     OpenprojectTimeEntriesModule,
-
-    OpWpTabsModule,
-
     EditFieldControlsModule,
-    OpenprojectTabsModule,
     OpenprojectStoragesModule,
-
     WorkPackageIsolatedQuerySpaceDirective,
     OpenprojectEnterpriseModule,
-  ],
-  providers: [
-    // Notification service
-    WorkPackageNotificationService,
-
-    // External query configuration
-    ExternalQueryConfigurationService,
-    ExternalRelationQueryConfigurationService,
-
-    // Global work package states / services
-    SchemaCacheService,
-
-    // Global query/table state services
-    // For any service that depends on the isolated query space,
-    // they should be provided in wp-isolated-query-space.directive instead
-    QueryFiltersService,
-    WorkPackagesListInvalidQueryService,
-
-    // Provide a separate service for creation events of WP Inline create
-    // This can be hierarchically injected to provide isolated events on an embedded table
-    WorkPackageRelationsService,
-
-    WorkPackagesActivityService,
-    WorkPackageRelationsService,
-    WorkPackageWatchersService,
-
-    WorkPackagesQueryViewService,
-
-    HalEventsService,
-    FileLinksResourceService,
-    StorageFilesResourceService,
-
-    StoragesResourceService,
-    ProjectStoragesResourceService,
-
-    RecentItemsService,
-  ],
-  declarations: [
     // Routing
     WorkPackagesBaseComponent,
     PartitionedQuerySpacePageComponent,
     WorkPackageViewPageComponent,
-
     // WP list side
     WorkPackageListViewComponent,
     WorkPackageSettingsButtonComponent,
-
     // WP New
     WorkPackageNewFullViewComponent,
     WorkPackageNewSplitViewComponent,
     WorkPackageTypeStatusComponent,
     WorkPackageEditActionsBarComponent,
-
     // WP Copy
     WorkPackageCopyFullViewComponent,
     WorkPackageCopySplitViewComponent,
-
     // Embedded table
     WorkPackageEmbeddedTableComponent,
     WorkPackageEmbeddedTableEntryComponent,
-
     // External query configuration
     ExternalQueryConfigurationComponent,
     ExternalRelationQueryConfigurationComponent,
-
     // Inline create
     WorkPackageInlineCreateComponent,
     WpRelationInlineAddExistingComponent,
-
     WorkPackagesGridComponent,
-
     WorkPackagesTableComponent,
     WorkPackagesTableConfigMenuComponent,
     WorkPackageTablePaginationComponent,
-
     WpResizerComponent,
-
     WorkPackageTableSumsRowController,
-
     // Fold/Unfold button on wp list
     WorkPackageFoldToggleButtonComponent,
-
     // Filters
     QueryFiltersComponent,
     QueryFilterComponent,
@@ -531,10 +467,8 @@ import {
     FilterProjectComponent,
     FilterToggledMultiselectValueComponent,
     FilterSearchableMultiselectValueComponent,
-
     WorkPackageFilterContainerComponent,
     WorkPackageFilterButtonComponent,
-
     // Context menus
     OpTypesContextMenuDirective,
     OpColumnsContextMenu,
@@ -544,7 +478,6 @@ import {
     WorkPackageSingleContextMenuDirective,
     WorkPackageViewDropdownMenuDirective,
     WorkPackageGroupToggleDropdownMenuDirective,
-
     // Timeline
     WorkPackageTimelineButtonComponent,
     WorkPackageTimelineHeaderController,
@@ -552,10 +485,8 @@ import {
     WorkPackageTableTimelineStaticElements,
     WorkPackageTableTimelineGrid,
     WorkPackageTimelineTableController,
-
     WorkPackageCreateButtonComponent,
     WorkPackageFilterByTextInputComponent,
-
     // Single view
     WorkPackageOverviewTabComponent,
     WorkPackageSingleViewComponent,
@@ -567,14 +498,11 @@ import {
     WorkPackageFormAttributeGroupComponent,
     BackButtonComponent,
     WorkPackageTimerButtonComponent,
-
     // Activity Tab
     WorkPackageActivityTabComponent,
-
     // Watchers wp-tab-wrapper
     WorkPackageWatchersTabComponent,
     WorkPackageWatcherEntryComponent,
-
     // Relations
     WorkPackageRelationsTabComponent,
     WorkPackageRelationsComponent,
@@ -584,10 +512,8 @@ import {
     WorkPackageRelationsHierarchyComponent,
     WorkPackageRelationsAutocompleteComponent,
     WorkPackageBreadcrumbParentComponent,
-
     // Files tab
     WorkPackageFilesTabComponent,
-
     // Split view
     WorkPackageDetailsViewButtonComponent,
     WorkPackageSplitViewComponent,
@@ -599,10 +525,8 @@ import {
     WorkPackageReminderContextMenuDirective,
     WorkPackageShareButtonComponent,
     WorkPackageSubjectComponent,
-
     // Full view
     WorkPackagesFullViewComponent,
-
     // Modals
     WpTableConfigurationModalComponent,
     WpTableConfigurationColumnsTabComponent,
@@ -618,31 +542,52 @@ import {
     WpDestroyModalComponent,
     WorkPackageShareModalComponent,
     WorkPackageReminderModalComponent,
-
     // CustomActions
     WpCustomActionComponent,
     WpCustomActionsComponent,
     CustomDateActionAdminComponent,
-
     // CKEditor macros which could not be included in the
     // editor module to avoid circular dependencies
     EmbeddedTablesMacroComponent,
     WpButtonMacroModalComponent,
-
     // Card view
     WorkPackageCardViewComponent,
     WorkPackageSingleCardComponent,
-
     // Notifications
     WorkPackageMarkNotificationButtonComponent,
-
     // Timestamps
     OpBaselineModalComponent,
     OpBaselineComponent,
     OpBaselineLoadingComponent,
     OpBaselineLegendsComponent,
-
     OpWpDatePickerModalComponent,
+  ],
+  providers: [
+    // Notification service
+    WorkPackageNotificationService,
+    // External query configuration
+    ExternalQueryConfigurationService,
+    ExternalRelationQueryConfigurationService,
+    // Global work package states / services
+    SchemaCacheService,
+    // Global query/table state services
+    // For any service that depends on the isolated query space,
+    // they should be provided in wp-isolated-query-space.directive instead
+    QueryFiltersService,
+    WorkPackagesListInvalidQueryService,
+    // Provide a separate service for creation events of WP Inline create
+    // This can be hierarchically injected to provide isolated events on an embedded table
+    WorkPackageRelationsService,
+    WorkPackagesActivityService,
+    WorkPackageRelationsService,
+    WorkPackageWatchersService,
+    WorkPackagesQueryViewService,
+    HalEventsService,
+    FileLinksResourceService,
+    StorageFilesResourceService,
+    StoragesResourceService,
+    ProjectStoragesResourceService,
+    RecentItemsService,
   ],
   exports: [
     WorkPackagesTableComponent,
@@ -654,18 +599,15 @@ import {
     WorkPackageFilterButtonComponent,
     WorkPackageFilterContainerComponent,
     QueryFiltersComponent,
-
     WpResizerComponent,
     WorkPackageBreadcrumbComponent,
     WorkPackageBreadcrumbParentComponent,
     WorkPackageSplitViewToolbarComponent,
     WorkPackageSubjectComponent,
     WorkPackagesGridComponent,
-
     // Modals
     WpTableConfigurationModalComponent,
     WpTableConfigurationFiltersTabComponent,
-
     // Needed so that e.g. IFC can access it.
     WorkPackageCreateButtonComponent,
     WorkPackageStatusButtonComponent,

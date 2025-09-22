@@ -31,12 +31,13 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 
 import { AbstractWorkPackageButtonComponent } from '../wp-buttons.module';
 import screenfull from 'screenfull';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: '../wp-button.template.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'opce-zen-mode-toggle-button',
-  standalone: false,
+  imports: [OpIconComponent]
 })
 export class ZenModeButtonComponent extends AbstractWorkPackageButtonComponent {
   public buttonId = 'work-packages-zen-mode-toggle-button';

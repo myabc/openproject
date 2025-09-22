@@ -10,9 +10,7 @@ import { ReminderPreset, REMINDER_PRESET_OPTIONS } from 'core-app/features/work-
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[wpReminderContextMenu]',
-  standalone: false,
-})
+  selector: '[wpReminderContextMenu]' })
 export class WorkPackageReminderContextMenuDirective extends OpContextMenuTrigger implements OnInit {
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('wpReminderContextMenu-workPackage') workPackage:WorkPackageResource;

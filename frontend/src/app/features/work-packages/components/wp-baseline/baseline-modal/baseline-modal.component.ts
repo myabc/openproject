@@ -32,12 +32,14 @@ import {
   HostBinding,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { SpotDropModalComponent } from '../../../../../spot/components/drop-modal/drop-modal.component';
+import { OpBaselineComponent } from '../baseline/baseline.component';
 
 @Component({
   selector: 'op-baseline-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './baseline-modal.component.html',
-  standalone: false,
+  imports: [SpotDropModalComponent, OpBaselineComponent],
 })
 export class OpBaselineModalComponent {
   @HostBinding('class.op-baseline-modal') className = true;

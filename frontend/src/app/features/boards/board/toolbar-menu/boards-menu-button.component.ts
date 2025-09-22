@@ -2,6 +2,9 @@ import { Component, Input } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { Board } from 'core-app/features/boards/board/board';
 import { Observable } from 'rxjs';
+import { BoardsToolbarMenuDirective } from './boards-toolbar-menu.directive';
+import { AsyncPipe } from '@angular/common';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   template: `
@@ -12,7 +15,11 @@ import { Observable } from 'rxjs';
       <op-icon icon-classes="button--icon icon-show-more" />
     </button>
   `,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    BoardsToolbarMenuDirective,
+    AsyncPipe
+  ],
 })
 export class BoardsMenuButtonComponent {
   @Input() board$:Observable<Board>;

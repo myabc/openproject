@@ -47,13 +47,14 @@ import {
   Subject, Subscription,
 } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-ifc-viewer',
   templateUrl: './ifc-viewer.component.html',
   styleUrls: ['./ifc-viewer.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [AsyncPipe],
 })
 export class IFCViewerComponent implements OnInit, OnDestroy, AfterViewInit {
   private viewInitialized$ = new Subject<void>();

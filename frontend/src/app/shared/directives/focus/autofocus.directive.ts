@@ -6,10 +6,7 @@ import {
 } from '@angular/core';
 import { FocusHelperService } from './focus-helper';
 
-@Directive({
-  selector: '[opAutofocus]',
-  standalone: false,
-})
+@Directive({ selector: '[opAutofocus]' })
 export class AutofocusDirective implements AfterViewInit {
   @Input('opAutofocus') public condition:string|boolean = true;
 

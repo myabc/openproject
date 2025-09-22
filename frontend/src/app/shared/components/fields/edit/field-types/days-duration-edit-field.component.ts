@@ -32,10 +32,11 @@ import {
 } from '@angular/core';
 import { DatePickerEditFieldComponent } from 'core-app/shared/components/fields/edit/field-types/date-picker-edit-field.component';
 import moment from 'moment-timezone';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './days-duration-edit-field.component.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class DaysDurationEditFieldComponent extends DatePickerEditFieldComponent implements OnInit {
   public get formattedValue():number {

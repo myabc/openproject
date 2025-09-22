@@ -48,6 +48,8 @@ import {
   CombinedDateDisplayField,
 } from 'core-app/shared/components/fields/display/field-types/combined-date-display.field';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { DisplayFieldComponent } from '../display/display-field.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './work-package-quickinfo-macro.html',
@@ -56,7 +58,7 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
   providers: [
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [DisplayFieldComponent, AsyncPipe],
 })
 export class WorkPackageQuickinfoMacroComponent {
   // Whether the value could not be loaded

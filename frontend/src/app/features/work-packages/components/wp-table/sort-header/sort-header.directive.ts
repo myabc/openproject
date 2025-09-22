@@ -51,13 +51,14 @@ import { WorkPackageViewRelationColumnsService } from 'core-app/features/work-pa
 import { combineLatest } from 'rxjs';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { WorkPackageViewBaselineService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-baseline.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'sortHeader',
   templateUrl: './sort-header.directive.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass],
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix
 export class SortHeaderDirective extends UntilDestroyedMixin implements AfterViewInit {

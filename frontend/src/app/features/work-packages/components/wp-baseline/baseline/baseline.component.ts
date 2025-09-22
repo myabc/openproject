@@ -60,6 +60,13 @@ import moment from 'moment-timezone';
 import { BannersService } from 'core-app/core/enterprise/banners.service';
 import { enterpriseDocsUrl } from 'core-app/core/setup/globals/constants.const';
 import { DayElement } from 'flatpickr/dist/types/instance';
+import { EnterpriseBannerFrameComponent } from '../../../../enterprise/enterprise-banner-frame.component';
+import { FormsModule } from '@angular/forms';
+import { SpotFormFieldComponent } from '../../../../../spot/components/form-field/form-field.component';
+import { SpotTooltipComponent } from '../../../../../spot/components/tooltip/tooltip.component';
+import { OpDatePickerSheetComponent } from '../../../../../shared/components/datepicker/sheet/date-picker-sheet.component';
+import { OpBaselineLoadingComponent } from '../baseline-loading/baseline-loading.component';
+import { AsyncPipe } from '@angular/common';
 
 const DEFAULT_SELECTED_TIME = '08:00';
 
@@ -68,7 +75,15 @@ const DEFAULT_SELECTED_TIME = '08:00';
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './baseline.component.html',
   styleUrls: ['./baseline.component.sass'],
-  standalone: false,
+  imports: [
+    EnterpriseBannerFrameComponent,
+    FormsModule,
+    SpotFormFieldComponent,
+    SpotTooltipComponent,
+    OpDatePickerSheetComponent,
+    OpBaselineLoadingComponent,
+    AsyncPipe,
+  ],
 })
 export class OpBaselineComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.op-baseline') className = true;

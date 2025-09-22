@@ -17,7 +17,6 @@ import moment, { Moment } from 'moment';
   styleUrls: ['./in-app-notification-date-alert.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
 })
 export class InAppNotificationDateAlertComponent implements OnInit {
   @Input() aggregatedNotifications:INotification[];

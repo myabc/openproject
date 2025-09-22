@@ -26,7 +26,7 @@ describe('TabHeaderComponent', () => {
 
     await TestBed
       .configureTestingModule({
-        declarations: [
+        imports: [
           TabHeaderComponent,
           OpIconComponent,
           GitActionsMenuDirective,

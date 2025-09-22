@@ -46,7 +46,6 @@ import { I18nService } from "core-app/core/i18n/i18n.service";
   styleUrls: [
     './styles/git-actions-menu.sass'
   ],
-  standalone: false,
 })
 export class GitActionsMenuComponent extends OPContextMenuComponent {
   @Input() public workPackage:WorkPackageResource;

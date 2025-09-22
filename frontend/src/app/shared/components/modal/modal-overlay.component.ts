@@ -43,13 +43,21 @@ import { OpModalComponent } from 'core-app/shared/components/modal/modal.compone
 import { ModalData, OpModalService } from 'core-app/shared/components/modal/modal.service';
 import { PortalOutletTarget } from 'core-app/shared/components/modal/portal-outlet-target.enum';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { XIconComponent } from '@openproject/octicons-angular';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
   selector: 'opce-modal-overlay',
   templateUrl: './modal-overlay.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    CdkTrapFocus,
+    XIconComponent,
+    CdkPortalOutlet,
+    AsyncPipe,
+  ],
 })
 export class OpModalOverlayComponent extends UntilDestroyedMixin {
   public notFullscreen = false;

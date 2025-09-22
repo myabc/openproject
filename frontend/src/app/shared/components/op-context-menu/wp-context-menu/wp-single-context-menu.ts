@@ -27,9 +27,7 @@ import { DeviceService } from 'core-app/core/browser/device.service';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[wpSingleContextMenu]',
-  standalone: false,
-})
+  selector: '[wpSingleContextMenu]' })
 export class WorkPackageSingleContextMenuDirective extends OpContextMenuTrigger implements AfterViewInit, OnDestroy {
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('wpSingleContextMenu-workPackage') public workPackage:WorkPackageResource;

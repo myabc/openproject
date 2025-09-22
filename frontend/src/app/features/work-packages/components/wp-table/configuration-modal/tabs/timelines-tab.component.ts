@@ -11,10 +11,11 @@ import { QueryColumn } from 'core-app/features/work-packages/components/wp-query
 import { zoomLevelOrder } from 'core-app/features/work-packages/components/wp-table/timeline/wp-timeline';
 import { TimelineLabels, TimelineZoomLevel } from 'core-app/features/hal/resources/query-resource';
 import { StateService } from '@uirouter/angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './timelines-tab.component.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpTableConfigurationTimelinesTabComponent implements TabComponent, OnInit {
   public timelineVisible = false;

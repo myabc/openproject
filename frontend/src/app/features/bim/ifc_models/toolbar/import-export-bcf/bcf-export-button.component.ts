@@ -40,6 +40,7 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import { JobStatusModalService } from 'core-app/features/job-status/job-status-modal.service';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   template: `
@@ -52,7 +53,7 @@ import { JobStatusModalService } from 'core-app/features/job-status/job-status-m
     </a>
   `,
   selector: 'bcf-export-button',
-  standalone: false,
+  imports: [OpIconComponent]
 })
 export class BcfExportButtonComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   public text = {

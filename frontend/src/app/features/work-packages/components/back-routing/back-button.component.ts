@@ -29,13 +29,18 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BackRoutingService } from 'core-app/features/work-packages/components/back-routing/back-routing.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { NgClass } from '@angular/common';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './back-button.component.html',
   styleUrls: ['./back-button.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-back-button',
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    NgClass
+  ],
 })
 export class BackButtonComponent {
   @Input() public linkClass:string;

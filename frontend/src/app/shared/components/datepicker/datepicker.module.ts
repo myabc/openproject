@@ -12,7 +12,6 @@ import { OpBasicDatePickerModule } from './basic-datepicker.module';
 import { OpSpotModule } from 'core-app/spot/spot.module';
 import { OpenprojectModalModule } from '../modal/modal.module';
 import { OpDatePickerSheetComponent } from 'core-app/shared/components/datepicker/sheet/date-picker-sheet.component';
-import { OpenprojectContentLoaderModule } from 'core-app/shared/components/op-content-loader/openproject-content-loader.module';
 import { OpWpDatePickerInstanceComponent } from 'core-app/shared/components/datepicker/wp-date-picker-modal/wp-date-picker-instance.component';
 
 @NgModule({
@@ -24,19 +23,13 @@ import { OpWpDatePickerInstanceComponent } from 'core-app/shared/components/date
     OpSpotModule,
     OpBasicDatePickerModule,
     OpenprojectModalModule,
-    OpenprojectContentLoaderModule,
-  ],
-
-  providers: [
-    I18nService,
-  ],
-
-  declarations: [
     OpModalSingleDatePickerComponent,
     OpDatePickerSheetComponent,
     OpWpDatePickerInstanceComponent,
   ],
-
+  providers: [
+    I18nService,
+  ],
   exports: [
     OpModalSingleDatePickerComponent,
     OpBasicDatePickerModule,

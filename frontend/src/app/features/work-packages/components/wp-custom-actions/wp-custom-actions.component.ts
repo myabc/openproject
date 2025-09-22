@@ -34,12 +34,13 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { CustomActionResource } from 'core-app/features/hal/resources/custom-action-resource';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { BannersService } from 'core-app/core/enterprise/banners.service';
+import { WpCustomActionComponent } from './wp-custom-actions/wp-custom-action.component';
 
 @Component({
   selector: 'wp-custom-actions',
   templateUrl: './wp-custom-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [WpCustomActionComponent],
 })
 export class WpCustomActionsComponent extends UntilDestroyedMixin implements OnInit {
   @Input() workPackage:WorkPackageResource;

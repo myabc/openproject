@@ -31,12 +31,13 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
+import { OpContentLoaderComponent } from '../../op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './loading-file-list.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-loading-file-list',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [OpContentLoaderComponent],
 })
 export class LoadingFileListComponent { }

@@ -15,6 +15,11 @@ import { PrincipalData } from 'core-app/shared/components/principal/principal-ty
 import { RoleResource } from 'core-app/features/hal/resources/role-resource';
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { ProjectResource } from 'core-app/features/hal/resources/project-resource';
+import { ProjectSelectionComponent } from './project-selection/project-selection.component';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { PrincipalComponent } from './principal/principal.component';
+import { SummaryComponent } from './summary/summary.component';
+import { SuccessComponent } from './success/success.component';
 
 enum Steps {
   ProjectSelection,
@@ -34,7 +39,13 @@ export enum PrincipalType {
   styleUrls: ['./invite-user.component.sass'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    ProjectSelectionComponent,
+    CdkTrapFocus,
+    PrincipalComponent,
+    SummaryComponent,
+    SuccessComponent,
+  ],
 })
 export class InviteUserModalComponent extends OpModalComponent implements OnInit {
   public Steps = Steps;

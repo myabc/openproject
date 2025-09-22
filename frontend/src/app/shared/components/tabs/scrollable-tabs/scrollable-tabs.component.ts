@@ -22,13 +22,24 @@ import { Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { AnchorUISref, UISrefStatus, UISrefActive, UISref } from '@uirouter/angular';
+import { TabCountComponent } from '../tab-badges/tab-count.component';
 
 @Component({
   templateUrl: 'scrollable-tabs.component.html',
   selector: 'op-scrollable-tabs',
   styleUrls: ['./scrollable-tabs.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    AnchorUISref,
+    UISrefStatus,
+    UISrefActive,
+    UISref,
+    TabCountComponent,
+    AsyncPipe,
+  ],
 })
 export class ScrollableTabsComponent extends UntilDestroyedMixin implements AfterViewInit, OnChanges {
   @ViewChild('scrollContainer', { static: true }) scrollContainer:ElementRef;

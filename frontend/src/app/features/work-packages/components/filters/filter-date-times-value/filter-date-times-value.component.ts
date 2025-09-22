@@ -41,11 +41,13 @@ import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { AbstractDateTimeValueController } from '../abstract-filter-date-time-value/abstract-filter-date-time-value.controller';
 import { validDate } from 'core-app/shared/components/datepicker/helpers/date-modal.helpers';
+import { OpBasicSingleDatePickerComponent } from '../../../../../shared/components/datepicker/basic-single-date-picker/basic-single-date-picker.component';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-filter-date-times-value',
   templateUrl: './filter-date-times-value.component.html',
-  standalone: false,
+  imports: [OpBasicSingleDatePickerComponent, AutofocusDirective],
 })
 export class FilterDateTimesValueComponent extends AbstractDateTimeValueController implements OnInit {
   @HostBinding('id') get id() {

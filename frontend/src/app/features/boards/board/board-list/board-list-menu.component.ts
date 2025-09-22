@@ -38,11 +38,12 @@ import { BoardActionsRegistryService } from 'core-app/features/boards/board/boar
 import { OpContextMenuItem } from 'core-app/shared/components/op-context-menu/op-context-menu.types';
 import { BoardService } from 'core-app/features/boards/board/board.service';
 import { BoardActionService } from 'core-app/features/boards/board/board-actions/board-action.service';
+import { IconTriggeredContextMenuComponent } from '../../../../shared/components/op-context-menu/icon-triggered-context-menu/icon-triggered-context-menu.component';
 
 @Component({
   selector: 'board-list-menu',
   templateUrl: './board-list-menu.component.html',
-  standalone: false,
+  imports: [IconTriggeredContextMenuComponent],
 })
 export class BoardListMenuComponent {
   @Input() board:Board;

@@ -39,9 +39,7 @@ describe('opIcon Directive', () => {
   beforeEach(waitForAsync(() => {
     // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
-      declarations: [
-        OpIconComponent,
-      ],
+      imports: [OpIconComponent],
     }).compileComponents();
   }));
 

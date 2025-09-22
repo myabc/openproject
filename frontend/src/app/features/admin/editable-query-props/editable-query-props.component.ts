@@ -8,7 +8,6 @@ import {
   selector: 'opce-editable-query-props',
   templateUrl: './editable-query-props.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class EditableQueryPropsComponent implements OnInit {
   id:string|null;

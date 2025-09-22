@@ -45,6 +45,7 @@ import { HalResourceNotificationService } from 'core-app/features/hal/services/h
 import { HalResourceSortingService } from 'core-app/features/hal/services/hal-resource-sorting.service';
 import { EditFieldComponent } from '../../edit-field.component';
 import { HalLink } from 'core-app/features/hal/hal-link/hal-link';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
 
 export interface ValueOption {
   name:string;
@@ -54,7 +55,7 @@ export interface ValueOption {
 @Component({
   templateUrl: './select-edit-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [DynamicComponent, DynamicIoDirective],
 })
 export class SelectEditFieldComponent extends EditFieldComponent implements OnInit {
   @InjectField() selectAutocompleterRegister:SelectAutocompleterRegisterService;

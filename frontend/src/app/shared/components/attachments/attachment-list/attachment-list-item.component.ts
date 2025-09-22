@@ -51,13 +51,26 @@ import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-
 import { ConfirmDialogOptions } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.modal';
 import { getIconForMimeType } from 'core-app/shared/components/storages/functions/storages.functions';
 import { IFileIcon } from 'core-app/shared/components/storages/icons.mapping';
+import { BugIconComponent, FileMediaIconComponent, OpFileCsvIconComponent, OpFileDocIconComponent, OpFilePresentationIconComponent, OpFileSheetIconComponent, OpFileTextIconComponent, OpPdfIconComponent, FileIconComponent, DownloadIconComponent, TrashIconComponent } from '@openproject/octicons-angular';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[op-attachment-list-item]',
   templateUrl: './attachment-list-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    BugIconComponent,
+    FileMediaIconComponent,
+    OpFileCsvIconComponent,
+    OpFileDocIconComponent,
+    OpFilePresentationIconComponent,
+    OpFileSheetIconComponent,
+    OpFileTextIconComponent,
+    OpPdfIconComponent,
+    FileIconComponent,
+    DownloadIconComponent,
+    TrashIconComponent,
+  ],
 })
 export class OpAttachmentListItemComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit {
   @Input() public attachment:IAttachment;

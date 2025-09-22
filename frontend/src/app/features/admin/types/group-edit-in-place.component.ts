@@ -36,12 +36,14 @@ import {
   Output,
 } from '@angular/core';
 import { TypeBannerService } from 'core-app/features/admin/types/type-banner.service';
+import { FormsModule } from '@angular/forms';
+import { AutofocusDirective } from '../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-group-edit-in-place',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './group-edit-in-place.html',
-  standalone: false,
+  imports: [FormsModule, AutofocusDirective],
 })
 export class GroupEditInPlaceComponent implements OnInit {
   @Input() public placeholder = '';

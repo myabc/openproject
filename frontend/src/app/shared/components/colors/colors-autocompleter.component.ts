@@ -31,6 +31,9 @@ import {
   Highlighting,
 } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting.functions';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 interface ColorItem {
   name:string;
@@ -59,7 +62,13 @@ interface ColorItem {
   `,
   selector: 'opce-colors-autocompleter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+  ],
 })
 export class ColorsAutocompleterComponent implements OnInit {
   public options:ColorItem[];

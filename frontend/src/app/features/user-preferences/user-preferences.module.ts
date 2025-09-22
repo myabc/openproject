@@ -33,7 +33,13 @@ import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openpr
   providers: [
     UserPreferencesService,
   ],
-  declarations: [
+  imports: [
+    CommonModule,
+    OpSharedModule,
+    OpenprojectAutocompleterModule,
+    OpenprojectEnterpriseModule,
+    FormsModule,
+    ReactiveFormsModule,
     NotificationsSettingsPageComponent,
     NotificationSettingInlineCreateComponent,
     NotificationSettingsTableComponent,
@@ -43,14 +49,6 @@ import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openpr
     EmailAlertsSettingsComponent,
     WorkdaysSettingsComponent,
     PauseRemindersComponent,
-  ],
-  imports: [
-    CommonModule,
-    OpSharedModule,
-    OpenprojectAutocompleterModule,
-    OpenprojectEnterpriseModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
 })
 export class OpenProjectMyAccountModule { }

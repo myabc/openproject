@@ -11,6 +11,12 @@ import { INotification } from 'core-app/core/state/in-app-notifications/in-app-n
 import { IanCenterService } from 'core-app/features/in-app-notifications/center/state/ian-center.service';
 import { DeviceService } from 'core-app/core/browser/device.service';
 import { UrlParamsService } from 'core-app/core/navigation/url-params.service';
+import { InAppNotificationStatusComponent } from './status/in-app-notification-status.component';
+import { AnchorUISref, UISref } from '@uirouter/angular';
+import { NgClass, AsyncPipe, KeyValuePipe } from '@angular/common';
+import { InAppNotificationReminderAlertComponent } from './reminder-alert/in-app-notification-reminder-alert.component';
+import { InAppNotificationDateAlertComponent } from './date-alert/in-app-notification-date-alert.component';
+import { InAppNotificationActorsLineComponent } from './actors-line/in-app-notification-actors-line.component';
 
 @Component({
   selector: 'op-in-app-notification-entry',
@@ -18,7 +24,17 @@ import { UrlParamsService } from 'core-app/core/navigation/url-params.service';
   styleUrls: ['./in-app-notification-entry.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    InAppNotificationStatusComponent,
+    AnchorUISref,
+    UISref,
+    NgClass,
+    InAppNotificationReminderAlertComponent,
+    InAppNotificationDateAlertComponent,
+    InAppNotificationActorsLineComponent,
+    AsyncPipe,
+    KeyValuePipe,
+  ],
 })
 export class InAppNotificationEntryComponent implements OnInit {
   @HostBinding('class.op-ian-item') className = true;

@@ -36,13 +36,15 @@ import {
   OnInit,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { OpSpotModule } from '../../../../../spot/spot.module';
+import { InfoIconComponent } from '@openproject/octicons-angular';
 
 @Component({
   selector: 'op-exclusion-info',
   templateUrl: './op-exclusion-info.component.html',
   styleUrls: ['./op-exclusion-info.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpSpotModule, InfoIconComponent],
 })
 export class OpExclusionInfoComponent implements OnInit {
   public opened = false;

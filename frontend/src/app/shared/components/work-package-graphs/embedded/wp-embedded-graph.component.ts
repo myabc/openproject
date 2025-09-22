@@ -4,6 +4,9 @@ import { ChartOptions, Plugin } from 'chart.js';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { GroupObject } from 'core-app/features/hal/resources/wp-collection-resource';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
+import { NgStyle } from '@angular/common';
+import { BaseChartDirective } from 'ng2-charts';
+import { OpSharedModule } from '../../../shared.module';
 
 export interface WorkPackageEmbeddedGraphDataset {
   label:string;
@@ -20,7 +23,11 @@ interface ChartDataSet {
   selector: 'op-wp-embedded-graph',
   templateUrl: './wp-embedded-graph.html',
   styleUrls: ['./wp-embedded-graph.component.sass'],
-  standalone: false,
+  imports: [
+    NgStyle,
+    BaseChartDirective,
+    OpSharedModule,
+  ],
 })
 export class WorkPackageEmbeddedGraphComponent {
   @Input() public datasets:WorkPackageEmbeddedGraphDataset[];

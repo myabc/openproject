@@ -33,11 +33,13 @@ import { DebouncedEventEmitter } from 'core-app/shared/helpers/rxjs/debounced-ev
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { componentDestroyed } from '@w11k/ngx-componentdestroyed';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
+import { FormsModule } from '@angular/forms';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-filter-string-value',
   templateUrl: './filter-string-value.component.html',
-  standalone: false,
+  imports: [FormsModule, AutofocusDirective],
 })
 export class FilterStringValueComponent extends UntilDestroyedMixin {
   @Input() public shouldFocus = false;

@@ -16,7 +16,7 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { OpModalService } from '../modal/modal.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
-import { FullCalendarComponent } from '@fullcalendar/angular';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, EventInput, EventSourceFuncArg } from '@fullcalendar/core';
 import listPlugin from '@fullcalendar/list';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
@@ -29,6 +29,10 @@ import { ConfirmDialogOptions } from '../modals/confirm-dialog/confirm-dialog.mo
 import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import moment from 'moment-timezone';
 import allLocales from '@fullcalendar/core/locales-all';
+import { OpModalSingleDatePickerComponent } from '../datepicker/modal-single-date-picker/modal-single-date-picker.component';
+import { SpotFormFieldComponent } from '../../../spot/components/form-field/form-field.component';
+import { SpotTextFieldComponent } from '../../../spot/components/text-field/text-field.component';
+import { FormsModule } from '@angular/forms';
 
 
 export interface INonWorkingDay {
@@ -44,7 +48,13 @@ export interface INonWorkingDay {
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./op-non-working-days-list.component.sass'],
   templateUrl: './op-non-working-days-list.component.html',
-  standalone: false,
+  imports: [
+    FullCalendarModule,
+    OpModalSingleDatePickerComponent,
+    SpotFormFieldComponent,
+    SpotTextFieldComponent,
+    FormsModule,
+  ],
 })
 export class OpNonWorkingDaysListComponent implements OnInit, AfterViewInit {
   @ViewChild(FullCalendarComponent) ucCalendar:FullCalendarComponent;

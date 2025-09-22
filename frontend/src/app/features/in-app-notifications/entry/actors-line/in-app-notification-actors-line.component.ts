@@ -3,6 +3,9 @@ import { DeviceService } from 'core-app/core/browser/device.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { INotification } from 'core-app/core/state/in-app-notifications/in-app-notification.model';
 import { PrincipalLike } from 'core-app/shared/components/principal/principal-types';
+import { InAppNotificationRelativeTimeComponent } from '../relative-time/in-app-notification-relative-time.component';
+import { OpPrincipalComponent } from '../../../../shared/components/principal/principal.component';
+import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'op-in-app-notification-actors-line',
@@ -10,7 +13,11 @@ import { PrincipalLike } from 'core-app/shared/components/principal/principal-ty
   styleUrls: ['./in-app-notification-actors-line.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    InAppNotificationRelativeTimeComponent,
+    OpPrincipalComponent,
+    SlicePipe,
+  ],
 })
 export class InAppNotificationActorsLineComponent implements OnInit {
   @HostBinding('class.op-ian-actors') className = true;

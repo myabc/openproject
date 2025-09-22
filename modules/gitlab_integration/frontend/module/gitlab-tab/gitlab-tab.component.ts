@@ -32,6 +32,10 @@ import { WorkPackageResource } from "core-app/features/hal/resources/work-packag
 import { TabComponent } from "core-app/features/work-packages/components/wp-tabs/components/wp-tab-wrapper/tab";
 import { I18nService } from "core-app/core/i18n/i18n.service";
 import { PathHelperService } from "core-app/core/path-helper/path-helper.service";
+import { TabHeaderIssueComponent } from '../tab-header-issue/tab-header-issue.component';
+import { TabIssueComponent } from '../tab-issue/tab-issue.component';
+import { TabHeaderMrsComponent } from '../tab-header-mr/tab-header-mr.component';
+import { TabMrsComponent } from '../tab-mrs/tab-mrs.component';
 
 @Component({
   selector: 'gitlab-tab',
@@ -39,7 +43,12 @@ import { PathHelperService } from "core-app/core/path-helper/path-helper.service
   styleUrls: [
     './gitlab-tab.component.sass',
   ],
-  standalone: false,
+  imports: [
+    TabHeaderIssueComponent,
+    TabIssueComponent,
+    TabHeaderMrsComponent,
+    TabMrsComponent,
+  ],
 })
 export class GitlabTabComponent implements TabComponent {
   @Input() public workPackage:WorkPackageResource;

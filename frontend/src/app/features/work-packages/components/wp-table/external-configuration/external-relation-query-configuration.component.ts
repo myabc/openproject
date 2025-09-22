@@ -6,6 +6,7 @@ import { RestrictedWpTableConfigurationService } from 'core-app/features/work-pa
 import { WpTableConfigurationRelationSelectorComponent } from 'core-app/features/work-packages/components/wp-table/configuration-modal/wp-table-configuration-relation-selector';
 import { WpTableConfigurationModalPrependToken } from 'core-app/features/work-packages/components/wp-table/configuration-modal/wp-table-configuration.modal';
 import { ExternalQueryConfigurationComponent } from 'core-app/features/work-packages/components/wp-table/external-configuration/external-query-configuration.component';
+import { WorkPackageEmbeddedTableComponent } from '../embedded/wp-embedded-table.component';
 
 @Component({
   templateUrl: './external-query-configuration.template.html',
@@ -15,7 +16,7 @@ import { ExternalQueryConfigurationComponent } from 'core-app/features/work-pack
     ],
     { provide: WpTableConfigurationModalPrependToken, useValue: WpTableConfigurationRelationSelectorComponent },
   ],
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent],
 })
 export class ExternalRelationQueryConfigurationComponent extends ExternalQueryConfigurationComponent {
 }

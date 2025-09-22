@@ -29,6 +29,12 @@ import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decora
 import { ActionsService } from 'core-app/core/state/actions/actions.service';
 import { OpWorkPackagesCalendarService } from 'core-app/features/calendar/op-work-packages-calendar.service';
 import { OpCalendarService } from 'core-app/features/calendar/op-calendar.service';
+import { NgClass } from '@angular/common';
+import { OpBreadcrumbsComponent } from '../../../../shared/components/breadcrumbs/op-breadcrumbs.component';
+import { BackButtonComponent } from '../../../work-packages/components/back-routing/back-button.component';
+import { EditableToolbarTitleComponent } from '../../../../shared/components/editable-toolbar-title/editable-toolbar-title.component';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { UIView } from '@uirouter/angular';
 
 @Component({
   templateUrl: '../../../work-packages/routing/partitioned-query-space-page/partitioned-query-space-page.component.html',
@@ -42,7 +48,15 @@ import { OpCalendarService } from 'core-app/features/calendar/op-calendar.servic
     OpCalendarService,
     CalendarDragDropService,
   ],
-  standalone: false,
+  imports: [
+    NgClass,
+    OpBreadcrumbsComponent,
+    BackButtonComponent,
+    EditableToolbarTitleComponent,
+    DynamicComponent,
+    DynamicIoDirective,
+    UIView,
+  ],
 })
 export class TeamPlannerPageComponent extends PartitionedQuerySpacePageComponent implements OnInit {
   @InjectField() actions$:ActionsService;

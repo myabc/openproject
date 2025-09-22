@@ -30,12 +30,14 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
+import { SpotSwitchComponent } from '../../../../../spot/components/switch/switch.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'op-filter-boolean-value',
   templateUrl: './filter-boolean-value.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [SpotSwitchComponent, FormsModule],
 })
 export class FilterBooleanValueComponent {
   @Input() public shouldFocus = false;

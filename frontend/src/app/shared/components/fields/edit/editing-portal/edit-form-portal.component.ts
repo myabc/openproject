@@ -19,11 +19,19 @@ import { createLocalInjector } from 'core-app/shared/components/fields/edit/edit
 import { IFieldSchema } from 'core-app/shared/components/fields/field.base';
 import { EditFieldService, IEditFieldType } from 'core-app/shared/components/fields/edit/edit-field.service';
 import { ResourceChangeset } from 'core-app/shared/components/fields/changeset/resource-changeset';
+import { NgClass, NgComponentOutlet } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ComponentOutletInjectorDirective } from 'ng-dynamic-component';
 
 @Component({
   selector: 'edit-form-portal',
   templateUrl: './edit-form-portal.component.html',
-  standalone: false,
+  imports: [
+    NgClass,
+    FormsModule,
+    NgComponentOutlet,
+    ComponentOutletInjectorDirective,
+  ],
 })
 export class EditFormPortalComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() schemaInput:IFieldSchema;

@@ -40,10 +40,12 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/query-space/isolated-query-space';
 import { WorkPackagesListService } from 'core-app/features/work-packages/components/wp-list/wp-list.service';
 import { States } from 'core-app/core/states/states.service';
+import { FormsModule } from '@angular/forms';
+import { QuerySharingFormComponent } from '../share-modal/query-sharing-form.component';
 
 @Component({
   templateUrl: './save-query.modal.html',
-  standalone: false,
+  imports: [FormsModule, QuerySharingFormComponent],
 })
 export class SaveQueryModalComponent extends OpModalComponent {
   public queryName = '';

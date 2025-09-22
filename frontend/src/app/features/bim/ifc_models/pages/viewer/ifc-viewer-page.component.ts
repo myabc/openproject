@@ -75,6 +75,12 @@ import { QueryResource } from 'core-app/features/hal/resources/query-resource';
 import {
   WorkPackageSettingsButtonComponent,
 } from 'core-app/features/work-packages/components/wp-buttons/wp-settings-button/wp-settings-button.component';
+import { NgClass } from '@angular/common';
+import { OpBreadcrumbsComponent } from '../../../../../shared/components/breadcrumbs/op-breadcrumbs.component';
+import { BackButtonComponent } from '../../../../work-packages/components/back-routing/back-button.component';
+import { EditableToolbarTitleComponent } from '../../../../../shared/components/editable-toolbar-title/editable-toolbar-title.component';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { UIView } from '@uirouter/angular';
 
 @Component({
   templateUrl: '../../../../work-packages/routing/partitioned-query-space-page/partitioned-query-space-page.component.html',
@@ -89,7 +95,15 @@ import {
     QueryParamListenerService,
   ],
   selector: 'op-ifc-viewer-page',
-  standalone: false,
+  imports: [
+    NgClass,
+    OpBreadcrumbsComponent,
+    BackButtonComponent,
+    EditableToolbarTitleComponent,
+    DynamicComponent,
+    DynamicIoDirective,
+    UIView,
+  ],
 })
 export class IFCViewerPageComponent
   extends PartitionedQuerySpacePageComponent

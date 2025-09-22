@@ -31,12 +31,13 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { EditFormComponent } from 'core-app/shared/components/fields/edit/edit-form/edit-form.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './wp-edit-actions-bar.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'wp-edit-actions-bar',
-  standalone: false,
+  imports: [OpIconComponent]
 })
 export class WorkPackageEditActionsBarComponent {
   @Output('onSave') public onSave = new EventEmitter<void>();

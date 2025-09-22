@@ -32,6 +32,7 @@ import { WorkPackageEditFormRoutingService } from 'core-app/features/work-packag
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { UIView } from '@uirouter/angular';
 
 export const wpBaseSelector = 'work-packages-base';
 
@@ -46,7 +47,7 @@ export const wpBaseSelector = 'work-packages-base';
   providers: [
     { provide: EditFormRoutingService, useClass: WorkPackageEditFormRoutingService },
   ],
-  standalone: false,
+  imports: [UIView],
 })
 export class WorkPackagesBaseComponent {
 }

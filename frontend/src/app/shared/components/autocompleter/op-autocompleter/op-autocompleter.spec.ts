@@ -54,11 +54,10 @@ describe('autocompleter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [OpAutocompleterComponent],
-    schemas: [NO_ERRORS_SCHEMA],
-    imports: [NgSelectModule],
-    providers: [States, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [NgSelectModule, OpAutocompleterComponent],
+      providers: [States, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(OpAutocompleterComponent);
     getOptionsFnSpy = jasmine.createSpy("getOptionsFn").and.callFake((searchTerm:string) => {

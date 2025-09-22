@@ -31,11 +31,13 @@ import { WorkPackageResource } from "core-app/features/hal/resources/work-packag
 import { TabComponent } from "core-app/features/work-packages/components/wp-tabs/components/wp-tab-wrapper/tab";
 import { I18nService } from "core-app/core/i18n/i18n.service";
 import { PathHelperService } from "core-app/core/path-helper/path-helper.service";
+import { TabHeaderComponent } from '../tab-header/tab-header.component';
+import { TabPrsComponent } from '../tab-prs/tab-prs.component';
 
 @Component({
   selector: 'github-tab',
   templateUrl: './github-tab.template.html',
-  standalone: false,
+  imports: [TabHeaderComponent, TabPrsComponent],
 })
 export class GitHubTabComponent implements TabComponent {
   @Input() public workPackage:WorkPackageResource;

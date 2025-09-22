@@ -12,13 +12,22 @@ import { FilterOperator } from 'core-app/shared/helpers/api-v3/api-v3-filter-bui
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.service';
 import { HalResourceEditingService } from 'core-app/shared/components/fields/edit/services/hal-resource-editing.service';
+import { WidgetHeaderComponent } from '../../header/header.component';
+import { WidgetMenuComponent } from '../../menu/widget-menu.component';
+import { OpSharedModule } from '../../../../../shared.module';
+import { OpIconComponent } from '../../../../icon/icon.component';
 
 @Component({
   templateUrl: '../list/time-entries-list.component.html',
   providers: [
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    OpSharedModule,
+    OpIconComponent,
+  ],
 })
 export class WidgetTimeEntriesProjectComponent extends WidgetTimeEntriesListComponent implements OnInit {
   constructor(readonly injector:Injector,

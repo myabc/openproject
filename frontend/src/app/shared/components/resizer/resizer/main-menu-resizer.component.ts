@@ -34,6 +34,7 @@ import {
   debounceTime,
   distinctUntilChanged,
 } from 'rxjs/operators';
+import { ResizerComponent } from '../resizer.component';
 
 @Component({
   selector: 'opce-main-menu-resizer',
@@ -57,7 +58,7 @@ import {
       </button>
     </op-resizer>
   `,
-  standalone: false,
+  imports: [ResizerComponent],
 })
 export class MainMenuResizerComponent extends UntilDestroyedMixin implements OnInit {
   public toggleTitle:string;

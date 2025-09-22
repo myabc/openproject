@@ -39,11 +39,13 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
 import { componentDestroyed } from '@w11k/ngx-componentdestroyed';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
+import { OpBasicRangeDatePickerComponent } from '../../../../../shared/components/datepicker/basic-range-date-picker/basic-range-date-picker.component';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-filter-dates-value',
   templateUrl: './filter-dates-value.component.html',
-  standalone: false,
+  imports: [OpBasicRangeDatePickerComponent, AutofocusDirective],
 })
 export class FilterDatesValueComponent extends UntilDestroyedMixin {
   @HostBinding('id') get id() {

@@ -30,10 +30,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule, inject, provideAppInitializ
 import { CommonModule } from '@angular/common';
 import { OpenprojectModalModule } from 'core-app/shared/components/modal/modal.module';
 import { OpenprojectEditorModule } from 'core-app/shared/components/editor/openproject-editor.module';
-import { OpenprojectAttachmentsModule } from 'core-app/shared/components/attachments/openproject-attachments.module';
 import { OpSharedModule } from 'core-app/shared/shared.module';
 import { OpSpotModule } from 'core-app/spot/spot.module';
-import { AttributeHelpTextModule } from 'core-app/shared/components/attribute-help-texts/attribute-help-text.module';
 import { EditFieldService } from 'core-app/shared/components/fields/edit/edit-field.service';
 import { DisplayFieldService } from 'core-app/shared/components/fields/display/display-field.service';
 import { initializeCoreEditFields } from 'core-app/shared/components/fields/edit/edit-field.initializer';
@@ -52,11 +50,7 @@ import { AttributeLabelMacroComponent } from 'core-app/shared/components/fields/
 import { WorkPackageQuickinfoMacroComponent } from 'core-app/shared/components/fields/macros/work-package-quickinfo-macro.component';
 import { DisplayFieldComponent } from 'core-app/shared/components/fields/display/display-field.component';
 import { OpenprojectAutocompleterModule } from 'core-app/shared/components/autocompleter/openproject-autocompleter.module';
-import { BooleanEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/boolean-edit-field/boolean-edit-field.module';
-import { IntegerEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/integer-edit-field/integer-edit-field.module';
-import { TextEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/text-edit-field/text-edit-field.module';
 import { DateEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/date-edit-field/date-edit-field.module';
-import { SelectEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/select-edit-field/select-edit-field.module';
 import { FormattableEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/formattable-edit-field/formattable-edit-field.module';
 import { EditFieldControlsModule } from 'core-app/shared/components/fields/edit/field-controls/edit-field-controls.module';
 import { ProjectEditFieldComponent } from './edit/field-types/project-edit-field.component';
@@ -76,37 +70,12 @@ import { FormsModule } from '@angular/forms';
     OpSpotModule,
     FormsModule,
     NgSelectModule,
-    OpenprojectAttachmentsModule,
     OpenprojectEditorModule,
     OpenprojectModalModule,
     OpenprojectAutocompleterModule,
-    AttributeHelpTextModule,
-    // Input Modules
-    BooleanEditFieldModule,
-    IntegerEditFieldModule,
-    TextEditFieldModule,
     DateEditFieldModule,
-    SelectEditFieldModule,
     FormattableEditFieldModule,
     EditFieldControlsModule,
-  ],
-  exports: [
-    EditFormPortalComponent,
-    EditFormComponent,
-    EditableAttributeFieldComponent,
-    DisplayFieldComponent,
-  ],
-  providers: [
-    provideAppInitializer(() => {
-      const initializerFn = (initializeCoreEditFields)(inject(EditFieldService), inject(SelectAutocompleterRegisterService));
-      return initializerFn();
-    }),
-    provideAppInitializer(() => {
-      const initializerFn = (initializeCoreDisplayFields)(inject(DisplayFieldService));
-      return initializerFn();
-    }),
-  ],
-  declarations: [
     EditFormPortalComponent,
     HoursDurationEditFieldComponent,
     ProgressPopoverEditFieldComponent,
@@ -125,8 +94,23 @@ import { FormsModule } from '@angular/forms';
     ProjectStatusEditFieldComponent,
     AttributeValueMacroComponent,
     AttributeLabelMacroComponent,
-
     WorkPackageQuickinfoMacroComponent,
+  ],
+  exports: [
+    EditFormPortalComponent,
+    EditFormComponent,
+    EditableAttributeFieldComponent,
+    DisplayFieldComponent,
+  ],
+  providers: [
+    provideAppInitializer(() => {
+      const initializerFn = (initializeCoreEditFields)(inject(EditFieldService), inject(SelectAutocompleterRegisterService));
+      return initializerFn();
+    }),
+    provideAppInitializer(() => {
+      const initializerFn = (initializeCoreDisplayFields)(inject(DisplayFieldService));
+      return initializerFn();
+    }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

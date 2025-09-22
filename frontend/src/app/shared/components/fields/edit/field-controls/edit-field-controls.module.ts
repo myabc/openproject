@@ -4,12 +4,10 @@ import { EditFieldControlsComponent } from 'core-app/shared/components/fields/ed
 import { OpSharedModule } from 'core-app/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    EditFieldControlsComponent,
-  ],
   imports: [
     CommonModule,
     OpSharedModule,
+    EditFieldControlsComponent,
   ],
   exports: [
     EditFieldControlsComponent,

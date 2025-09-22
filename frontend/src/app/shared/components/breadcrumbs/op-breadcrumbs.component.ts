@@ -42,7 +42,6 @@ export type BreadcrumbItem =
   selector: 'op-breadcrumbs',
   styleUrls: ['./op-breadcrumbs.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class OpBreadcrumbsComponent {
   @Input() items:BreadcrumbItem[] = [];

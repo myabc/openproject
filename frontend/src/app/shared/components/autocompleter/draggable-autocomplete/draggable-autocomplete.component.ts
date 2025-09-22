@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { NgSelectComponent } from '@ng-select/ng-select';
-import { DragulaService, Group } from 'ng2-dragula';
+import { DragulaService, Group, DragulaModule } from 'ng2-dragula';
 import { DomAutoscrollService } from 'core-app/shared/helpers/drag-and-drop/dom-autoscroll.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { setBodyCursor } from 'core-app/shared/helpers/dom/set-window-cursor.helper';
@@ -23,6 +23,7 @@ import { QueryFilterResource } from 'core-app/features/hal/resources/query-filte
 import { AlternativeSearchService } from 'core-app/shared/components/work-packages/alternative-search.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 import { merge } from 'rxjs';
+import { NgClass } from '@angular/common';
 
 export interface DraggableOption {
   name:string;
@@ -34,7 +35,11 @@ export interface DraggableOption {
   templateUrl: './draggable-autocomplete.component.html',
   styleUrls: ['./draggable-autocomplete.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    NgClass,
+    DragulaModule,
+  ],
 })
 export class DraggableAutocompleteComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit, OnDestroy {
   /** Options to show in the autocompleter */

@@ -26,7 +26,6 @@ export type SpotCheckboxState = true|false|null;
     multi: true,
   }],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class SpotCheckboxComponent implements ControlValueAccessor {
   @HostBinding('class.spot-checkbox') public className = true;

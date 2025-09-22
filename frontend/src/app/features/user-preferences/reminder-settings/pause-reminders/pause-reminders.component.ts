@@ -3,23 +3,29 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import {
-  UntypedFormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
+import { UntypedFormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import {
   map,
   startWith,
 } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { SpotSelectorFieldComponent } from '../../../../spot/components/selector-field/selector-field.component';
+import { OpBasicRangeDatePickerComponent } from '../../../../shared/components/datepicker/basic-range-date-picker/basic-range-date-picker.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-pause-reminders',
   templateUrl: './pause-reminders.component.html',
   styleUrls: ['./pause-reminders.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotSelectorFieldComponent,
+    OpBasicRangeDatePickerComponent,
+    AsyncPipe,
+  ],
 })
 export class PauseRemindersComponent implements OnInit {
   form:UntypedFormGroup;

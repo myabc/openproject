@@ -33,6 +33,10 @@ import {
 } from '@angular/core';
 import { OpAutocompleterComponent } from 'core-app/shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 import { MeetingAutocompleterTemplateComponent } from 'core-app/shared/components/autocompleter/meeting-autocompleter/meeting-autocompleter-template.component';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 export const meetingsAutocompleterSelector = 'op-meeting-autocompleter';
 
@@ -41,7 +45,19 @@ export const meetingsAutocompleterSelector = 'op-meeting-autocompleter';
   styleUrls: ['./meeting-autocompleter.component.sass'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class MeetingAutocompleterComponent extends OpAutocompleterComponent implements OnInit {
   @HostBinding('class.op-meeting-autocompleter') public className = true;

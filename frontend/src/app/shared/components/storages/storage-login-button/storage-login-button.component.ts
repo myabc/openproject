@@ -34,13 +34,14 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IStorageLoginInput } from 'core-app/shared/components/storages/storage-login-button/storage-login-input';
 import { storageLocaleString } from 'core-app/shared/components/storages/functions/storages.functions';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { LinkExternalIconComponent } from '@openproject/octicons-angular';
 
 
 @Component({
   selector: 'op-storage-login-button',
   templateUrl: 'storage-login-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [LinkExternalIconComponent],
 })
 export class StorageLoginButtonComponent implements OnInit {
   @Input() input:IStorageLoginInput;

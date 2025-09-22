@@ -47,12 +47,13 @@ import { CurrentUserService } from 'core-app/core/current-user/current-user.serv
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { HalResourceService } from 'core-app/features/hal/services/hal-resource.service';
 import { compareByHref } from 'core-app/shared/helpers/angular/tracking-functions';
+import { OpAutocompleterComponent } from '../../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 
 @Component({
   selector: 'op-filter-toggled-multiselect-value',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './filter-toggled-multiselect-value.component.html',
-  standalone: false,
+  imports: [OpAutocompleterComponent],
 })
 export class FilterToggledMultiselectValueComponent implements OnInit, AfterViewInit {
   @Input() public shouldFocus = false;

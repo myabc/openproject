@@ -61,17 +61,13 @@ import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openpr
     OpenprojectModalModule,
     OpenprojectAutocompleterModule,
     OpenprojectEnterpriseModule,
-
     // Dynamic Module for actions
     DynamicModule,
-
     // Routes for /boards
     UIRouterModule.forChild({
       states: BOARDS_ROUTES,
       config: uiRouterBoardsConfiguration,
     }),
-  ],
-  declarations: [
     BoardPartitionedPageComponent,
     BoardListContainerComponent,
     BoardListComponent,

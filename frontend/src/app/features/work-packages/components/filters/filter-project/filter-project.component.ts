@@ -40,12 +40,13 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
 import { firstValueFrom } from 'rxjs';
 import { IAPIFilter } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
+import { ProjectAutocompleterComponent } from '../../../../../shared/components/autocompleter/project-autocompleter/project-autocompleter.component';
 
 @Component({
   selector: 'op-filter-project',
   templateUrl: './filter-project.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ProjectAutocompleterComponent],
 })
 export class FilterProjectComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public shouldFocus = false;

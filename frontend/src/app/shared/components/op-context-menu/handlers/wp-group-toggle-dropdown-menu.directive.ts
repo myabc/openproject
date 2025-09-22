@@ -32,10 +32,7 @@ import { OpContextMenuTrigger } from 'core-app/shared/components/op-context-menu
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { WorkPackageViewCollapsedGroupsService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-collapsed-groups.service';
 
-@Directive({
-  selector: '[wpGroupToggleDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[wpGroupToggleDropdown]' })
 export class WorkPackageGroupToggleDropdownMenuDirective extends OpContextMenuTrigger {
   constructor(readonly elementRef:ElementRef,
     readonly opContextMenu:OPContextMenuService,

@@ -8,10 +8,28 @@ import {
   UserAutocompleterComponent,
 } from 'core-app/shared/components/autocompleter/user-autocompleter/user-autocompleter.component';
 import { URLParamsEncoder } from 'core-app/features/hal/services/url-params-encoder';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { NgOptionHighlightDirective } from '@ng-select/ng-option-highlight';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 @Component({
   templateUrl: '../op-autocompleter/op-autocompleter.component.html',
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgOptionHighlightDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class MembersAutocompleterComponent extends UserAutocompleterComponent {
   @InjectField() pathHelper:PathHelperService;

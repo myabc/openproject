@@ -30,7 +30,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 
-import { IconModule } from 'core-app/shared/components/icon/icon.module';
 import { OpSpotModule } from 'core-app/spot/spot.module';
 
 import { StorageComponent } from 'core-app/shared/components/storages/storage/storage.component';
@@ -67,11 +66,8 @@ import {
 @NgModule({
   imports: [
     CommonModule,
-    IconModule,
     OpSpotModule,
-    OpSharedModule
-  ],
-  declarations: [
+    OpSharedModule,
     StorageComponent,
     StorageLoginButtonComponent,
     FileLinkListItemComponent,
@@ -81,7 +77,7 @@ import {
     StorageInformationComponent,
     StorageFileListItemComponent,
     SortFilesPipe,
-    UploadConflictModalComponent,
+    UploadConflictModalComponent
   ],
   exports: [
     StorageComponent,

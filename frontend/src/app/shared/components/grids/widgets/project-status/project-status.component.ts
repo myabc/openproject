@@ -44,6 +44,12 @@ import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/q
 import { Observable } from 'rxjs';
 import { HalResourceEditingService } from 'core-app/shared/components/fields/edit/services/hal-resource-editing.service';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { AttributeHelpTextComponent } from '../../../attribute-help-texts/attribute-help-text.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { EditFormComponent } from '../../../fields/edit/edit-form/edit-form.component';
+import { EditableAttributeFieldComponent } from '../../../fields/edit/field/editable-attribute-field.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './project-status.component.html',
@@ -53,7 +59,14 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
     IsolatedQuerySpace,
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    AttributeHelpTextComponent,
+    WidgetMenuComponent,
+    EditFormComponent,
+    EditableAttributeFieldComponent,
+    AsyncPipe,
+  ],
 })
 export class WidgetProjectStatusComponent extends AbstractWidgetComponent implements OnInit {
   @ViewChild('contentContainer', { static: true }) readonly contentContainer:ElementRef;

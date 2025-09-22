@@ -55,13 +55,33 @@ import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-
 import { getIconForMimeType, isDirectory } from 'core-app/shared/components/storages/functions/storages.functions';
 import { FloatingAction } from 'core-app/shared/components/storages/file-link-list-item/floating-action';
 import SpotDropAlignmentOption from 'core-app/spot/drop-alignment-options';
+import { OpSpotModule } from '../../../../spot/spot.module';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { FileMediaIconComponent, FileDirectoryFillIconComponent, OpFileCsvIconComponent, OpFileDocIconComponent, OpFilePresentationIconComponent, OpFileSheetIconComponent, OpFileTextIconComponent, OpPdfIconComponent, ServerIconComponent, FileIconComponent, UnlinkIconComponent, DownloadIconComponent, FileDirectoryOpenFillIconComponent } from '@openproject/octicons-angular';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[op-file-link-list-item]',
   templateUrl: './file-link-list-item.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpSpotModule,
+    NgClass,
+    FileMediaIconComponent,
+    FileDirectoryFillIconComponent,
+    OpFileCsvIconComponent,
+    OpFileDocIconComponent,
+    OpFilePresentationIconComponent,
+    OpFileSheetIconComponent,
+    OpFileTextIconComponent,
+    OpPdfIconComponent,
+    ServerIconComponent,
+    FileIconComponent,
+    NgTemplateOutlet,
+    UnlinkIconComponent,
+    DownloadIconComponent,
+    FileDirectoryOpenFillIconComponent,
+  ],
 })
 export class FileLinkListItemComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() public fileLink:IFileLink;

@@ -51,12 +51,18 @@ import {
 import { formatElapsedTime } from 'core-app/features/work-packages/components/wp-timer-button/time-formatter.helper';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { StateService } from '@uirouter/core';
+import { AnchorUISref, UISref } from '@uirouter/angular';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './stop-existing-timer-modal.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    AnchorUISref,
+    UISref,
+    AsyncPipe,
+  ],
 })
 export class StopExistingTimerModalComponent extends OpModalComponent implements OnInit {
   @HostBinding('class.op-timer-stop-modal') className = true;

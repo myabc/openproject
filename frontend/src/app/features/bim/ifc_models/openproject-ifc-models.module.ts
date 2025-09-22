@@ -29,7 +29,6 @@ import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
 
 import { OpSharedModule } from 'core-app/shared/shared.module';
-import { IconModule } from 'core-app/shared/components/icon/icon.module';
 import { IFC_ROUTES } from 'core-app/features/bim/ifc_models/openproject-ifc-models.routes';
 import { OpenprojectWorkPackagesModule } from 'core-app/features/work-packages/openproject-work-packages.module';
 import { IFCViewerPageComponent } from 'core-app/features/bim/ifc_models/pages/viewer/ifc-viewer-page.component';
@@ -62,13 +61,6 @@ import { BcfSplitRightComponent } from 'core-app/features/bim/ifc_models/bcf/spl
     UIRouterModule.forChild({
       states: IFC_ROUTES,
     }),
-    IconModule,
-  ],
-  providers: [
-    IFCViewerService,
-    IfcModelsDataService,
-  ],
-  declarations: [
     // Pages
     IFCViewerPageComponent,
 
@@ -83,6 +75,10 @@ import { BcfSplitRightComponent } from 'core-app/features/bim/ifc_models/bcf/spl
     BcfViewToggleDropdownDirective,
 
     IFCViewerComponent,
+  ],
+  providers: [
+    IFCViewerService,
+    IfcModelsDataService,
   ],
 })
 export class OpenprojectIFCModelsModule {

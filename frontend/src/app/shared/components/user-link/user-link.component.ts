@@ -48,7 +48,6 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class UserLinkComponent {
   @Input() user:UserResource;

@@ -45,6 +45,23 @@ import { WorkPackageViewSelectionService } from 'core-app/features/work-packages
 import { WorkPackageSingleViewBase } from 'core-app/features/work-packages/routing/wp-view-base/work-package-single-view.base';
 import { WorkPackageNotificationService } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
 import { Observable, of } from 'rxjs';
+import { EditFormComponent } from '../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { WorkPackageBreadcrumbComponent } from '../../components/wp-breadcrumb/wp-breadcrumb.component';
+import { BackButtonComponent } from '../../components/back-routing/back-button.component';
+import { WorkPackageSubjectComponent } from '../../components/wp-subject/wp-subject.component';
+import { WorkPackageCreateButtonComponent } from '../../components/wp-buttons/wp-create-button/wp-create-button.component';
+import { WorkPackageShareButtonComponent } from '../../components/wp-buttons/wp-share-button/wp-share-button.component';
+import { WorkPackageTimerButtonComponent } from '../../components/wp-timer-button/wp-timer-button.component';
+import { WorkPackageWatcherButtonComponent } from '../../components/wp-watcher-button/wp-watcher-button.component';
+import { WorkPackageReminderButtonComponent } from '../../components/wp-buttons/wp-reminder-button/wp-reminder-button.component';
+import { WorkPackageMarkNotificationButtonComponent } from '../../components/wp-buttons/wp-mark-notification-button/work-package-mark-notification-button.component';
+import { ZenModeButtonComponent } from '../../components/wp-buttons/zen-mode-toggle-button/zen-mode-toggle-button.component';
+import { WorkPackageSingleContextMenuDirective } from '../../../../shared/components/op-context-menu/wp-context-menu/wp-single-context-menu';
+import { WorkPackageSingleViewComponent } from '../../components/wp-single-view/wp-single-view.component';
+import { WpTabsComponent } from '../../components/wp-tabs/components/wp-tabs/wp-tabs.component';
+import { UIView } from '@uirouter/angular';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './wp-full-view.html',
@@ -56,7 +73,25 @@ import { Observable, of } from 'rxjs';
     { provide: HalResourceNotificationService, useExisting: WorkPackageNotificationService },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    EditFormComponent,
+    WorkPackageBreadcrumbComponent,
+    BackButtonComponent,
+    WorkPackageSubjectComponent,
+    WorkPackageCreateButtonComponent,
+    WorkPackageShareButtonComponent,
+    WorkPackageTimerButtonComponent,
+    WorkPackageWatcherButtonComponent,
+    WorkPackageReminderButtonComponent,
+    WorkPackageMarkNotificationButtonComponent,
+    ZenModeButtonComponent,
+    WorkPackageSingleContextMenuDirective,
+    WorkPackageSingleViewComponent,
+    WpTabsComponent,
+    UIView,
+    WpResizerComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackagesFullViewComponent extends WorkPackageSingleViewBase implements OnInit {
   // Watcher properties

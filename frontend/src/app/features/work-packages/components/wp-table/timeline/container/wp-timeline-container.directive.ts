@@ -89,11 +89,20 @@ import { WeekdayService } from 'core-app/core/days/weekday.service';
 import Mousetrap from 'mousetrap';
 import { DayResourceService } from 'core-app/core/state/days/day.service';
 import { IDay } from 'core-app/core/state/days/day.model';
+import { WorkPackageTimelineHeaderController } from '../header/wp-timeline-header.directive';
+import { WorkPackageTableTimelineStaticElements } from '../global-elements/wp-timeline-static-elements.directive';
+import { WorkPackageTableTimelineGrid } from '../grid/wp-timeline-grid.directive';
+import { WorkPackageTableTimelineRelations } from '../global-elements/wp-timeline-relations.directive';
 
 @Component({
   selector: 'wp-timeline-container',
   templateUrl: './wp-timeline-container.html',
-  standalone: false,
+  imports: [
+    WorkPackageTimelineHeaderController,
+    WorkPackageTableTimelineStaticElements,
+    WorkPackageTableTimelineGrid,
+    WorkPackageTableTimelineRelations,
+  ],
 })
 export class WorkPackageTimelineTableController extends UntilDestroyedMixin implements AfterViewInit {
   private $element:JQuery;

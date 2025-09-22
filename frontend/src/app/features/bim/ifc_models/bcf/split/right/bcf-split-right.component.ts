@@ -34,12 +34,14 @@ import {
 import { Observable } from 'rxjs';
 import { BcfViewService } from 'core-app/features/bim/ifc_models/pages/viewer/bcf-view.service';
 import { map } from 'rxjs/operators';
+import { BcfListComponent } from '../../list/bcf-list.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './bcf-split-right.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-bcf-content-right',
-  standalone: false,
+  imports: [BcfListComponent, AsyncPipe],
 })
 export class BcfSplitRightComponent implements OnInit {
   showWorkPackages$:Observable<boolean>;

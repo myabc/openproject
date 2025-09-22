@@ -41,10 +41,7 @@ import {
   filter,
   map,
 } from 'rxjs/operators';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { ID } from '@datorama/akita';
 import { OpInviteUserModalService } from 'core-app/features/invite-user-modal/invite-user-modal.service';
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
@@ -56,6 +53,9 @@ import { addFiltersToPath } from 'core-app/core/apiv3/helpers/add-filters-to-pat
 import { UserAutocompleterTemplateComponent } from 'core-app/shared/components/autocompleter/user-autocompleter/user-autocompleter-template.component';
 import { IUser } from 'core-app/core/state/principals/user.model';
 import { compareByAttribute } from 'core-app/shared/helpers/angular/tracking-functions';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 export const usersAutocompleterSelector = 'op-user-autocompleter';
 
@@ -83,7 +83,19 @@ export interface IUserAutocompleteItem {
   ],
   styleUrls: ['./user-autocompleter.component.sass'],
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class UserAutocompleterComponent extends OpAutocompleterComponent<IUserAutocompleteItem> implements OnInit, ControlValueAccessor {
   @Input() public inviteUserToProject:string|undefined;

@@ -10,7 +10,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 
 export type SpotSwitchState = boolean;
@@ -25,7 +25,7 @@ export type SpotSwitchState = boolean;
     multi: true,
   }],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FormsModule],
 })
 export class SpotSwitchComponent implements ControlValueAccessor {
   @HostBinding('class.spot-switch') public className = true;

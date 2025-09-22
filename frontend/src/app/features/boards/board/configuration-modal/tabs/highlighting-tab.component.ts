@@ -5,10 +5,11 @@ import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import { OpModalLocalsToken } from 'core-app/shared/components/modal/modal.service';
 import { Board } from 'core-app/features/boards/board/board';
 import { CardHighlightingMode } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting-mode.const';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './highlighting-tab.component.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class BoardHighlightingTabComponent implements TabComponent {
   // Highlighting mode

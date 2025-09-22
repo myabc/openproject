@@ -36,7 +36,8 @@ import { GithubPullRequestResourceService } from '../state/github-pull-request.s
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
-import { PullRequestState } from './pull-request-state.component';
+import { PullRequestState, PullRequestStateComponent } from './pull-request-state.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './pull-request-macro.component.html',
@@ -45,7 +46,7 @@ import { PullRequestState } from './pull-request-state.component';
   providers: [
     HalResourceEditingService,
   ],
-  standalone: false,
+  imports: [PullRequestStateComponent, AsyncPipe],
 })
 export class PullRequestMacroComponent implements OnInit {
   @Input() pullRequestId:string;

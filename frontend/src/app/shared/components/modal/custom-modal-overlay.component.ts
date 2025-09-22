@@ -34,6 +34,10 @@ import {
 import { ModalData } from 'core-app/shared/components/modal/modal.service';
 import { OpModalOverlayComponent } from 'core-app/shared/components/modal/modal-overlay.component';
 import { PortalOutletTarget } from 'core-app/shared/components/modal/portal-outlet-target.enum';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { XIconComponent } from '@openproject/octicons-angular';
+import { CdkPortalOutlet } from '@angular/cdk/portal';
+import { AsyncPipe } from '@angular/common';
 
 export const opCustomModalOverlaySelector = 'op-custom-modal-overlay';
 
@@ -41,7 +45,12 @@ export const opCustomModalOverlaySelector = 'op-custom-modal-overlay';
   selector: opCustomModalOverlaySelector,
   templateUrl: './modal-overlay.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    CdkTrapFocus,
+    XIconComponent,
+    CdkPortalOutlet,
+    AsyncPipe,
+  ],
 })
 export class OpCustomModalOverlayComponent extends OpModalOverlayComponent {
   protected isDefaultTarget(modalData:ModalData | null):boolean {

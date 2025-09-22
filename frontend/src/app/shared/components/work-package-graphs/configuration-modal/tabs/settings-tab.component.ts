@@ -3,12 +3,13 @@ import { Component, ViewChild } from '@angular/core';
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { WpGraphConfigurationSettingsTabInnerComponent } from './settings-tab-inner.component';
 
 @Component({
   selector: 'op-wp-graph-configuration-settings-tab',
   templateUrl: './settings-tab.component.html',
   hostDirectives: [WorkPackageIsolatedQuerySpaceDirective],
-  standalone: false,
+  imports: [WpGraphConfigurationSettingsTabInnerComponent],
 })
 export class WpGraphConfigurationSettingsTabComponent implements TabComponent {
   @ViewChild('tabInner', { static: true })

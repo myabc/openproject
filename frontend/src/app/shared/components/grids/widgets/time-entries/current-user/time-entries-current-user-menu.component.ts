@@ -38,11 +38,12 @@ import {
 } from 'core-app/shared/components/grids/widgets/time-entries/current-user/configuration-modal/configuration.modal';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { OpContextMenuItem } from 'core-app/shared/components/op-context-menu/op-context-menu.types';
+import { OpSharedModule } from '../../../../../shared.module';
 
 @Component({
   selector: 'widget-time-entries-current-user-menu',
   templateUrl: '../../menu/widget-menu.component.html',
-  standalone: false,
+  imports: [OpSharedModule],
 })
 export class WidgetTimeEntriesCurrentUserMenuComponent extends WidgetAbstractMenuComponent {
   @InjectField() opModalService:OpModalService;

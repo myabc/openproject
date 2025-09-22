@@ -10,10 +10,7 @@ import {
   EventEmitter,
   ChangeDetectorRef,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'spot-text-field',
@@ -23,7 +20,7 @@ import {
     useExisting: forwardRef(() => SpotTextFieldComponent),
     multi: true,
   }],
-  standalone: false,
+  imports: [FormsModule],
 })
 export class SpotTextFieldComponent implements ControlValueAccessor {
   @HostBinding('class.spot-text-field') public className = true;

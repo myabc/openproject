@@ -27,6 +27,8 @@
 //++
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { WorkPackageGroupToggleDropdownMenuDirective } from '../../../../../shared/components/op-context-menu/handlers/wp-group-toggle-dropdown-menu.directive';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   template: `
@@ -40,7 +42,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'wp-fold-toggle-view-button',
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    WorkPackageGroupToggleDropdownMenuDirective
+  ],
 })
 export class WorkPackageFoldToggleButtonComponent {
 }

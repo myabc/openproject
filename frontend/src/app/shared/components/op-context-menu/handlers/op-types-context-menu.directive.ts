@@ -41,10 +41,7 @@ import {
 } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting.functions';
 import { TypeResource } from 'core-app/features/hal/resources/type-resource';
 
-@Directive({
-  selector: '[opTypesCreateDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[opTypesCreateDropdown]' })
 export class OpTypesContextMenuDirective extends OpContextMenuTrigger {
   @Input('projectIdentifier') public projectIdentifier:string|null|undefined;
 

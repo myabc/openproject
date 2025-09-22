@@ -38,6 +38,8 @@ import { OpModalComponent } from 'core-app/shared/components/modal/modal.compone
 import { OpModalLocalsToken } from 'core-app/shared/components/modal/modal.service';
 import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { NgClass } from '@angular/common';
 
 export interface ConfirmDialogOptions {
   text:{
@@ -66,7 +68,7 @@ export interface ConfirmDialogOptions {
   templateUrl: './confirm-dialog.modal.html',
   styleUrls: ['./confirm-dialog.modal.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [CdkTrapFocus, NgClass],
 })
 export class ConfirmDialogModalComponent extends OpModalComponent {
   public showClose:boolean;

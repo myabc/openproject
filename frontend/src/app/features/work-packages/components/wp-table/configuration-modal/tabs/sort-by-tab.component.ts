@@ -7,6 +7,7 @@ import {
   QUERY_SORT_BY_DESC,
   QuerySortByResource,
 } from 'core-app/features/hal/resources/query-sort-by-resource';
+import { FormsModule } from '@angular/forms';
 
 export class SortModalObject {
   constructor(public column:SortColumn,
@@ -23,7 +24,7 @@ export type SortingMode = 'automatic'|'manual';
 
 @Component({
   templateUrl: './sort-by-tab.component.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpTableConfigurationSortByTabComponent implements TabComponent {
   public text = {

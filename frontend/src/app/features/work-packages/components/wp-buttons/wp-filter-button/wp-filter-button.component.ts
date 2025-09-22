@@ -34,12 +34,17 @@ import {
 import { WorkPackageViewFiltersService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-filters.service';
 import { componentDestroyed } from '@w11k/ngx-componentdestroyed';
 import { WorkPackageFiltersService } from 'core-app/features/work-packages/components/filters/wp-filters/wp-filters.service';
+import { NgClass } from '@angular/common';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   selector: 'wp-filter-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './wp-filter-button.html',
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    NgClass
+  ],
 })
 export class WorkPackageFilterButtonComponent extends AbstractWorkPackageButtonComponent implements OnInit {
   public count:number;

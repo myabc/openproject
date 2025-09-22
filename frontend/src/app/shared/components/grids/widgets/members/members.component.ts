@@ -16,6 +16,12 @@ import { ApiV3ListParameters } from 'core-app/core/apiv3/paths/apiv3-list-resour
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { AttributeHelpTextComponent } from '../../../attribute-help-texts/attribute-help-text.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { OpSharedModule } from '../../../../shared.module';
+import { OpPrincipalComponent } from '../../../principal/principal.component';
+import { AsyncPipe } from '@angular/common';
 
 const DISPLAYED_MEMBERS_LIMIT = 100;
 
@@ -23,7 +29,14 @@ const DISPLAYED_MEMBERS_LIMIT = 100;
   templateUrl: './members.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./members.component.sass'],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    AttributeHelpTextComponent,
+    WidgetMenuComponent,
+    OpSharedModule,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class WidgetMembersComponent extends AbstractWidgetComponent implements OnInit {
   public text = {

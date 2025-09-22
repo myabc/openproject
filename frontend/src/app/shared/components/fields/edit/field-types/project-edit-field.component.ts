@@ -57,13 +57,20 @@ import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import { IAPIFilter } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
 import { FilterOperator } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
+import { ProjectAutocompleterComponent } from '../../../autocompleter/project-autocompleter/project-autocompleter.component';
+import { NgClass } from '@angular/common';
+import { OpContentLoaderComponent } from '../../../op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './project-edit-field.component.html',
   styleUrls: ['./project-edit-field.component.sass'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    ProjectAutocompleterComponent,
+    NgClass,
+    OpContentLoaderComponent,
+  ],
 })
 export class ProjectEditFieldComponent extends EditFieldComponent implements OnInit {
   isNew = isNewResource(this.resource);

@@ -10,6 +10,7 @@ import { BoardSubtasksActionService } from 'core-app/features/boards/board/board
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { UIView } from '@uirouter/angular';
 
 @Component({
   selector: 'boards-entry',
@@ -24,7 +25,7 @@ import {
     BoardSubtasksActionService,
     QueryUpdatedService,
   ],
-  standalone: false,
+  imports: [UIView],
 })
 export class BoardsRootComponent {
   constructor(readonly injector:Injector) {

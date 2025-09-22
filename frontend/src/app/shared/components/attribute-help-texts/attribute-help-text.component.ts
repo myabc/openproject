@@ -40,6 +40,7 @@ import { populateInputsFromDataset } from 'core-app/shared/components/dataset-in
 import { AttributeHelpTextsService } from './attribute-help-text.service';
 import { AttributeHelpTextModalService } from './attribute-help-text-modal.service';
 import { uniqueId } from 'lodash';
+import { QuestionIconComponent } from '@openproject/octicons-angular';
 
 export const attributeHelpTextSelector = 'attribute-help-text';
 
@@ -47,7 +48,7 @@ export const attributeHelpTextSelector = 'attribute-help-text';
   selector: attributeHelpTextSelector,
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './attribute-help-text.component.html',
-  standalone: false,
+  imports: [QuestionIconComponent],
 })
 export class AttributeHelpTextComponent implements OnInit {
   // Attribute to show help text for

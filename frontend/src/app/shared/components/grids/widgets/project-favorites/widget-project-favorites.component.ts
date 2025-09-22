@@ -17,13 +17,23 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
 import { Observable } from 'rxjs';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { StarIconComponent, StarFillIconComponent } from '@openproject/octicons-angular';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './widget-project-favorites.component.html',
   styleUrls: ['./widget-project-favorites.component.sass'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    StarIconComponent,
+    StarFillIconComponent,
+    AsyncPipe,
+  ],
 })
 export class WidgetProjectFavoritesComponent extends AbstractWidgetComponent implements OnInit {
   @HostBinding('class.op-widget-project-favorites') className = true;

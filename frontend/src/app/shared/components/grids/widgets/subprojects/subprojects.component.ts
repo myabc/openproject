@@ -11,11 +11,18 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { ApiV3ListParameters } from 'core-app/core/apiv3/paths/apiv3-list-resource.interface';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { MAGIC_PAGE_NUMBER } from 'core-app/core/apiv3/helpers/get-paginated-results';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { OpSharedModule } from '../../../../shared.module';
 
 @Component({
   templateUrl: './subprojects.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    OpSharedModule,
+  ],
 })
 export class WidgetSubprojectsComponent extends AbstractWidgetComponent implements OnInit {
   public text = {

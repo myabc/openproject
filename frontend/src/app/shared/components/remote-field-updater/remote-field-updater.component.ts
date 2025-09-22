@@ -35,7 +35,6 @@ export const remoteFieldUpdaterSelector = 'remote-field-updater';
   selector: remoteFieldUpdaterSelector,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '',
-  standalone: false,
 })
 export class RemoteFieldUpdaterComponent implements OnInit, OnDestroy {
   constructor(

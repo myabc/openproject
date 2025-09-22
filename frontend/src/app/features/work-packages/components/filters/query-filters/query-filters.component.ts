@@ -49,6 +49,8 @@ import { WorkPackageViewBaselineService } from 'core-app/features/work-packages/
 import { combineLatestWith } from 'rxjs';
 import { repositionDropdownBugfix } from 'core-app/shared/components/autocompleter/op-autocompleter/autocompleter.helper';
 import { AlternativeSearchService } from 'core-app/shared/components/work-packages/alternative-search.service';
+import { WorkPackageFilterByTextInputComponent } from '../quick-filter-by-text-input/quick-filter-by-text-input.component';
+import { QueryFilterComponent } from '../query-filter/query-filter.component';
 
 const ADD_FILTER_SELECT_INDEX = -1;
 
@@ -56,7 +58,11 @@ const ADD_FILTER_SELECT_INDEX = -1;
   selector: 'op-query-filters',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './query-filters.component.html',
-  standalone: false,
+  imports: [
+    WorkPackageFilterByTextInputComponent,
+    QueryFilterComponent,
+    NgSelectComponent,
+  ],
 })
 export class QueryFiltersComponent extends UntilDestroyedMixin implements OnInit, OnChanges {
   @ViewChild(NgSelectComponent) public ngSelectComponent:NgSelectComponent;

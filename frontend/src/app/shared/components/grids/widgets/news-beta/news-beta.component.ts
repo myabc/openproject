@@ -26,13 +26,16 @@
 // See COPYRIGHT and LICENSE files for more details.
 //++
 
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AbstractTurboWidgetComponent } from 'core-app/shared/components/grids/widgets/abstract-turbo-widget.component';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
 
 @Component({
   templateUrl: './news-beta.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [WidgetHeaderComponent, WidgetMenuComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WidgetNewsBetaComponent extends AbstractTurboWidgetComponent {
   override frameId = 'grids-widgets-news-component';

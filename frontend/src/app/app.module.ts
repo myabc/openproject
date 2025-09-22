@@ -39,7 +39,6 @@ import { OpSharedModule } from 'core-app/shared/shared.module';
 import { OpSpotModule } from 'core-app/spot/spot.module';
 import { OpDragScrollDirective } from 'core-app/shared/directives/op-drag-scroll/op-drag-scroll.directive';
 import { OpenprojectWorkPackagesModule } from 'core-app/features/work-packages/openproject-work-packages.module';
-import { OpenprojectAttachmentsModule } from 'core-app/shared/components/attachments/openproject-attachments.module';
 import { OpenprojectEditorModule } from 'core-app/shared/components/editor/openproject-editor.module';
 import { OpenprojectGridsModule } from 'core-app/shared/components/grids/openproject-grids.module';
 import { OpenprojectRouterModule } from 'core-app/core/routing/openproject-router.module';
@@ -81,7 +80,6 @@ import {
 
 import { PaginationService } from 'core-app/shared/components/table-pagination/pagination-service';
 import { MainMenuResizerComponent } from 'core-app/shared/components/resizer/resizer/main-menu-resizer.component';
-import { OpenprojectTabsModule } from 'core-app/shared/components/tabs/openproject-tabs.module';
 import { OpenprojectAdminModule } from 'core-app/features/admin/openproject-admin.module';
 import { OpenprojectHalModule } from 'core-app/features/hal/openproject-hal.module';
 import { OpenprojectPluginsModule } from 'core-app/features/plugins/openproject-plugins.module';
@@ -91,9 +89,6 @@ import {
 } from 'core-app/features/in-app-notifications/in-app-notifications.module';
 import { OpenProjectBackupService } from './core/backup/op-backup.service';
 import { OpenProjectStateModule } from 'core-app/core/state/openproject-state.module';
-import {
-  OpenprojectContentLoaderModule,
-} from 'core-app/shared/components/op-content-loader/openproject-content-loader.module';
 import { OpenProjectHeaderInterceptor } from 'core-app/features/hal/http/openproject-header-interceptor';
 import { TopMenuService } from 'core-app/core/top-menu/top-menu.service';
 import { OpUploadService } from 'core-app/core/upload/upload.service';
@@ -252,24 +247,6 @@ export function runBootstrap(appRef:ApplicationRef) {
 }
 
 @NgModule({
-  declarations: [
-    OpContextMenuTrigger,
-
-    // Modals
-    ConfirmDialogModalComponent,
-    DynamicContentModalComponent,
-    PasswordConfirmationModalComponent,
-
-    // Main menu
-    MainMenuResizerComponent,
-
-    // Project selector
-    OpHeaderProjectSelectComponent,
-    OpHeaderProjectSelectListComponent,
-
-    // Form configuration
-    OpDragScrollDirective,
-  ],
   imports: [
     // The BrowserModule must only be loaded here!
     BrowserModule,
@@ -292,7 +269,6 @@ export function runBootstrap(appRef:ApplicationRef) {
     // Display + Edit field functionality
     OpenprojectFieldsModule,
     OpenprojectGridsModule,
-    OpenprojectAttachmentsModule,
 
     // Work packages and their routes
     OpenprojectWorkPackagesModule,
@@ -336,17 +312,28 @@ export function runBootstrap(appRef:ApplicationRef) {
     // Invite user modal
     OpenprojectInviteUserModalModule,
 
-    // Tabs
-    OpenprojectTabsModule,
-
     // Notifications
     OpenProjectInAppNotificationsModule,
 
-    // Loading
-    OpenprojectContentLoaderModule,
-
     // My account
     OpenProjectMyAccountModule,
+
+    OpContextMenuTrigger,
+
+    // Modals
+    ConfirmDialogModalComponent,
+    DynamicContentModalComponent,
+    PasswordConfirmationModalComponent,
+
+    // Main menu
+    MainMenuResizerComponent,
+
+    // Project selector
+    OpHeaderProjectSelectComponent,
+    OpHeaderProjectSelectListComponent,
+
+    // Form configuration
+    OpDragScrollDirective,
   ],
   providers: [
     { provide: States, useValue: new States() },

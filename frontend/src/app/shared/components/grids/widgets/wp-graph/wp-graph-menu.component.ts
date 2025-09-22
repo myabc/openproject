@@ -29,11 +29,12 @@
 import { Component } from '@angular/core';
 import { WpGraphConfigurationModalComponent } from 'core-app/shared/components/work-package-graphs/configuration-modal/wp-graph-configuration.modal';
 import { WidgetWpSetMenuComponent } from 'core-app/shared/components/grids/widgets/menu/wp-set-menu.component';
+import { OpSharedModule } from '../../../../shared.module';
 
 @Component({
   selector: 'widget-wp-graph-menu',
   templateUrl: '../menu/widget-menu.component.html',
-  standalone: false,
+  imports: [OpSharedModule],
 })
 export class WidgetWpGraphMenuComponent extends WidgetWpSetMenuComponent {
   protected configurationComponent = WpGraphConfigurationModalComponent;

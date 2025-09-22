@@ -32,6 +32,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Inject,
   Injector,
@@ -53,12 +54,22 @@ import { HalEventsService } from 'core-app/features/hal/services/hal-events.serv
 import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
+import { OpSpotModule } from '../../../../../spot/spot.module';
+import { XIconComponent } from '@openproject/octicons-angular';
+import { ModalWithTurboContentDirective } from '../modal-with-turbo-content/modal-with-turbo-content.directive';
+import { OpContentLoaderComponent } from '../../../op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './progress-popover-edit-field.component.html',
   styleUrls: ['./progress-popover-edit-field.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpSpotModule,
+    XIconComponent,
+    ModalWithTurboContentDirective,
+    OpContentLoaderComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProgressPopoverEditFieldComponent extends ProgressEditFieldComponent implements OnInit {
   text = {

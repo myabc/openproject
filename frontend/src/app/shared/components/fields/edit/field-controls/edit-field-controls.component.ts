@@ -30,11 +30,12 @@ import {
   Component, EventEmitter, Input, Output,
 } from '@angular/core';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
+import { OpIconComponent } from '../../../icon/icon.component';
 
 @Component({
   selector: 'edit-field-controls',
   templateUrl: './edit-field-controls.component.html',
-  standalone: false,
+  imports: [OpIconComponent],
 })
 export class EditFieldControlsComponent {
   @Input() public cancelTitle:string;

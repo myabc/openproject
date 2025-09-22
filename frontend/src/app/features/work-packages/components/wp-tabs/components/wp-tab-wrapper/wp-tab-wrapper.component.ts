@@ -38,11 +38,17 @@ import { map } from 'rxjs/operators';
 import { WpTabDefinition } from 'core-app/features/work-packages/components/wp-tabs/components/wp-tab-wrapper/tab';
 import { WorkPackageTabsService } from 'core-app/features/work-packages/components/wp-tabs/services/wp-tabs/wp-tabs.service';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './wp-tab-wrapper.html',
   selector: 'op-wp-tab',
-  standalone: false,
+  imports: [
+    DynamicComponent,
+    DynamicIoDirective,
+    AsyncPipe,
+  ],
 })
 export class WpTabWrapperComponent implements OnInit {
   workPackage:WorkPackageResource;

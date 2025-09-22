@@ -34,12 +34,21 @@ import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { OpenprojectCalendarModule } from '../../../../../features/calendar/openproject-calendar.module';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './wp-calendar.component.html',
   hostDirectives: [WorkPackageIsolatedQuerySpaceDirective],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    OpenprojectCalendarModule,
+    AsyncPipe,
+  ],
 })
 export class WidgetWpCalendarComponent extends AbstractWidgetComponent {
   text = {

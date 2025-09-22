@@ -33,10 +33,7 @@ import { HalResourceEditingService } from 'core-app/shared/components/fields/edi
 import { States } from 'core-app/core/states/states.service';
 import { FormResource } from 'core-app/features/hal/resources/form-resource';
 
-@Directive({
-  selector: '[wpCreateSettingsMenu]',
-  standalone: false,
-})
+@Directive({ selector: '[wpCreateSettingsMenu]' })
 export class WorkPackageCreateSettingsMenuDirective extends OpContextMenuTrigger {
   constructor(readonly elementRef:ElementRef,
     readonly opContextMenu:OPContextMenuService,

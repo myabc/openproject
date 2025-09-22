@@ -41,7 +41,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { onDayCreate, parseDate, setDates } from 'core-app/shared/components/datepicker/helpers/date-modal.helpers';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { DatePicker } from '../datepicker';
@@ -52,6 +52,9 @@ import { debounce } from 'lodash';
 import {
   SpotDropModalTeleportationService,
 } from 'core-app/spot/components/drop-modal/drop-modal-teleportation.service';
+import { OpSpotModule } from '../../../../spot/spot.module';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { NgClass } from '@angular/common';
 
 // eslint-disable-next-line change-detection-strategy/on-push
 @Component({
@@ -66,7 +69,12 @@ import {
       multi: true,
     },
   ],
-  standalone: false,
+  imports: [
+    OpSpotModule,
+    FormsModule,
+    CdkTrapFocus,
+    NgClass,
+  ],
 })
 export class OpModalSingleDatePickerComponent implements ControlValueAccessor, OnInit, AfterContentInit {
   @Output('closed') closed = new EventEmitter();

@@ -13,6 +13,11 @@ import { GridRemoveWidgetService } from 'core-app/shared/components/grids/grid/r
 import { WidgetWpGraphComponent } from 'core-app/shared/components/grids/widgets/wp-graph/wp-graph.component';
 import { GridWidgetArea } from 'core-app/shared/components/grids/areas/grid-widget-area';
 import { BrowserDetector } from 'core-app/core/browser/browser-detector.service';
+import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { NgClass } from '@angular/common';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { OpSharedModule } from '../../../shared.module';
+import { PlusIconComponent } from '@openproject/octicons-angular';
 
 export interface WidgetRegistration {
   identifier:string;
@@ -33,7 +38,15 @@ export const GRID_PROVIDERS = [
 @Component({
   templateUrl: './grid.component.html',
   selector: 'grid',
-  standalone: false,
+  imports: [
+    CdkDropList,
+    NgClass,
+    CdkDrag,
+    DynamicComponent,
+    DynamicIoDirective,
+    OpSharedModule,
+    PlusIconComponent,
+  ],
 })
 export class GridComponent implements OnDestroy, OnInit {
   public uiWidgets:ComponentRef<any>[] = [];

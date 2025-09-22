@@ -42,8 +42,6 @@ import { CurrentUserModule } from 'core-app/core/current-user/current-user.modul
 import {
   OpenprojectAutocompleterModule,
 } from 'core-app/shared/components/autocompleter/openproject-autocompleter.module';
-import { IconModule } from 'core-app/shared/components/icon/icon.module';
-import { AttributeHelpTextModule } from 'core-app/shared/components/attribute-help-texts/attribute-help-text.module';
 import {
   IconTriggeredContextMenuComponent,
 } from 'core-app/shared/components/op-context-menu/icon-triggered-context-menu/icon-triggered-context-menu.component';
@@ -56,7 +54,6 @@ import {
 } from 'core-app/features/work-packages/components/wp-buttons/zen-mode-toggle-button/zen-mode-toggle-button.component';
 import { OPContextMenuComponent } from 'core-app/shared/components/op-context-menu/op-context-menu.component';
 import { OpenprojectPrincipalRenderingModule } from 'core-app/shared/components/principal/principal-rendering.module';
-import { FocusModule } from 'core-app/shared/directives/focus/focus.module';
 import { TablePaginationComponent } from 'core-app/shared/components/table-pagination/table-pagination.component';
 import { StaticQueriesService } from 'core-app/shared/components/op-view-select/op-static-queries.service';
 import { CopyToClipboardService } from './components/copy-to-clipboard/copy-to-clipboard.service';
@@ -77,9 +74,6 @@ import {
   OpNonWorkingDaysListComponent,
 } from './components/op-non-working-days-list/op-non-working-days-list.component';
 import { ViewsResourceService } from 'core-app/core/state/views/views.service';
-import {
-  OpenprojectContentLoaderModule,
-} from 'core-app/shared/components/op-content-loader/openproject-content-loader.module';
 import { OpenprojectModalModule } from 'core-app/shared/components/modal/modal.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { OpDatePickerModule } from 'core-app/shared/components/datepicker/datepicker.module';
@@ -116,15 +110,32 @@ export function bootstrapModule(injector:Injector):void {
     NgOptionHighlightDirective,
 
     OpenprojectPrincipalRenderingModule,
-    OpenprojectContentLoaderModule,
     OpenprojectAutocompleterModule,
     OpenprojectModalModule,
 
-    FocusModule,
-    IconModule,
-    AttributeHelpTextModule,
     FullCalendarModule,
     OpDatePickerModule,
+    ToastsContainerComponent,
+    ToastComponent,
+    UploadProgressComponent,
+    OpDateTimeComponent,
+    OPContextMenuComponent,
+    IconTriggeredContextMenuComponent,
+    ResizerComponent,
+    TablePaginationComponent,
+    SortHeaderDirective,
+    // Zen mode button
+    ZenModeButtonComponent,
+    NoResultsComponent,
+    OpBreadcrumbsComponent,
+    EditableToolbarTitleComponent,
+    PersistentToggleComponent,
+    RemoteFieldUpdaterComponent,
+    OpOptionListComponent,
+    OpProjectIncludeComponent,
+    OpProjectIncludeListComponent,
+    OpLoadingProjectListComponent,
+    OpNonWorkingDaysListComponent,
   ],
   exports: [
     // Re-export all commonly used
@@ -135,19 +146,15 @@ export function bootstrapModule(injector:Injector):void {
     PortalModule,
     DragDropModule,
     A11yModule,
-    IconModule,
-    AttributeHelpTextModule,
     FormsModule,
     NgOptionHighlightDirective,
     OpenprojectPrincipalRenderingModule,
     OpenprojectAutocompleterModule,
-    OpenprojectContentLoaderModule,
 
     OpSpotModule,
 
     OpDatePickerModule,
 
-    FocusModule,
     OpDateTimeComponent,
 
     ToastsContainerComponent,
@@ -177,43 +184,12 @@ export function bootstrapModule(injector:Injector):void {
     OpLoadingProjectListComponent,
 
     OpNonWorkingDaysListComponent,
+
   ],
   providers: [
     CopyToClipboardService,
     StaticQueriesService,
     ViewsResourceService,
-  ],
-  declarations: [
-    ToastsContainerComponent,
-    ToastComponent,
-    UploadProgressComponent,
-    OpDateTimeComponent,
-
-    OPContextMenuComponent,
-    IconTriggeredContextMenuComponent,
-
-    ResizerComponent,
-
-    TablePaginationComponent,
-    SortHeaderDirective,
-
-    // Zen mode button
-    ZenModeButtonComponent,
-
-    NoResultsComponent,
-    OpBreadcrumbsComponent,
-
-    EditableToolbarTitleComponent,
-
-    PersistentToggleComponent,
-    RemoteFieldUpdaterComponent,
-
-    OpOptionListComponent,
-    OpProjectIncludeComponent,
-    OpProjectIncludeListComponent,
-    OpLoadingProjectListComponent,
-
-    OpNonWorkingDaysListComponent,
   ],
 })
 export class OpSharedModule {

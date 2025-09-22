@@ -61,7 +61,6 @@ import { firstValueFrom } from 'rxjs';
 @Component({
   selector: 'edit-form,[edit-form]',
   template: '<ng-content />',
-  standalone: false,
 })
 export class EditFormComponent extends EditForm<HalResource> implements OnInit, OnDestroy {
   @Input('resource') resource:HalResource;

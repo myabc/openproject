@@ -19,6 +19,9 @@ import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
+import { OpStopwatchStopIconComponent } from '@openproject/octicons-angular';
+import { AnchorUISref, UISref } from '@uirouter/angular';
+import { AsyncPipe } from '@angular/common';
 
 export const timerAccountSelector = 'op-timer-account-menu';
 
@@ -28,7 +31,12 @@ export const timerAccountSelector = 'op-timer-account-menu';
   styleUrls: ['./timer-account-menu.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    OpStopwatchStopIconComponent,
+    AnchorUISref,
+    UISref,
+    AsyncPipe,
+  ],
 })
 export class TimerAccountMenuComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.op-timer-account-menu') className = true;

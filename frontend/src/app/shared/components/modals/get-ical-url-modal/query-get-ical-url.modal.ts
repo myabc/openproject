@@ -36,17 +36,15 @@ import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import {
   ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, OnInit,
 } from '@angular/core';
-import {
-  UntypedFormGroup,
-  UntypedFormControl,
-  Validators,
-  AbstractControl,
-} from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators, AbstractControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/query-space/isolated-query-space';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { QueryResource } from 'core-app/features/hal/resources/query-resource';
 import { CopyToClipboardService } from 'core-app/shared/components/copy-to-clipboard/copy-to-clipboard.service';
+import { SpotFormFieldComponent } from '../../../../spot/components/form-field/form-field.component';
+import { SpotTextFieldComponent } from '../../../../spot/components/text-field/text-field.component';
+import { AutofocusDirective } from '../../../directives/focus/autofocus.directive';
 
 interface TokenNameFormValue {
   name:string;
@@ -55,7 +53,13 @@ interface TokenNameFormValue {
 @Component({
   templateUrl: './query-get-ical-url.modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotFormFieldComponent,
+    SpotTextFieldComponent,
+    AutofocusDirective,
+  ],
 })
 export class QueryGetIcalUrlModalComponent extends OpModalComponent implements OnInit {
   public tokenName = '';

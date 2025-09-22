@@ -46,12 +46,13 @@ import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { WorkPackageViewFiltersService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-filters.service';
+import { OpAutocompleterComponent } from '../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 
 @Component({
   templateUrl: './add-assignee.component.html',
   selector: 'op-tp-add-assignee',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpAutocompleterComponent],
 })
 export class AddAssigneeComponent {
   @Output() public selectAssignee = new EventEmitter<HalResource>();

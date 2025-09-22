@@ -51,10 +51,15 @@ import {
 import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/query-space/isolated-query-space';
 import { IAPIFilter } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
 import { FilterOperator } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
+import { WorkPackageRelationsAutocompleteComponent } from '../../../wp-relations-create/wp-relations-autocomplete/wp-relations-autocomplete.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './wp-relation-inline-add-existing.component.html',
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    WorkPackageRelationsAutocompleteComponent
+  ],
 })
 export class WpRelationInlineAddExistingComponent {
   public selectedWpId:string;

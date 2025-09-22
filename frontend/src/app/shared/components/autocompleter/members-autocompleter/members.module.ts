@@ -37,10 +37,8 @@ import { FormsModule } from '@angular/forms';
     OpSharedModule,
     FormsModule,
     NgSelectModule,
-  ],
-  exports: [],
-  declarations: [
     MembersAutocompleterComponent,
   ],
+  exports: [],
 })
 export class OpenprojectMembersModule { }

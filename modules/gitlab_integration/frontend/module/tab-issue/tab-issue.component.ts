@@ -34,12 +34,13 @@ import { CollectionResource } from "core-app/features/hal/resources/collection-r
 import { I18nService } from "core-app/core/i18n/i18n.service";
 import {IGitlabIssueResource} from "core-app/features/plugins/linked/openproject-gitlab_integration/typings";
 import {ApiV3Service} from "core-app/core/apiv3/api-v3.service";
+import { IssueComponent } from '../issue/issue.component';
 
 @Component({
   selector: 'tab-issue',
   templateUrl: './tab-issue.template.html',
   host: { class: 'op-issue' },
-  standalone: false,
+  imports: [IssueComponent],
 })
 export class TabIssueComponent implements OnInit {
   @Input() public workPackage:WorkPackageResource;

@@ -31,6 +31,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   template: `
@@ -47,7 +48,7 @@ import { TimezoneService } from 'core-app/core/datetime/timezone.service';
            [id]="handler.htmlId" />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FormsModule],
 })
 export class HoursDurationEditFieldComponent extends EditFieldComponent {
   @InjectField() TimezoneService:TimezoneService;

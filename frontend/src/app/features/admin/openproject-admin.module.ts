@@ -39,15 +39,12 @@ import { EditableQueryPropsComponent } from 'core-app/features/admin/editable-qu
   imports: [
     DragulaModule.forRoot(),
     OpSharedModule,
-  ],
-  providers: [
-  ],
-  declarations: [
     TypeFormAttributeGroupComponent,
     TypeFormQueryGroupComponent,
     TypeFormConfigurationComponent,
     GroupEditInPlaceComponent,
     EditableQueryPropsComponent,
   ],
+  providers: [],
 })
 export class OpenprojectAdminModule { }

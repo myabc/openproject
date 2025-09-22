@@ -36,12 +36,13 @@ import {
 import { IAttachment } from 'core-app/core/state/attachments/attachment.model';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { AttachmentsResourceService } from 'core-app/core/state/attachments/attachments.service';
+import { OpAttachmentListItemComponent } from './attachment-list-item.component';
 
 @Component({
   selector: 'op-attachment-list',
   templateUrl: './attachment-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpAttachmentListItemComponent],
 })
 export class OpAttachmentListComponent extends UntilDestroyedMixin {
   @Input() public attachments:IAttachment[] = [];

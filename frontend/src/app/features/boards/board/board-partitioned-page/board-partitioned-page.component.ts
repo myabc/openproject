@@ -29,7 +29,7 @@ import {
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { QueryResource } from 'core-app/features/hal/resources/query-resource';
-import { Ng2StateDeclaration } from '@uirouter/angular';
+import { Ng2StateDeclaration, UIView } from '@uirouter/angular';
 import { BoardFiltersService } from 'core-app/features/boards/board/board-filter/board-filters.service';
 import { CardViewHandlerRegistry } from 'core-app/features/work-packages/components/wp-card-view/event-handler/card-view-handler-registry';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
@@ -38,6 +38,11 @@ import { EMPTY } from 'rxjs';
 import { SubmenuService } from 'core-app/core/main-menu/submenu.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
+import { NgClass } from '@angular/common';
+import { OpBreadcrumbsComponent } from '../../../../shared/components/breadcrumbs/op-breadcrumbs.component';
+import { BackButtonComponent } from '../../../work-packages/components/back-routing/back-button.component';
+import { EditableToolbarTitleComponent } from '../../../../shared/components/editable-toolbar-title/editable-toolbar-title.component';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
 
 export function boardCardViewHandlerFactory(injector:Injector) {
   return new CardViewHandlerRegistry(injector);
@@ -54,7 +59,15 @@ export function boardCardViewHandlerFactory(injector:Injector) {
     DragAndDropService,
     BoardFiltersService,
   ],
-  standalone: false,
+  imports: [
+    NgClass,
+    OpBreadcrumbsComponent,
+    BackButtonComponent,
+    EditableToolbarTitleComponent,
+    DynamicComponent,
+    DynamicIoDirective,
+    UIView,
+  ],
 })
 export class BoardPartitionedPageComponent extends UntilDestroyedMixin {
   text = {

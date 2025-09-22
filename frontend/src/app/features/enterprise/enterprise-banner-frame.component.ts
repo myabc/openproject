@@ -26,7 +26,7 @@
 // See COPYRIGHT and LICENSE files for more details.
 //++
 
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { BannersService } from 'core-app/core/enterprise/banners.service';
 
@@ -34,7 +34,7 @@ import { BannersService } from 'core-app/core/enterprise/banners.service';
   templateUrl: './enterprise-banner-frame.component.html',
   selector: 'op-enterprise-banner-frame',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EnterpriseBannerFrameComponent implements OnInit {
   @Input() public feature:string;

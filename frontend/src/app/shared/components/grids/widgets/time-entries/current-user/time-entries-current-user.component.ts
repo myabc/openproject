@@ -8,11 +8,18 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
 import { AbstractWidgetComponent } from 'core-app/shared/components/grids/widgets/abstract-widget.component';
 import { DisplayedDays } from 'core-app/features/calendar/te-calendar/te-calendar.component';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
+import { WidgetHeaderComponent } from '../../header/header.component';
+import { WidgetTimeEntriesCurrentUserMenuComponent } from './time-entries-current-user-menu.component';
+import { OpenprojectCalendarModule } from '../../../../../../features/calendar/openproject-calendar.module';
 
 @Component({
   templateUrl: './time-entries-current-user.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetTimeEntriesCurrentUserMenuComponent,
+    OpenprojectCalendarModule,
+  ],
 })
 export class WidgetTimeEntriesCurrentUserComponent extends AbstractWidgetComponent {
   public entries:TimeEntryResource[] = [];

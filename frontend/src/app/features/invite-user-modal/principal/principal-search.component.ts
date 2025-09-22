@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject, combineLatest, forkJoin, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, share, shareReplay, switchMap } from 'rxjs/operators';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
@@ -13,6 +13,9 @@ import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter
 import { PrincipalType } from '../invite-user.component';
 import { CapabilitiesResourceService } from 'core-app/core/state/capabilities/capabilities.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective, NgNotFoundTemplateDirective, NgTagTemplateDirective } from '@ng-select/ng-select';
+import { NgOptionHighlightDirective } from '@ng-select/ng-option-highlight';
+import { AsyncPipe } from '@angular/common';
 
 interface NgSelectPrincipalOption {
   principal:PrincipalLike,
@@ -24,7 +27,17 @@ interface NgSelectPrincipalOption {
   styleUrls: ['./principal-search.component.sass'],
   templateUrl: './principal-search.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgOptionHighlightDirective,
+    NgNotFoundTemplateDirective,
+    NgTagTemplateDirective,
+    AsyncPipe,
+  ],
 })
 export class PrincipalSearchComponent extends UntilDestroyedMixin implements OnInit {
   @Input() spotFormBinding:UntypedFormControl;

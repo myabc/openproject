@@ -44,6 +44,7 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { GroupDescriptor } from 'core-app/features/work-packages/components/wp-single-view/wp-single-view.component';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import { WorkPackageRelationsService } from 'core-app/features/work-packages/components/wp-relations/wp-relations.service';
+import { WorkPackageEmbeddedTableComponent } from '../../../wp-table/embedded/wp-embedded-table.component';
 
 @Component({
   selector: 'wp-children-query',
@@ -51,7 +52,7 @@ import { WorkPackageRelationsService } from 'core-app/features/work-packages/com
   providers: [
     { provide: WorkPackageInlineCreateService, useClass: WpChildrenInlineCreateService },
   ],
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent],
 })
 export class WorkPackageChildrenQueryComponent extends WorkPackageRelationQueryBase implements OnInit {
   @Input() public workPackage:WorkPackageResource;

@@ -46,6 +46,12 @@ import { WorkPackageFoldToggleButtonComponent } from 'core-app/features/work-pac
 import { OpProjectIncludeComponent } from 'core-app/shared/components/project-include/project-include.component';
 import { OpBaselineModalComponent } from 'core-app/features/work-packages/components/wp-baseline/baseline-modal/baseline-modal.component';
 import { BreadcrumbItem } from 'core-app/shared/components/breadcrumbs/op-breadcrumbs.component';
+import { NgClass } from '@angular/common';
+import { OpBreadcrumbsComponent } from '../../../../shared/components/breadcrumbs/op-breadcrumbs.component';
+import { BackButtonComponent } from '../../components/back-routing/back-button.component';
+import { EditableToolbarTitleComponent } from '../../../../shared/components/editable-toolbar-title/editable-toolbar-title.component';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { UIView } from '@uirouter/angular';
 
 @Component({
   selector: 'wp-view-page',
@@ -60,7 +66,15 @@ import { BreadcrumbItem } from 'core-app/shared/components/breadcrumbs/op-breadc
     { provide: HalResourceNotificationService, useClass: WorkPackageNotificationService },
     QueryParamListenerService,
   ],
-  standalone: false,
+  imports: [
+    NgClass,
+    OpBreadcrumbsComponent,
+    BackButtonComponent,
+    EditableToolbarTitleComponent,
+    DynamicComponent,
+    DynamicIoDirective,
+    UIView,
+  ],
 })
 export class WorkPackageViewPageComponent extends PartitionedQuerySpacePageComponent implements OnInit {
   toolbarButtonComponents:ToolbarButtonComponentDefinition[] = [

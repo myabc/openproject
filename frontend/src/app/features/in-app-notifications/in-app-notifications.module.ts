@@ -13,10 +13,6 @@ import {
   InAppNotificationEntryComponent,
 } from 'core-app/features/in-app-notifications/entry/in-app-notification-entry.component';
 import { OpenprojectWorkPackagesModule } from 'core-app/features/work-packages/openproject-work-packages.module';
-import { IconModule } from 'core-app/shared/components/icon/icon.module';
-import {
-  OpenprojectContentLoaderModule,
-} from 'core-app/shared/components/op-content-loader/openproject-content-loader.module';
 import { OpenprojectPrincipalRenderingModule } from 'core-app/shared/components/principal/principal-rendering.module';
 import { OpSharedModule } from 'core-app/shared/shared.module';
 import { DynamicModule } from 'ng-dynamic-component';
@@ -27,7 +23,13 @@ import { InAppNotificationReminderAlertComponent } from './entry/reminder-alert/
 import { InAppNotificationStatusComponent } from './entry/status/in-app-notification-status.component';
 
 @NgModule({
-  declarations: [
+  imports: [
+    OpSharedModule,
+    DynamicModule,
+    CommonModule,
+    OpenprojectPrincipalRenderingModule,
+    OpenprojectWorkPackagesModule,
+    ScrollingModule,
     InAppNotificationBellComponent,
     InAppNotificationCenterComponent,
     InAppNotificationEntryComponent,
@@ -36,16 +38,6 @@ import { InAppNotificationStatusComponent } from './entry/status/in-app-notifica
     InAppNotificationDateAlertComponent,
     InAppNotificationRelativeTimeComponent,
     InAppNotificationReminderAlertComponent,
-  ],
-  imports: [
-    OpSharedModule,
-    DynamicModule,
-    CommonModule,
-    IconModule,
-    OpenprojectPrincipalRenderingModule,
-    OpenprojectWorkPackagesModule,
-    OpenprojectContentLoaderModule,
-    ScrollingModule,
   ],
   providers: [
     IanBellService,

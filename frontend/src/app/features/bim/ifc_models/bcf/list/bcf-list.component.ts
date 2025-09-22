@@ -51,6 +51,11 @@ import {
 import {
   WorkPackageNotificationService,
 } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { WorkPackagesTableComponent } from '../../../../work-packages/components/wp-table/wp-table.component';
+import { WpResizerComponent } from '../../../../../shared/components/resizer/resizer/wp-resizer.component';
+import { WorkPackagesGridComponent } from '../../../../work-packages/components/wp-grid/wp-grid.component';
+import { WorkPackageTablePaginationComponent } from '../../../../work-packages/components/wp-table/table-pagination/wp-table-pagination.component';
 
 @Component({
   templateUrl: './bcf-list.component.html',
@@ -62,7 +67,14 @@ import {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-bcf-list',
-  standalone: false,
+  imports: [
+    NgClass,
+    WorkPackagesTableComponent,
+    WpResizerComponent,
+    WorkPackagesGridComponent,
+    WorkPackageTablePaginationComponent,
+    AsyncPipe,
+  ],
 })
 export class BcfListComponent extends WorkPackageListViewComponent implements UntilDestroyedMixin, OnInit {
   @Input() showResizer = false;

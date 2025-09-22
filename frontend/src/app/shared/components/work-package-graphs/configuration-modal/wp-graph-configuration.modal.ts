@@ -29,13 +29,20 @@ import { ComponentType } from '@angular/cdk/portal';
 import { WpGraphConfigurationService } from 'core-app/shared/components/work-package-graphs/configuration/wp-graph-configuration.service';
 import { WpGraphConfiguration } from 'core-app/shared/components/work-package-graphs/configuration/wp-graph-configuration';
 import { WorkPackageNotificationService } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
+import { NgComponentOutlet } from '@angular/common';
+import { ComponentOutletInjectorDirective } from 'ng-dynamic-component';
+import { ScrollableTabsComponent } from '../../tabs/scrollable-tabs/scrollable-tabs.component';
 
 export const WpTableConfigurationModalPrependToken = new InjectionToken<ComponentType<any>>('WpTableConfigurationModalPrependComponent');
 
 @Component({
   templateUrl: '../../../../features/work-packages/components/wp-table/configuration-modal/wp-table-configuration.modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgComponentOutlet,
+    ComponentOutletInjectorDirective,
+    ScrollableTabsComponent,
+  ],
 })
 export class WpGraphConfigurationModalComponent extends OpModalComponent implements OnInit, OnDestroy {
   public $element:HTMLElement;

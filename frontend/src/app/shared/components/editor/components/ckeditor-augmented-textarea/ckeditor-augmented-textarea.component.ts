@@ -59,11 +59,13 @@ import { AttachmentCollectionResource } from 'core-app/features/hal/resources/at
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 import { navigator } from '@hotwired/turbo';
 import { uniqueId } from 'lodash';
+import { OpCkeditorComponent as OpCkeditorComponent_1 } from '../ckeditor/op-ckeditor.component';
+import { OpAttachmentsComponent } from '../../../attachments/attachments.component';
 
 @Component({
   templateUrl: './ckeditor-augmented-textarea.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpCkeditorComponent_1, OpAttachmentsComponent],
 })
 export class CkeditorAugmentedTextareaComponent extends UntilDestroyedMixin implements OnInit {
   // Track form submission "in-flight" state per form, to prevent multiple

@@ -31,6 +31,8 @@ import { Component, Input } from '@angular/core';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import {IGitlabMergeRequestResource} from 'core-app/features/plugins/linked/openproject-gitlab_integration/typings';
+import { NgClass, NgStyle } from '@angular/common';
+import { OpDateTimeComponent } from '../../../../../shared/components/date/op-date-time.component';
 
 @Component({
   selector: 'gitlab-merge-request',
@@ -40,7 +42,11 @@ import {IGitlabMergeRequestResource} from 'core-app/features/plugins/linked/open
     './mr-pipeline.component.sass',
   ],
   host: { class: 'op-merge-request' },
-  standalone: false,
+  imports: [
+    NgClass,
+    OpDateTimeComponent,
+    NgStyle,
+  ],
 })
 
 export class MergeRequestComponent {

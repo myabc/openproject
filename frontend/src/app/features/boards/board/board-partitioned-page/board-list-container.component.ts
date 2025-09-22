@@ -22,7 +22,7 @@ import { DragAndDropService } from 'core-app/shared/helpers/drag-and-drop/drag-a
 import { QueryUpdatedService } from 'core-app/features/boards/board/query-updated/query-updated.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { Board, BoardWidgetOption } from 'core-app/features/boards/board/board';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag, CdkDragHandle } from '@angular/cdk/drag-drop';
 import { GridWidgetResource } from 'core-app/features/hal/resources/grid-widget-resource';
 import {
   BoardPartitionedPageComponent,
@@ -41,6 +41,10 @@ import {
   WorkPackageStatesInitializationService,
 } from 'core-app/features/work-packages/components/wp-list/wp-states-initialization.service';
 import { enterpriseDocsUrl } from 'core-app/core/setup/globals/constants.const';
+import { EnterpriseBannerFrameComponent } from '../../../enterprise/enterprise-banner-frame.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { WorkPackageIsolatedQuerySpaceDirective } from '../../../work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { BoardListComponent as BoardListComponent_1 } from '../board-list/board-list.component';
 
 @Component({
   templateUrl: './board-list-container.component.html',
@@ -49,7 +53,16 @@ import { enterpriseDocsUrl } from 'core-app/core/setup/globals/constants.const';
     BoardListCrossSelectionService,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    EnterpriseBannerFrameComponent,
+    CdkDropList,
+    NgClass,
+    CdkDrag,
+    CdkDragHandle,
+    WorkPackageIsolatedQuerySpaceDirective,
+    BoardListComponent_1,
+    AsyncPipe,
+  ],
 })
 export class BoardListContainerComponent extends UntilDestroyedMixin implements OnInit {
   text = {

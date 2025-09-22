@@ -35,12 +35,14 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
 import { take } from 'rxjs/operators';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
+import { OpTypesContextMenuDirective } from '../../../../../shared/components/op-context-menu/handlers/op-types-context-menu.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'wp-create-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './wp-create-button.html',
-  standalone: false,
+  imports: [OpTypesContextMenuDirective, AsyncPipe],
 })
 export class WorkPackageCreateButtonComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @Input('allowed') allowedWhen:string[];

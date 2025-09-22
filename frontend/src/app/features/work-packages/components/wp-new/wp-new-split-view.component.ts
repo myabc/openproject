@@ -28,12 +28,23 @@
 
 import { WorkPackageCreateComponent } from 'core-app/features/work-packages/components/wp-new/wp-create.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { EditFormComponent } from '../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { WorkPackageTypeStatusComponent } from '../wp-type-status/wp-type-status.component';
+import { WorkPackageSingleViewComponent } from '../wp-single-view/wp-single-view.component';
+import { WorkPackageEditActionsBarComponent } from '../edit-actions-bar/wp-edit-actions-bar.component';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
 
 @Component({
   selector: 'wp-new-split-view',
   templateUrl: './wp-new-split-view.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    EditFormComponent,
+    WorkPackageTypeStatusComponent,
+    WorkPackageSingleViewComponent,
+    WorkPackageEditActionsBarComponent,
+    WpResizerComponent,
+  ],
 })
 export class WorkPackageNewSplitViewComponent extends WorkPackageCreateComponent {
 }

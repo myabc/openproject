@@ -44,12 +44,22 @@ import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { firstValueFrom } from 'rxjs';
+import { NgSelectComponent, NgTagTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   templateUrl: '../create-autocompleter/create-autocompleter.component.html',
   selector: 'version-autocompleter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgTagTemplateDirective,
+    NgOptionTemplateDirective,
+    NgStyle,
+  ],
 })
 export class VersionAutocompleterComponent extends CreateAutocompleterComponent implements AfterViewInit {
   @Output() public onCreate = new EventEmitter<VersionResource>();

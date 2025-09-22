@@ -45,20 +45,17 @@ describe('shows news', () => {
   };
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [
-        WidgetNewsComponent
-    ],
-    schemas: [NO_ERRORS_SCHEMA],
-    imports: [],
-    providers: [
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [WidgetNewsComponent],
+      providers: [
         TimezoneService,
         { provide: ConfigurationService, useValue: configurationServiceStub },
         States,
         { provide: ApiV3Service, useValue: apiv3ServiceStub },
         HalResourceService,
         provideHttpClient(withInterceptorsFromDi()),
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WidgetNewsComponent);
     app = fixture.debugElement.componentInstance;

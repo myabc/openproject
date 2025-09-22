@@ -10,6 +10,7 @@ import { TimeEntryResource } from 'core-app/features/hal/resources/time-entry-re
 import { Observable, switchMap } from 'rxjs';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
+import { OpIconComponent } from '../../icon/icon.component';
 
 @Component({
   selector: 'opce-time-entry-trigger-actions',
@@ -31,7 +32,7 @@ import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service
     PathHelperService,
     TurboRequestsService,
   ],
-  standalone: false,
+  imports: [OpIconComponent],
 })
 export class TriggerActionsEntryComponent {
   @InjectField() readonly apiv3Service:ApiV3Service;

@@ -35,13 +35,20 @@ import {
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UserResource } from 'core-app/features/hal/resources/user-resource';
 import { WorkPackageWatchersTabComponent } from './watchers-tab.component';
+import { FocusWithinDirective } from '../../../../../shared/directives/focus/focus-within.directive';
+import { OpPrincipalComponent } from '../../../../../shared/components/principal/principal.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './wp-watcher-entry.component.html',
   styleUrls: ['./wp-watcher-entry.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-wp-watcher-entry',
-  standalone: false,
+  imports: [
+    FocusWithinDirective,
+    OpIconComponent,
+    OpPrincipalComponent
+  ],
 })
 export class WorkPackageWatcherEntryComponent implements OnInit {
   @Input() public watcher:UserResource;

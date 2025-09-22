@@ -62,10 +62,7 @@ import {
 } from 'core-app/features/work-packages/components/wp-query/url-params-helper';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
 
-@Directive({
-  selector: '[opSettingsContextMenu]',
-  standalone: false,
-})
+@Directive({ selector: '[opSettingsContextMenu]' })
 export class OpSettingsMenuDirective extends OpContextMenuTrigger {
   @Input('opSettingsContextMenu-query') public query:QueryResource;
 

@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Inject,
   OnInit,
@@ -15,12 +16,14 @@ import { WorkPackageResource } from 'core-app/features/hal/resources/work-packag
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { ActionsService } from 'core-app/core/state/actions/actions.service';
 import { shareModalUpdated } from 'core-app/features/work-packages/components/wp-share-modal/sharing.actions';
+import { OpContentLoaderComponent } from 'core-app/shared/components/op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './wp-share.modal.html',
   styleUrls: ['./wp-share.modal.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpContentLoaderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WorkPackageShareModalComponent extends OpModalComponent implements OnInit {
   @ViewChild('frameElement') frameElement:ElementRef<HTMLIFrameElement>|undefined;

@@ -41,11 +41,13 @@ import { componentDestroyed } from '@w11k/ngx-componentdestroyed';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { AbstractDateTimeValueController } from '../abstract-filter-date-time-value/abstract-filter-date-time-value.controller';
+import { OpBasicSingleDatePickerComponent } from '../../../../../shared/components/datepicker/basic-single-date-picker/basic-single-date-picker.component';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-filter-date-time-value',
   templateUrl: './filter-date-time-value.component.html',
-  standalone: false,
+  imports: [OpBasicSingleDatePickerComponent, AutofocusDirective],
 })
 export class FilterDateTimeValueComponent extends AbstractDateTimeValueController implements OnInit {
   @HostBinding('id') get id() {

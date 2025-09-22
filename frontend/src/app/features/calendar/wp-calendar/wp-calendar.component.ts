@@ -43,7 +43,7 @@ import {
   EventInput,
   ToolbarInput,
 } from '@fullcalendar/core';
-import { FullCalendarComponent } from '@fullcalendar/angular';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import moment from 'moment';
 import { Subject } from 'rxjs';
@@ -91,6 +91,7 @@ import allLocales from '@fullcalendar/core/locales-all';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { MeetingResource } from 'core-app/features/hal/resources/meeting-resource';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './wp-calendar.template.html',
@@ -102,7 +103,7 @@ import { TimezoneService } from 'core-app/core/datetime/timezone.service';
     OpWorkPackagesCalendarService,
     OpCalendarService,
   ],
-  standalone: false,
+  imports: [FullCalendarModule, AsyncPipe],
 })
 export class WorkPackagesCalendarComponent extends UntilDestroyedMixin implements OnInit {
   @ViewChild(FullCalendarComponent) ucCalendar:FullCalendarComponent;

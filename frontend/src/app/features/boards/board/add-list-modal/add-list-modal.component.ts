@@ -48,10 +48,12 @@ import {
 } from 'rxjs';
 import { OpAutocompleterComponent } from 'core-app/shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
+import { OpAutocompleterComponent as OpAutocompleterComponent_1 } from '../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
+import { OpAutocompleterFooterTemplateDirective } from '../../../../shared/components/autocompleter/autocompleter-footer-template/op-autocompleter-footer-template.directive';
 
 @Component({
   templateUrl: './add-list-modal.html',
-  standalone: false,
+  imports: [OpAutocompleterComponent_1, OpAutocompleterFooterTemplateDirective],
 })
 export class AddListModalComponent extends OpModalComponent implements OnInit {
   @ViewChild(OpAutocompleterComponent, { static: true }) public ngSelectComponent:OpAutocompleterComponent;

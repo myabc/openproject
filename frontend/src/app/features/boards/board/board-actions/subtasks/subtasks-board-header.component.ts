@@ -31,12 +31,13 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import { Highlighting } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting.functions';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
+import { NgClass } from '@angular/common';
 
 @Component({
   templateUrl: './subtasks-board-header.html',
   styleUrls: ['./subtasks-board-header.sass'],
   host: { class: 'title-container -small' },
-  standalone: false,
+  imports: [NgClass],
 })
 export class SubtasksBoardHeaderComponent implements OnInit {
   @Input() public resource:WorkPackageResource;

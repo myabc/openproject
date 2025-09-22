@@ -54,6 +54,16 @@ import {
   WorkPackageTabsService,
 } from 'core-app/features/work-packages/components/wp-tabs/services/wp-tabs/wp-tabs.service';
 import { TabComponent } from 'core-app/features/work-packages/components/wp-tabs/components/wp-tab-wrapper/tab';
+import { WpTabsComponent } from '../../components/wp-tabs/components/wp-tabs/wp-tabs.component';
+import { EditFormComponent } from '../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { WorkPackageBreadcrumbComponent } from '../../components/wp-breadcrumb/wp-breadcrumb.component';
+import { BackButtonComponent } from '../../components/back-routing/back-button.component';
+import { WorkPackageSubjectComponent } from '../../components/wp-subject/wp-subject.component';
+import { UIView } from '@uirouter/angular';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { WorkPackageSplitViewToolbarComponent } from '../../components/wp-details/wp-details-toolbar.component';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './wp-split-view.html',
@@ -63,7 +73,19 @@ import { TabComponent } from 'core-app/features/work-packages/components/wp-tabs
     WpSingleViewService,
     { provide: HalResourceNotificationService, useClass: WorkPackageNotificationService },
   ],
-  standalone: false,
+  imports: [
+    WpTabsComponent,
+    EditFormComponent,
+    WorkPackageBreadcrumbComponent,
+    BackButtonComponent,
+    WorkPackageSubjectComponent,
+    UIView,
+    DynamicComponent,
+    DynamicIoDirective,
+    WorkPackageSplitViewToolbarComponent,
+    WpResizerComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageSplitViewComponent extends WorkPackageSingleViewBase implements OnInit {
   hasState:boolean = !!this.$state.current;

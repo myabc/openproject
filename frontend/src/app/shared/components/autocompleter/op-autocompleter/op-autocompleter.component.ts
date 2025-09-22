@@ -23,7 +23,7 @@ import {
   ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
-import { DropdownPosition, NgSelectComponent } from '@ng-select/ng-select';
+import { DropdownPosition, NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
 import { BehaviorSubject, merge, NEVER, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
 
@@ -45,7 +45,7 @@ import {
   repositionDropdownBugfix,
 } from 'core-app/shared/components/autocompleter/op-autocompleter/autocompleter.helper';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { ID } from '@datorama/akita';
 import { HttpClient } from '@angular/common/http';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
@@ -57,6 +57,8 @@ import {
 } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
 import { UserResource } from 'core-app/features/hal/resources/user-resource';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 export interface IAutocompleteItem {
   id:ID;
@@ -88,7 +90,19 @@ type GroupValueFn = (key:string | any, children:any[]) => string | any;
       multi: true,
     },
   ],
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 // It is component that you can use whenever you need an autocompleter
 // it has all inputs and outputs of ng-select

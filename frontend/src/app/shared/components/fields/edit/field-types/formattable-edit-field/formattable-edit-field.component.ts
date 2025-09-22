@@ -33,11 +33,13 @@ import {
   ICKEditorInstance,
 } from 'core-app/shared/components/editor/components/ckeditor/ckeditor.types';
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
+import { OpCkeditorComponent as OpCkeditorComponent_1 } from '../../../../editor/components/ckeditor/op-ckeditor.component';
+import { EditFieldControlsComponent } from '../../field-controls/edit-field-controls.component';
 
 @Component({
   templateUrl: './formattable-edit-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpCkeditorComponent_1, EditFieldControlsComponent],
 })
 export class FormattableEditFieldComponent extends EditFieldComponent implements OnInit, OnDestroy {
   public readonly field = this;

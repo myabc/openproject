@@ -14,6 +14,9 @@ import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetWpTableMenuComponent } from './wp-table-menu.component';
+import { OpenprojectWorkPackagesModule } from '../../../../../features/work-packages/openproject-work-packages.module';
 
 @Component({
   selector: 'widget-wp-table',
@@ -21,7 +24,11 @@ import { CurrentProjectService } from 'core-app/core/current-project/current-pro
   styleUrls: ['./wp-table.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [WorkPackageIsolatedQuerySpaceDirective],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetWpTableMenuComponent,
+    OpenprojectWorkPackagesModule,
+  ],
 })
 export class WidgetWpTableComponent extends AbstractWidgetComponent implements OnInit {
   public queryId:string|null;

@@ -16,11 +16,18 @@ import { CurrentProjectService } from 'core-app/core/current-project/current-pro
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { DocumentResource } from '../../../../../../../../modules/documents/frontend/module/hal/resources/document-resource';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { OpSharedModule } from '../../../../shared.module';
 
 @Component({
   templateUrl: './documents.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    OpSharedModule,
+  ],
 })
 export class WidgetDocumentsComponent extends AbstractWidgetComponent implements OnInit {
   public text = {

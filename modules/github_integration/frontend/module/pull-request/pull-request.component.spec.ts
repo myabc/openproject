@@ -8,8 +8,7 @@ import { PullRequestStateComponent } from './pull-request-state.component';
 
 @Component({
   selector: 'op-date-time',
-  template: ``,
-  standalone: false,
+  template: '',
 })
 class OpDateTimeComponent {
   @Input('dateTimeValue') dateTimeValue:any;
@@ -81,7 +80,7 @@ describe('PullRequestComponent', () => {
   beforeEach(async () => {
     await TestBed
       .configureTestingModule({
-        declarations: [
+        imports: [
           PullRequestComponent,
           OpDateTimeComponent,
           OpIconComponent,

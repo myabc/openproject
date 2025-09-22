@@ -20,6 +20,11 @@ import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { filter } from 'rxjs/operators';
 import { GridAreaService } from 'core-app/shared/components/grids/grid/area.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { EditFormPortalComponent } from '../../../fields/edit/editing-portal/edit-form-portal.component';
+import { OpAttachmentsComponent } from '../../../attachments/attachments.component';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   templateUrl: './custom-text.component.html',
@@ -27,7 +32,14 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   providers: [
     CustomTextEditFieldService,
   ],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    EditFormPortalComponent,
+    OpAttachmentsComponent,
+    NgClass,
+    NgTemplateOutlet,
+  ],
 })
 export class WidgetCustomTextComponent extends AbstractWidgetComponent implements OnInit, OnChanges, OnDestroy {
   protected currentRawText:string;

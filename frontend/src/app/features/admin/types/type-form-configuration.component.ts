@@ -4,11 +4,14 @@ import {
   ExternalRelationQueryConfigurationService,
 } from 'core-app/features/work-packages/components/wp-table/external-configuration/external-relation-query-configuration.service';
 import { DomAutoscrollService } from 'core-app/shared/helpers/drag-and-drop/dom-autoscroll.service';
-import { DragulaService, DrakeWithModels } from 'ng2-dragula';
+import { DragulaService, DrakeWithModels, DragulaModule } from 'ng2-dragula';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { installMenuLogic } from 'core-app/core/setup/globals/global-listeners/action-menu';
 import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.service';
 import { TypeBannerService } from 'core-app/features/admin/types/type-banner.service';
+import { TypeFormAttributeGroupComponent } from './attribute-group.component';
+import { TypeFormQueryGroupComponent } from './query-group.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 export type TypeGroupType = 'attribute'|'query';
 
@@ -36,7 +39,12 @@ export const emptyTypeGroup = '__empty';
   providers: [
     TypeBannerService,
   ],
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    DragulaModule,
+    TypeFormAttributeGroupComponent,
+    TypeFormQueryGroupComponent,
+  ],
 })
 export class TypeFormConfigurationComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit, OnDestroy {
   public text = {

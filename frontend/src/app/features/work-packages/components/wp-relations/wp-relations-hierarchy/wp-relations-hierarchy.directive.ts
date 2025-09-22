@@ -37,12 +37,13 @@ import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
 import { SchemaCacheService } from 'core-app/core/schemas/schema-cache.service';
+import { WorkPackageChildrenQueryComponent } from '../embedded/children/wp-children-query.component';
 
 @Component({
   selector: 'wp-relations-hierarchy',
   templateUrl: './wp-relations-hierarchy.template.html',
   hostDirectives: [WorkPackageIsolatedQuerySpaceDirective],
-  standalone: false,
+  imports: [WorkPackageChildrenQueryComponent],
 })
 export class WorkPackageRelationsHierarchyComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

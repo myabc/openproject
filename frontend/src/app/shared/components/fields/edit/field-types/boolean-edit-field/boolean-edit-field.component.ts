@@ -39,8 +39,7 @@ import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-
            (keydown)="handler.handleUserKeydown($event)"
            [disabled]="inFlight"
            [id]="handler.htmlId" />
-  `,
-  standalone: false,
+  `
 })
 export class BooleanEditFieldComponent extends EditFieldComponent {
   public updateValue(newValue:boolean) {

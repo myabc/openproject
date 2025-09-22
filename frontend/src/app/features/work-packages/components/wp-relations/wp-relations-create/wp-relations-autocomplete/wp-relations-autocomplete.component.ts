@@ -42,6 +42,11 @@ import {
 } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { TOpAutocompleterResource } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { NgOptionHighlightDirective } from '@ng-select/ng-option-highlight';
+import { OpPrincipalComponent } from '../../../../../../shared/components/principal/principal.component';
 
 export interface IWorkPackageAutocompleteItem extends WorkPackageResource {
   id:string,
@@ -52,7 +57,20 @@ export interface IWorkPackageAutocompleteItem extends WorkPackageResource {
   templateUrl: '../../../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component.html',
   styleUrls: ['../../../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgOptionHighlightDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageRelationsAutocompleteComponent extends OpAutocompleterComponent<IWorkPackageAutocompleteItem> {
   @Input() workPackage:WorkPackageResource;

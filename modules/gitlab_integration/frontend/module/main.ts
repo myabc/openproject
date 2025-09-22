@@ -29,7 +29,6 @@
 
 import { Injector, NgModule } from '@angular/core';
 import { OpSharedModule } from 'core-app/shared/shared.module';
-import { OpenprojectTabsModule } from 'core-app/shared/components/tabs/openproject-tabs.module';
 import { WorkPackageTabsService } from 'core-app/features/work-packages/components/wp-tabs/services/wp-tabs/wp-tabs.service';
 
 
@@ -83,13 +82,6 @@ export function initializeGitlabIntegrationPlugin(injector:Injector) {
 @NgModule({
   imports: [
     OpSharedModule,
-    OpenprojectTabsModule,
-  ],
-  providers: [
-    WorkPackagesGitlabMrsService,
-    WorkPackagesGitlabIssueService,
-  ],
-  declarations: [
     GitlabTabComponent,
     TabHeaderMrsComponent,
     TabHeaderIssueComponent,
@@ -99,6 +91,10 @@ export function initializeGitlabIntegrationPlugin(injector:Injector) {
     GitActionsMenuComponent,
     MergeRequestComponent,
     IssueComponent,
+  ],
+  providers: [
+    WorkPackagesGitlabMrsService,
+    WorkPackagesGitlabIssueService,
   ],
   exports: [
     GitlabTabComponent,

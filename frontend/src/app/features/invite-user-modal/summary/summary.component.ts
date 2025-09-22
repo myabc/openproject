@@ -15,13 +15,20 @@ import { PrincipalData, PrincipalLike } from 'core-app/shared/components/princip
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { ProjectResource } from 'core-app/features/hal/resources/project-resource';
 import { PrincipalType } from '../invite-user.component';
+import { FormsModule } from '@angular/forms';
+import { SpotFormFieldComponent } from '../../../spot/components/form-field/form-field.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   selector: 'op-ium-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    FormsModule, 
+    SpotFormFieldComponent
+  ],
 })
 export class SummaryComponent {
   @Input() type:PrincipalType;

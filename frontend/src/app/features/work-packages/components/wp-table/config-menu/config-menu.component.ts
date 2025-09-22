@@ -3,11 +3,12 @@ import { Component, Injector } from '@angular/core';
 import { OpModalService } from 'core-app/shared/components/modal/modal.service';
 import { OPContextMenuService } from 'core-app/shared/components/op-context-menu/op-context-menu.service';
 import { WpTableConfigurationModalComponent } from 'core-app/features/work-packages/components/wp-table/configuration-modal/wp-table-configuration.modal';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './config-menu.template.html',
   selector: 'wp-table-config-menu',
-  standalone: false,
+  imports: [OpIconComponent]
 })
 export class WorkPackagesTableConfigMenuComponent {
   public text = {

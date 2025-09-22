@@ -9,6 +9,7 @@ import { UrlParamsHelperService } from 'core-app/features/work-packages/componen
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { WorkPackageEmbeddedTableComponent as WorkPackageEmbeddedTableComponent_1 } from '../embedded/wp-embedded-table.component';
 
 export interface QueryConfigurationLocals {
   service:any;
@@ -22,7 +23,7 @@ export interface QueryConfigurationLocals {
   templateUrl: './external-query-configuration.template.html',
   hostDirectives: [WorkPackageIsolatedQuerySpaceDirective],
   providers: [[{ provide: WpTableConfigurationService, useClass: RestrictedWpTableConfigurationService }]],
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent_1],
 })
 export class ExternalQueryConfigurationComponent implements OnInit, AfterViewInit {
   @ViewChild('embeddedTableForConfiguration', { static: true }) private embeddedTable:WorkPackageEmbeddedTableComponent;

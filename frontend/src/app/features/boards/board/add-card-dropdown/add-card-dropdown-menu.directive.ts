@@ -38,10 +38,7 @@ import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/q
 import { WorkPackageInlineCreateService } from 'core-app/features/work-packages/components/wp-inline-create/wp-inline-create.service';
 import { BoardListComponent } from 'core-app/features/boards/board/board-list/board-list.component';
 
-@Directive({
-  selector: '[op-addCardDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[op-addCardDropdown]' })
 export class AddCardDropdownMenuDirective extends OpContextMenuTrigger {
   constructor(readonly elementRef:ElementRef,
     readonly opContextMenu:OPContextMenuService,

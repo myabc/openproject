@@ -31,12 +31,15 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
+import { OpContentLoaderComponent } from 'core-app/shared/components/op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './baseline-loading.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-baseline-loading',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    OpContentLoaderComponent
+  ]
 })
 export class OpBaselineLoadingComponent { }

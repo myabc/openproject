@@ -43,6 +43,11 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
 import {
   SearchableProjectListService,
 } from 'core-app/shared/components/searchable-project-list/searchable-project-list.service';
+import { SpotTooltipComponent } from '../../../../spot/components/tooltip/tooltip.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { SpotCheckboxComponent } from '../../../../spot/components/checkbox/checkbox.component';
+import { OpSearchHighlightDirective } from '../../../directives/search-highlight.directive';
+import { OpSharedModule } from '../../../shared.module';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -50,7 +55,14 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './project-include-list.component.html',
   styleUrls: ['./project-include-list.component.sass'],
-  standalone: false,
+  imports: [
+    SpotTooltipComponent,
+    NgClass,
+    SpotCheckboxComponent,
+    OpSearchHighlightDirective,
+    OpSharedModule,
+    AsyncPipe,
+  ],
 })
 export class OpProjectIncludeListComponent {
   @HostBinding('class.spot-list') classNameList = true;

@@ -27,6 +27,7 @@
 //++
 
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'op-icon',
@@ -42,7 +43,7 @@ import { Component, Input } from '@angular/core';
         ></span>
       }
       `,
-  standalone: false,
+  imports: [NgClass],
 })
 export class OpIconComponent {
   @Input('icon-classes') iconClasses:string;

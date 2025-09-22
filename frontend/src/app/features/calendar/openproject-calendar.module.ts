@@ -44,26 +44,18 @@ import { QueryGetIcalUrlModalComponent } from 'core-app/shared/components/modals
   imports: [
     // Commons
     OpSharedModule,
-
     // Routes for /calendar
     UIRouterModule.forChild({ states: CALENDAR_ROUTES }),
-
     // Work Package module
     OpenprojectWorkPackagesModule,
-
     // Time entry module
     OpenprojectTimeEntriesModule,
-
     // Editable fields e.g. for modals
     OpenprojectFieldsModule,
-
     // Calendar component
     FullCalendarModule,
-
     // Angular reactive forms, required for QueryGetIcalUrlModalComponent
     ReactiveFormsModule,
-  ],
-  declarations: [
     // Work package calendars
     WorkPackagesCalendarPageComponent,
     WorkPackagesCalendarComponent,

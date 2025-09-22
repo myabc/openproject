@@ -29,6 +29,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { IToast, ToastService } from './toast.service';
+import { ToastComponent } from './toast.component';
 
 
 @Component({
@@ -43,7 +44,7 @@ import { IToast, ToastService } from './toast.service';
     `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'opce-toasts-container',
-  standalone: false,
+  imports: [ToastComponent],
 })
 export class ToastsContainerComponent extends UntilDestroyedMixin implements OnInit {
   public stack:IToast[] = [];

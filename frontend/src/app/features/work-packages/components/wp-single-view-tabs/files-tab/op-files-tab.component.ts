@@ -43,12 +43,18 @@ import { ProjectStoragesResourceService } from 'core-app/core/state/project-stor
 import { IProjectStorage } from 'core-app/core/state/project-storages/project-storage.model';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { StorageComponent } from '../../../../../shared/components/storages/storage/storage.component';
 
 @Component({
   selector: 'op-files-tab',
   templateUrl: './op-files-tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    StorageComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageFilesTabComponent implements OnInit {
   @Input() workPackage:WorkPackageResource;

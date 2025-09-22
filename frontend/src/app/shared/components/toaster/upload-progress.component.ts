@@ -68,7 +68,6 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
     </li>
     `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class UploadProgressComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit {
   @Input() public file:File;

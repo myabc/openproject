@@ -39,13 +39,14 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 import { OpModalService } from 'core-app/shared/components/modal/modal.service';
 import { StaticAttributeHelpTextModalComponent } from './static-attribute-help-text.modal';
+import { QuestionIconComponent } from '@openproject/octicons-angular';
 
 
 @Component({
   selector: 'opce-static-attribute-help-text',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './static-attribute-help-text.component.html',
-  standalone: false,
+  imports: [QuestionIconComponent],
 })
 export class StaticAttributeHelpTextComponent {
   // Attribute pass the modal title and content

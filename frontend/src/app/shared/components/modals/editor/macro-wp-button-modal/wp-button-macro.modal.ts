@@ -43,11 +43,12 @@ import { TypeResource } from 'core-app/features/hal/resources/type-resource';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { FormResource } from 'core-app/features/hal/resources/form-resource';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './wp-button-macro.modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpButtonMacroModalComponent extends OpModalComponent implements AfterViewInit {
   public changed = false;

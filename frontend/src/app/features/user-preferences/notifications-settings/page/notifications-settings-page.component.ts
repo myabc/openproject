@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit } from '@angular/core';
-import { UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs/internal/operators/take';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
@@ -11,6 +11,9 @@ import { enterpriseDocsUrl } from 'core-app/core/setup/globals/constants.const';
 import { overDueReminderTimes, reminderAvailableTimeframes } from '../overdue-reminder-available-times';
 import { ConfigurationService } from 'core-app/core/config/configuration.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { SpotSelectorFieldComponent } from '../../../../spot/components/selector-field/selector-field.component';
+import { EnterpriseBannerFrameComponent } from '../../../enterprise/enterprise-banner-frame.component';
+import { NotificationSettingsTableComponent } from '../table/notification-settings-table.component';
 
 export const myNotificationsPageComponentSelector = 'op-notifications-page';
 
@@ -46,7 +49,13 @@ interface IFullNotificationSettingsValue extends IToastSettingsValue {
   templateUrl: './notifications-settings-page.component.html',
   styleUrls: ['./notifications-settings-page.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotSelectorFieldComponent,
+    EnterpriseBannerFrameComponent,
+    NotificationSettingsTableComponent,
+  ],
 })
 export class NotificationsSettingsPageComponent extends UntilDestroyedMixin implements OnInit {
   @Input() userId:string;

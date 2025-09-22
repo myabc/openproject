@@ -76,12 +76,9 @@ describe('wpTablePagination Directive', () => {
 
     // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
-    declarations: [
-        WorkPackageTablePaginationComponent,
-        OpIconComponent,
-    ],
-    imports: [],
-    providers: [
+      imports: [WorkPackageTablePaginationComponent,
+        OpIconComponent],
+      providers: [
         States,
         PaginationService,
         WorkPackageViewSortByService,
@@ -93,8 +90,8 @@ describe('wpTablePagination Directive', () => {
         IsolatedQuerySpace,
         I18nService,
         provideHttpClient(withInterceptorsFromDi()),
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   }));
 
   describe('page ranges and links', () => {

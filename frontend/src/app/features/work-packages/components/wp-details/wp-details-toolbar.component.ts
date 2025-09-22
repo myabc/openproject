@@ -36,12 +36,25 @@ import {
   HalResourceEditingService,
 } from 'core-app/shared/components/fields/edit/services/hal-resource-editing.service';
 import { Observable, of } from 'rxjs';
+import { WorkPackageWatcherButtonComponent } from '../wp-watcher-button/wp-watcher-button.component';
+import { WorkPackageMarkNotificationButtonComponent } from '../wp-buttons/wp-mark-notification-button/work-package-mark-notification-button.component';
+import { WorkPackageShareButtonComponent } from '../wp-buttons/wp-share-button/wp-share-button.component';
+import { WorkPackageReminderButtonComponent } from '../wp-buttons/wp-reminder-button/wp-reminder-button.component';
+import { WorkPackageSingleContextMenuDirective } from '../../../../shared/components/op-context-menu/wp-context-menu/wp-single-context-menu';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'wp-details-toolbar',
   templateUrl: './wp-details-toolbar.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WorkPackageWatcherButtonComponent,
+    WorkPackageMarkNotificationButtonComponent,
+    WorkPackageShareButtonComponent,
+    WorkPackageReminderButtonComponent,
+    WorkPackageSingleContextMenuDirective,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageSplitViewToolbarComponent implements OnInit {
   @Input() workPackage:WorkPackageResource;

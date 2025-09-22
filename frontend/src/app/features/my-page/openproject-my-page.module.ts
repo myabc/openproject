@@ -37,8 +37,6 @@ import { MyPageComponent } from 'core-app/features/my-page/my-page.component';
     OpSharedModule,
     OpenprojectGridsModule,
     OpenprojectModalModule,
-  ],
-  declarations: [
     MyPageComponent,
   ],
 })

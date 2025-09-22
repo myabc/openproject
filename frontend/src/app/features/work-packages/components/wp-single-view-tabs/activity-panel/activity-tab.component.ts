@@ -26,17 +26,19 @@
 // See COPYRIGHT and LICENSE files for more details.
 //++
 
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Input, ViewChild } from '@angular/core';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import {
   ActivityPanelBaseController,
 } from 'core-app/features/work-packages/components/wp-single-view-tabs/activity-panel/activity-base.controller';
+import { OpContentLoaderComponent } from 'core-app/shared/components/op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './activity-tab.html',
   selector: 'wp-activity-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpContentLoaderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WorkPackageActivityTabComponent extends ActivityPanelBaseController {
   @Input() public workPackage:WorkPackageResource;

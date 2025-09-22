@@ -16,20 +16,17 @@ import { BooleanInputComponent } from 'core-app/shared/components/dynamic-forms/
 import { DynamicFormComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-form/dynamic-form.component';
 import { FormattableTextareaInputComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-inputs/formattable-textarea-input/formattable-textarea-input.component';
 import { DynamicFieldWrapperComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-field-wrapper/dynamic-field-wrapper.component';
-import { InviteUserButtonModule } from 'core-app/features/invite-user-modal/button/invite-user-button.module';
 import { DateInputComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-inputs/date-input/date-input.component';
 import { DynamicFieldGroupWrapperComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-field-group-wrapper/dynamic-field-group-wrapper.component';
 import { FormattableControlModule } from 'core-app/shared/components/dynamic-forms/components/dynamic-inputs/formattable-textarea-input/components/formattable-control/formattable-control.module';
 import { OpSharedModule } from 'core-app/shared/shared.module';
 import { UserInputComponent } from 'core-app/shared/components/dynamic-forms/components/dynamic-inputs/user-input/user-input.component';
-import { AttributeHelpTextModule } from 'core-app/shared/components/attribute-help-texts/attribute-help-text.module';
 import { OpSpotModule } from 'core-app/spot/spot.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AttributeHelpTextModule,
     OpSpotModule,
     FormlyModule.forRoot({
       types: [
@@ -55,15 +52,11 @@ import { OpSpotModule } from 'core-app/spot/spot.module';
       ],
     }),
     OpSharedModule,
-
     // Input dependencies
     FormsModule,
     NgSelectModule,
     NgOptionHighlightDirective,
-    InviteUserButtonModule,
     FormattableControlModule,
-  ],
-  declarations: [
     DynamicFormComponent,
     DynamicFieldGroupWrapperComponent,
     DynamicFieldWrapperComponent,

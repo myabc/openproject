@@ -37,7 +37,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectComponent, NgTagTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
@@ -47,6 +47,8 @@ import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decora
 import { Subject } from 'rxjs';
 import { compareByHref } from 'core-app/shared/helpers/angular/tracking-functions';
 import { repositionDropdownBugfix } from 'core-app/shared/components/autocompleter/op-autocompleter/autocompleter.helper';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-redundant-type-constituents
 type AddTagFn = (term:string) => any | Promise<any>;
@@ -61,7 +63,14 @@ export interface CreateAutocompleterValueOption {
   selector: 'create-autocompleter',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./create-autocompleter.component.sass'],
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgTagTemplateDirective,
+    NgOptionTemplateDirective,
+    NgStyle,
+  ],
 })
 export class CreateAutocompleterComponent extends UntilDestroyedMixin implements AfterViewInit {
   @Input() public availableValues:CreateAutocompleterValueOption[];

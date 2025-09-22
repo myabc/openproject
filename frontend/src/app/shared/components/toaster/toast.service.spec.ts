@@ -41,15 +41,15 @@ describe('ToastService', () => {
   beforeEach(waitForAsync(() => {
     // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
-    imports: [OpenprojectHalModule],
-    providers: [
+      imports: [OpenprojectHalModule],
+      providers: [
         { provide: ConfigurationService, useValue: { autoHidePopups: () => true } },
         I18nService,
         ToastService,
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-})
+      ]
+    })
       .compileComponents()
       .then(() => {
         toastService = TestBed.inject(ToastService);

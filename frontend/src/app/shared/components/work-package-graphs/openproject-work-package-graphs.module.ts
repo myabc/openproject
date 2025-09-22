@@ -37,7 +37,6 @@ import { WpGraphConfigurationFiltersTabInnerComponent } from 'core-app/shared/co
 import { WpGraphConfigurationSettingsTabInnerComponent } from 'core-app/shared/components/work-package-graphs/configuration-modal/tabs/settings-tab-inner.component';
 import { WorkPackageEmbeddedGraphComponent } from 'core-app/shared/components/work-package-graphs/embedded/wp-embedded-graph.component';
 import { WorkPackageOverviewGraphComponent } from 'core-app/shared/components/work-package-graphs/overview/wp-overview-graph.component';
-import { OpenprojectTabsModule } from 'core-app/shared/components/tabs/openproject-tabs.module';
 import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
@@ -46,30 +45,22 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
     // Commons
     OpSharedModule,
     OpenprojectModalModule,
-
     OpenprojectWorkPackagesModule,
-
     BaseChartDirective,
-    OpenprojectTabsModule,
-  ],
-  declarations: [
     // Modals
     WpGraphConfigurationModalComponent,
     WpGraphConfigurationFiltersTabComponent,
     WpGraphConfigurationFiltersTabInnerComponent,
     WpGraphConfigurationSettingsTabComponent,
     WpGraphConfigurationSettingsTabInnerComponent,
-
     // Embedded graphs
     WorkPackageEmbeddedGraphComponent,
     // Work package graphs on version page
     WorkPackageOverviewGraphComponent,
-
   ],
   exports: [
     // Modals
     WpGraphConfigurationModalComponent,
-
     // Embedded graphs
     WorkPackageEmbeddedGraphComponent,
     WorkPackageOverviewGraphComponent,

@@ -29,7 +29,6 @@
 import { Injector, NgModule, inject, provideAppInitializer } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { OpenprojectAttachmentsModule } from 'core-app/shared/components/attachments/openproject-attachments.module';
 import { OpenprojectModalModule } from 'core-app/shared/components/modal/modal.module';
 import {
   CkeditorAugmentedTextareaComponent,
@@ -59,8 +58,13 @@ export function initializeServices(injector:Injector) {
   imports: [
     FormsModule,
     CommonModule,
-    OpenprojectAttachmentsModule,
     OpenprojectModalModule,
+    // CKEditor and Macros
+    CkeditorAugmentedTextareaComponent,
+    OpCkeditorComponent,
+    WikiIncludePageMacroModalComponent,
+    CodeBlockMacroModalComponent,
+    ChildPagesMacroModalComponent,
   ],
   providers: [
     // CKEditor
@@ -75,14 +79,6 @@ export function initializeServices(injector:Injector) {
   exports: [
     CkeditorAugmentedTextareaComponent,
     OpCkeditorComponent,
-  ],
-  declarations: [
-    // CKEditor and Macros
-    CkeditorAugmentedTextareaComponent,
-    OpCkeditorComponent,
-    WikiIncludePageMacroModalComponent,
-    CodeBlockMacroModalComponent,
-    ChildPagesMacroModalComponent,
   ],
 })
 export class OpenprojectEditorModule {

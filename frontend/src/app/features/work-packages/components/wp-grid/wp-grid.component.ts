@@ -40,6 +40,8 @@ import { WorkPackageCardDragAndDropService } from 'core-app/features/work-packag
 import { WorkPackagesListService } from 'core-app/features/work-packages/components/wp-list/wp-list.service';
 import { WorkPackageTableConfiguration } from 'core-app/features/work-packages/components/wp-table/wp-table-configuration';
 import { WorkPackageViewOutputs } from 'core-app/features/work-packages/routing/wp-view-base/event-handling/event-handler-registry';
+import { WorkPackageCardViewComponent } from '../wp-card-view/wp-card-view.component';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
 
 @Component({
   selector: 'wp-grid',
@@ -71,7 +73,7 @@ import { WorkPackageViewOutputs } from 'core-app/features/work-packages/routing/
     DragAndDropService,
     WorkPackageCardDragAndDropService,
   ],
-  standalone: false,
+  imports: [WorkPackageCardViewComponent, WpResizerComponent],
 })
 export class WorkPackagesGridComponent implements WorkPackageViewOutputs {
   @Input() public configuration:WorkPackageTableConfiguration;

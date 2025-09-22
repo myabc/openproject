@@ -7,8 +7,6 @@ import { OpSharedModule } from 'core-app/shared/shared.module';
   imports: [
     CommonModule,
     OpSharedModule,
-  ],
-  declarations: [
     DateEditFieldComponent,
   ],
   exports: [

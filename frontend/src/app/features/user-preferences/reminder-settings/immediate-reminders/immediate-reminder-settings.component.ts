@@ -5,16 +5,18 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UserPreferencesService } from 'core-app/features/user-preferences/state/user-preferences.service';
-import {
-  UntypedFormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
+import { UntypedFormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SpotSelectorFieldComponent } from '../../../../spot/components/selector-field/selector-field.component';
 
 @Component({
   selector: 'op-immediate-reminder-settings',
   templateUrl: './immediate-reminder-settings.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotSelectorFieldComponent,
+  ],
 })
 export class ImmediateReminderSettingsComponent implements OnInit {
   form:UntypedFormGroup;

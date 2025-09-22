@@ -49,9 +49,7 @@ describe('UserLinkComponent component test', () => {
   beforeEach(waitForAsync(() => {
     // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
-      declarations: [
-        UserLinkComponent,
-      ],
+      imports: [UserLinkComponent],
       providers: [
         { provide: I18nService, useValue: I18nStub },
         { provide: PathHelperService, useValue: PathHelperStub },

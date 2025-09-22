@@ -6,6 +6,7 @@ import {
   IProjectAutocompleteItem,
 } from 'core-app/shared/components/autocompleter/project-autocompleter/project-autocomplete-item';
 import { IAPIFilter } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
+import { ProjectAutocompleterComponent } from '../../../../shared/components/autocompleter/project-autocompleter/project-autocompleter.component';
 
 export interface NotificationSettingProjectOption {
   name:string;
@@ -17,7 +18,7 @@ export interface NotificationSettingProjectOption {
   templateUrl: './notification-setting-inline-create.component.html',
   styleUrls: ['./notification-setting-inline-create.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ProjectAutocompleterComponent],
 })
 export class NotificationSettingInlineCreateComponent {
   @Input() userId:string;

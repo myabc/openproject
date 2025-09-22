@@ -58,7 +58,6 @@ import { filter } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-baseline-legends',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
 })
 export class OpBaselineLegendsComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.op-baseline-legends') className = true;

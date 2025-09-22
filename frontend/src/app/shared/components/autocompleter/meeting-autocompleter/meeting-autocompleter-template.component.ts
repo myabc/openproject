@@ -30,12 +30,13 @@ import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@ang
 import {
   IAutocompleterTemplateComponent,
 } from 'core-app/shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
+import { OpSearchHighlightDirective } from '../../../directives/search-highlight.directive';
 
 @Component({
   templateUrl: './meeting-autocompleter-template.component.html',
   styleUrls: ['./meeting-autocompleter-template.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpSearchHighlightDirective],
 })
 export class MeetingAutocompleterTemplateComponent implements IAutocompleterTemplateComponent {
   @ViewChild('labelTemplate') labelTemplate?:TemplateRef<Element>;

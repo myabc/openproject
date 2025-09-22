@@ -33,6 +33,7 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { WorkPackageViewTimelineService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-timeline.service';
 import { TimelineZoomLevel } from 'core-app/features/hal/resources/query-resource';
 import { AbstractWorkPackageButtonComponent, ButtonControllerText } from '../wp-buttons.module';
+import { NgClass } from '@angular/common';
 
 export interface TimelineButtonText extends ButtonControllerText {
   zoomOut:string;
@@ -45,7 +46,7 @@ export interface TimelineButtonText extends ButtonControllerText {
   styleUrls: ['./wp-timeline-toggle-button.sass'],
   selector: 'wp-timeline-toggle-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass],
 })
 export class WorkPackageTimelineButtonComponent extends AbstractWorkPackageButtonComponent implements OnInit {
   public buttonId = 'work-packages-timeline-toggle-button';

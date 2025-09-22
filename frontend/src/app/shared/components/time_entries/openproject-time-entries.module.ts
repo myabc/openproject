@@ -45,8 +45,6 @@ import {
     CommonModule,
     OpSharedModule,
     OpenprojectModalModule,
-  ],
-  declarations: [
     TriggerActionsEntryComponent,
     TimerAccountMenuComponent,
     StopExistingTimerModalComponent,

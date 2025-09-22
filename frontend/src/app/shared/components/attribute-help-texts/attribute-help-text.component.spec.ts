@@ -22,10 +22,6 @@ describe('AttributeHelpTextComponent', () => {
 
     void TestBed
       .configureTestingModule({
-        declarations: [
-          AttributeHelpTextComponent,
-          OpIconComponent,
-        ],
         providers: [
           { provide: AttributeHelpTextsService, useValue: serviceStub },
           { provide: AttributeHelpTextModalService, useValue: modalServiceStub },
@@ -33,6 +29,8 @@ describe('AttributeHelpTextComponent', () => {
         ],
         imports: [
           QuestionIconComponent,
+          AttributeHelpTextComponent,
+          OpIconComponent,
         ],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],
       })

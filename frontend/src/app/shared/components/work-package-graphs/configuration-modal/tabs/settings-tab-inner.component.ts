@@ -6,6 +6,7 @@ import { WorkPackageStatesInitializationService } from 'core-app/features/work-p
 import { TabComponent } from 'core-app/features/work-packages/components/wp-table/configuration-modal/tab-portal-outlet';
 import { QuerySpacedTabComponent } from 'core-app/shared/components/work-package-graphs/configuration-modal/tabs/abstract-query-spaced-tab.component';
 import { QueryGroupByResource } from 'core-app/features/hal/resources/query-group-by-resource';
+import { FormsModule } from '@angular/forms';
 
 interface OpChartType {
   identifier:string;
@@ -16,7 +17,7 @@ interface OpChartType {
 @Component({
   selector: 'op-settings-tab-inner',
   templateUrl: './settings-tab-inner.component.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpGraphConfigurationSettingsTabInnerComponent extends QuerySpacedTabComponent implements TabComponent {
   // Grouping

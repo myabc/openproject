@@ -3,12 +3,17 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { TypeGroup } from 'core-app/features/admin/types/type-form-configuration.component';
+import { GroupEditInPlaceComponent } from './group-edit-in-place.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   selector: 'op-type-form-query-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './query-group.component.html',
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    GroupEditInPlaceComponent
+  ],
 })
 export class TypeFormQueryGroupComponent {
   text = {

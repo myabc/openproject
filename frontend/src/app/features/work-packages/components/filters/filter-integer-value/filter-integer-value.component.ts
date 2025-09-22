@@ -34,11 +34,13 @@ import { componentDestroyed } from '@w11k/ngx-componentdestroyed';
 import { SchemaCacheService } from 'core-app/core/schemas/schema-cache.service';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
 import { QueryFilterResource } from 'core-app/features/hal/resources/query-filter-resource';
+import { FormsModule } from '@angular/forms';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
 
 @Component({
   selector: 'op-filter-integer-value',
   templateUrl: './filter-integer-value.component.html',
-  standalone: false,
+  imports: [FormsModule, AutofocusDirective],
 })
 export class FilterIntegerValueComponent extends UntilDestroyedMixin {
   @Input() public shouldFocus = false;

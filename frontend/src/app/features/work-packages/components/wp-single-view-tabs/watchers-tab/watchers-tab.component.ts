@@ -42,12 +42,21 @@ import {
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
+import { NgClass } from '@angular/common';
+import { WorkPackageWatcherEntryComponent } from './wp-watcher-entry.component';
+import { FormsModule } from '@angular/forms';
+import { UserAutocompleterComponent } from '../../../../../shared/components/autocompleter/user-autocompleter/user-autocompleter.component';
 
 @Component({
   templateUrl: './watchers-tab.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'wp-watchers-tab',
-  standalone: false,
+  imports: [
+    NgClass,
+    WorkPackageWatcherEntryComponent,
+    FormsModule,
+    UserAutocompleterComponent,
+  ],
 })
 export class WorkPackageWatchersTabComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

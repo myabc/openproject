@@ -41,6 +41,9 @@ import {
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { whenOutside } from 'core-app/shared/directives/focus/contain-helpers';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
+import { FormsModule } from '@angular/forms';
+import { AutofocusDirective } from '../../directives/focus/autofocus.directive';
+import { NgClass } from '@angular/common';
 
 export const triggerEditingEvent = 'op:selectableTitle:trigger';
 export const selectableTitleIdentifier = 'editable-toolbar-title';
@@ -49,7 +52,11 @@ export const selectableTitleIdentifier = 'editable-toolbar-title';
   selector: 'editable-toolbar-title',
   templateUrl: './editable-toolbar-title.html',
   styleUrls: ['./editable-toolbar-title.sass'],
-  standalone: false,
+  imports: [
+    FormsModule,
+    AutofocusDirective,
+    NgClass,
+  ],
 })
 export class EditableToolbarTitleComponent implements OnInit, OnChanges {
   @Input('title') public inputTitle:string;

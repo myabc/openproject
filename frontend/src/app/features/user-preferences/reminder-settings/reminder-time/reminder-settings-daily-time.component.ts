@@ -15,21 +15,23 @@ import {
   Observable,
 } from 'rxjs';
 import { UserPreferencesService } from 'core-app/features/user-preferences/state/user-preferences.service';
-import {
-  UntypedFormArray,
-  UntypedFormControl,
-  UntypedFormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl, UntypedFormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfigurationService } from 'core-app/core/config/configuration.service';
 import moment from 'moment';
+import { SpotSelectorFieldComponent } from '../../../../spot/components/selector-field/selector-field.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-reminder-settings-daily-time',
   templateUrl: './reminder-settings-daily-time.component.html',
   styleUrls: ['./reminder-settings-daily-time.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotSelectorFieldComponent,
+    AsyncPipe,
+  ],
 })
 export class ReminderSettingsDailyTimeComponent implements OnInit {
   // All times that are available in a day with a 1 hour gap between each.

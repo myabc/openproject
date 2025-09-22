@@ -29,6 +29,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { StateService } from '@uirouter/core';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   template: `
@@ -40,7 +41,7 @@ import { StateService } from '@uirouter/core';
   `,
   selector: 'op-refresh-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [OpIconComponent]
 })
 export class RefreshButtonComponent {
   public text = {

@@ -7,6 +7,9 @@ import { AbstractWidgetComponent } from 'core-app/shared/components/grids/widget
 import { ChartOptions } from 'chart.js';
 import { WpGraphConfigurationService } from 'core-app/shared/components/work-package-graphs/configuration/wp-graph-configuration.service';
 import { WpGraphConfiguration } from 'core-app/shared/components/work-package-graphs/configuration/wp-graph-configuration';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetWpGraphMenuComponent } from './wp-graph-menu.component';
+import { WorkPackageEmbeddedGraphComponent } from '../../../work-package-graphs/embedded/wp-embedded-graph.component';
 
 @Component({
   selector: 'widget-wp-graph',
@@ -14,7 +17,11 @@ import { WpGraphConfiguration } from 'core-app/shared/components/work-package-gr
   styleUrls: ['../wp-table/wp-table.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [WpGraphConfigurationService],
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetWpGraphMenuComponent,
+    WorkPackageEmbeddedGraphComponent,
+  ],
 })
 export class WidgetWpGraphComponent extends AbstractWidgetComponent implements OnInit, OnDestroy {
   public datasets:WorkPackageEmbeddedGraphDataset[] = [];

@@ -33,7 +33,6 @@ import { StatusResource } from 'core-app/features/hal/resources/status-resource'
   templateUrl: './status-board-header.html',
   styleUrls: ['./status-board-header.sass'],
   host: { class: 'title-container -small' },
-  standalone: false,
 })
 export class StatusBoardHeaderComponent {
   @Input('resource') public status:StatusResource;

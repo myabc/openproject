@@ -3,20 +3,23 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import {
-  UntypedFormArray,
-  UntypedFormControl,
-  FormGroupDirective,
-} from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import moment from 'moment';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { SpotSelectorFieldComponent } from '../../../../spot/components/selector-field/selector-field.component';
+import { PauseRemindersComponent } from '../pause-reminders/pause-reminders.component';
 
 @Component({
   selector: 'op-workdays-settings',
   templateUrl: './workdays-settings.component.html',
   styleUrls: ['./workdays-settings.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotSelectorFieldComponent,
+    PauseRemindersComponent,
+  ],
 })
 export class WorkdaysSettingsComponent implements OnInit {
   control:UntypedFormArray;

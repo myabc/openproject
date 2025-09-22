@@ -43,13 +43,26 @@ import { BaselineMode, getBaselineState } from 'core-app/features/work-packages/
 import {
   CombinedDateDisplayField,
 } from 'core-app/shared/components/fields/display/field-types/combined-date-display.field';
+import { NgClass } from '@angular/common';
+import { EditFormComponent } from '../../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { EditableAttributeFieldComponent } from '../../../../../shared/components/fields/edit/field/editable-attribute-field.component';
+import { DisplayFieldComponent } from '../../../../../shared/components/fields/display/display-field.component';
+import { WorkPackageStatusButtonComponent } from '../../wp-buttons/wp-status-button/wp-status-button.component';
+import { OpPrincipalComponent } from '../../../../../shared/components/principal/principal.component';
 
 @Component({
   selector: 'wp-single-card',
   styleUrls: ['./wp-single-card.component.sass'],
   templateUrl: './wp-single-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    EditFormComponent,
+    EditableAttributeFieldComponent,
+    DisplayFieldComponent,
+    WorkPackageStatusButtonComponent,
+    OpPrincipalComponent,
+  ],
 })
 export class WorkPackageSingleCardComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

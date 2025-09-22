@@ -39,7 +39,7 @@ import {
 } from '@angular/core';
 import { StateService } from '@uirouter/core';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
-import { NgxGalleryComponent, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { NgxGalleryComponent, NgxGalleryOptions, NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { HalLink } from 'core-app/features/hal/hal-link/hal-link';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
@@ -59,7 +59,7 @@ import { filter, take } from 'rxjs/operators';
   styleUrls: ['./bcf-wp-attribute-group.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ViewpointsService],
-  standalone: false,
+  imports: [NgxGalleryModule],
 })
 export class BcfWpAttributeGroupComponent extends UntilDestroyedMixin implements AfterViewInit, OnDestroy, OnInit {
   @Input() workPackage:WorkPackageResource;

@@ -6,13 +6,14 @@ import { PathHelperService } from 'core-app/core/path-helper/path-helper.service
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { IanBellService } from 'core-app/features/in-app-notifications/bell/state/ian-bell.service';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'opce-in-app-notification-bell',
   templateUrl: './in-app-notification-bell.component.html',
   styleUrls: ['./in-app-notification-bell.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass, AsyncPipe],
 })
 export class InAppNotificationBellComponent implements OnInit {
   @Input() interval = 50000;

@@ -8,11 +8,18 @@ import { HalEventsService } from 'core-app/features/hal/services/hal-events.serv
 import { WorkPackageNotificationService } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
 import { RelationResource } from 'core-app/features/hal/resources/relation-resource';
 import { WorkPackageRelationsService } from '../wp-relations.service';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
+import { FormsModule } from '@angular/forms';
+import { WorkPackageRelationsAutocompleteComponent } from './wp-relations-autocomplete/wp-relations-autocomplete.component';
 
 @Component({
   selector: 'wp-relations-create',
   templateUrl: './wp-relation-create.template.html',
-  standalone: false,
+  imports: [
+    AutofocusDirective,
+    FormsModule,
+    WorkPackageRelationsAutocompleteComponent,
+  ],
 })
 export class WorkPackageRelationsCreateComponent {
   @Input() readonly workPackage:WorkPackageResource;

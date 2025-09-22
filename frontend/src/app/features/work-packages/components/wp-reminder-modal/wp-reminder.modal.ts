@@ -6,6 +6,7 @@ import {
   Inject,
   OnInit,
   ViewChild, AfterViewInit, OnDestroy,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import { OpModalComponent } from 'core-app/shared/components/modal/modal.component';
@@ -20,12 +21,18 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { CollectionResource } from 'core-app/features/hal/resources/collection-resource';
+import { AsyncPipe } from '@angular/common';
+import { OpContentLoaderComponent } from 'core-app/shared/components/op-content-loader/op-content-loader.component';
 
 @Component({
   templateUrl: './wp-reminder.modal.html',
   styleUrls: ['./wp-reminder.modal.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    AsyncPipe,
+    OpContentLoaderComponent
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WorkPackageReminderModalComponent extends OpModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('frameElement') frameElement:ElementRef<HTMLIFrameElement>;

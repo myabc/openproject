@@ -32,11 +32,16 @@ import {
   Input,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { OpSettingsMenuDirective } from '../../../../../shared/components/op-context-menu/handlers/op-settings-dropdown-menu.directive';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   templateUrl: './wp-settings-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    OpSettingsMenuDirective
+  ],
 })
 export class WorkPackageSettingsButtonComponent {
   @Input() hideTableOptions = false;

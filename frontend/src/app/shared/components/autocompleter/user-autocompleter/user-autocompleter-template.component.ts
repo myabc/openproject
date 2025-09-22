@@ -33,12 +33,20 @@ import {
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { PrincipalLike } from 'core-app/shared/components/principal/principal-types';
 import { hrefFromPrincipal, typeFromHref } from 'core-app/shared/components/principal/principal-helper';
+import { OpPrincipalComponent } from '../../principal/principal.component';
+import { OpSearchHighlightDirective } from '../../../directives/search-highlight.directive';
+
+import { InviteUserButtonComponent } from 'core-app/features/invite-user-modal/button/invite-user-button.component';
 
 @Component({
   templateUrl: './user-autocompleter-template.component.html',
   styleUrls: ['./user-autocompleter-template.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpPrincipalComponent,
+    OpSearchHighlightDirective,
+    InviteUserButtonComponent
+  ],
 })
 export class UserAutocompleterTemplateComponent implements IAutocompleterTemplateComponent {
   @Input() public inviteUserToProject:string|undefined;

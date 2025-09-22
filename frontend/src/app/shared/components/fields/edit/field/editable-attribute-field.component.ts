@@ -58,12 +58,13 @@ import { debugLog } from '../../../../helpers/debug_output';
 import { hasSelectionWithin } from '../../../../helpers/selection-helpers';
 import { EditFieldHandler } from 'core-app/shared/components/fields/edit/editing-portal/edit-field-handler';
 import { SchemaResource } from 'core-app/features/hal/resources/schema-resource';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'op-editable-attribute-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './editable-attribute-field.component.html',
-  standalone: false,
+  imports: [NgClass],
 })
 export class EditableAttributeFieldComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @Input() public fieldName:string;

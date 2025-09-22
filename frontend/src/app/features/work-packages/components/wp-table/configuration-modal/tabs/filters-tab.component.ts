@@ -10,13 +10,14 @@ import {
   WorkPackageViewFiltersService,
 } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-filters.service';
 import { QueryFilterInstanceResource } from 'core-app/features/hal/resources/query-filter-instance-resource';
+import { QueryFiltersComponent } from '../../../filters/query-filters/query-filters.component';
 
 @Component({
   templateUrl: './filters-tab.component.html',
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'wp-table-config-filters-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [QueryFiltersComponent],
 })
 export class WpTableConfigurationFiltersTabComponent implements TabComponent, OnInit {
   public filters:QueryFilterInstanceResource[] = [];

@@ -31,11 +31,12 @@ import {
   Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { WorkPackageRelationRowComponent } from '../wp-relation-row/wp-relation-row.component';
 
 @Component({
   selector: 'wp-relations-group',
   templateUrl: './wp-relations-group.template.html',
-  standalone: false,
+  imports: [WorkPackageRelationRowComponent],
 })
 export class WorkPackageRelationsGroupComponent {
   @HostBinding('class.attributes-group') className = true;

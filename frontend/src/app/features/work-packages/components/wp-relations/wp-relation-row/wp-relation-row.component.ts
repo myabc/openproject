@@ -11,12 +11,30 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { RelationResource } from 'core-app/features/hal/resources/relation-resource';
 import { WorkPackageRelationsService } from '../wp-relations.service';
 import { Highlighting } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting.functions';
+import { FocusWithinDirective } from '../../../../../shared/directives/focus/focus-within.directive';
+import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AutofocusDirective } from '../../../../../shared/directives/focus/autofocus.directive';
+import { AnchorUISref, UISref } from '@uirouter/angular';
+import { EditFormComponent } from '../../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { EditableAttributeFieldComponent } from '../../../../../shared/components/fields/edit/field/editable-attribute-field.component';
+import { EditFieldControlsComponent } from '../../../../../shared/components/fields/edit/field-controls/edit-field-controls.component';
 
 
 @Component({
   selector: 'wp-relation-row',
   templateUrl: './wp-relation-row.template.html',
-  standalone: false,
+  imports: [
+    FocusWithinDirective,
+    NgClass,
+    FormsModule,
+    AutofocusDirective,
+    AnchorUISref,
+    UISref,
+    EditFormComponent,
+    EditableAttributeFieldComponent,
+    EditFieldControlsComponent,
+  ],
 })
 export class WorkPackageRelationRowComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

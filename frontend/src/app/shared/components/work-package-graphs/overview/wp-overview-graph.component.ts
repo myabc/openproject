@@ -20,6 +20,8 @@ import {
   WpGraphConfiguration,
   WpGraphQueryParams,
 } from 'core-app/shared/components/work-package-graphs/configuration/wp-graph-configuration';
+import { FormsModule } from '@angular/forms';
+import { WorkPackageEmbeddedGraphComponent as WorkPackageEmbeddedGraphComponent_1 } from '../embedded/wp-embedded-graph.component';
 
 
 @Component({
@@ -30,7 +32,7 @@ import {
   providers: [
     WpGraphConfigurationService,
   ],
-  standalone: false,
+  imports: [FormsModule, WorkPackageEmbeddedGraphComponent_1],
 })
 export class WorkPackageOverviewGraphComponent implements OnInit {
   @Input() initialFilters:any;

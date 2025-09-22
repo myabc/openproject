@@ -31,13 +31,22 @@ import {
 } from '@angular/core';
 import { GridAreaService } from 'core-app/shared/components/grids/grid/area.service';
 import { GridDragAndDropService } from 'core-app/shared/components/grids/grid/drag-and-drop.service';
+import { NgClass } from '@angular/common';
+import { GrabberIconComponent } from '@openproject/octicons-angular';
+import { CdkDragHandle } from '@angular/cdk/drag-drop';
+import { OpSharedModule } from '../../../../shared.module';
 
 @Component({
   selector: 'widget-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    GrabberIconComponent,
+    CdkDragHandle,
+    OpSharedModule,
+  ],
 })
 export class WidgetHeaderComponent {
   @Input() name:string;

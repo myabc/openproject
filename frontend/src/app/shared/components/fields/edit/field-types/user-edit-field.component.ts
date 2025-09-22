@@ -53,11 +53,12 @@ import { HalResourceService } from 'core-app/features/hal/services/hal-resource.
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
 import { IUserAutocompleteItem } from 'core-app/shared/components/autocompleter/user-autocompleter/user-autocompleter.component';
 import { CallableHalLink } from 'core-app/features/hal/hal-link/hal-link';
+import { UserAutocompleterComponent } from '../../../autocompleter/user-autocompleter/user-autocompleter.component';
 
 @Component({
   templateUrl: './user-edit-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [UserAutocompleterComponent],
 })
 export class UserEditFieldComponent extends EditFieldComponent implements OnInit {
   isNew = isNewResource(this.resource);

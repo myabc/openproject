@@ -35,12 +35,14 @@ import {
   OnInit,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { FormsModule } from '@angular/forms';
+import { OpBasicSingleDatePickerComponent } from '../../../../../shared/components/datepicker/basic-single-date-picker/basic-single-date-picker.component';
 
 @Component({
   selector: 'opce-custom-date-action-admin',
   templateUrl: './custom-date-action-admin.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [FormsModule, OpBasicSingleDatePickerComponent],
 })
 export class CustomDateActionAdminComponent implements OnInit {
   public valueVisible = false;

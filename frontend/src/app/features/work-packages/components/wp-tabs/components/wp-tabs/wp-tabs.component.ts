@@ -9,13 +9,14 @@ import {
   WorkPackageTabsService,
 } from 'core-app/features/work-packages/components/wp-tabs/services/wp-tabs/wp-tabs.service';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
+import { ScrollableTabsComponent } from '../../../../../../shared/components/tabs/scrollable-tabs/scrollable-tabs.component';
 
 @Component({
   selector: 'op-wp-tabs',
   templateUrl: './wp-tabs.component.html',
   styleUrls: ['./wp-tabs.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ScrollableTabsComponent],
 })
 export class WpTabsComponent implements OnInit {
   @Input() workPackage:WorkPackageResource;

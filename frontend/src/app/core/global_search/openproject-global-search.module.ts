@@ -42,14 +42,12 @@ import { RecentItemsService } from 'core-app/core/recent-items.service';
     OpSharedModule,
     OpenprojectWorkPackagesModule,
     OpenprojectAutocompleterModule,
+    GlobalSearchInputComponent,
+    GlobalSearchWorkPackagesComponent,
   ],
   providers: [
     GlobalSearchService,
     RecentItemsService,
-  ],
-  declarations: [
-    GlobalSearchInputComponent,
-    GlobalSearchWorkPackagesComponent,
   ],
 })
 export class OpenprojectGlobalSearchModule {

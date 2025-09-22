@@ -37,11 +37,13 @@ import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/q
 import { input } from '@openproject/reactivestates';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { QueryFilterResource } from 'core-app/features/hal/resources/query-filter-resource';
+import { FormsModule } from '@angular/forms';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'wp-filter-by-text-input',
   templateUrl: './quick-filter-by-text-input.html',
-  standalone: false,
+  imports: [FormsModule, AsyncPipe],
 })
 export class WorkPackageFilterByTextInputComponent extends UntilDestroyedMixin {
   @Output() public deactivateFilter = new EventEmitter<QueryFilterResource>();

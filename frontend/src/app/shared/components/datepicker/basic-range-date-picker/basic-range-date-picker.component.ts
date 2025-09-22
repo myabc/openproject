@@ -43,10 +43,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import {
   onDayCreate,
   validDate,
@@ -58,6 +55,7 @@ import { DayElement } from 'flatpickr/dist/types/instance';
 import { populateInputsFromDataset } from '../../dataset-inputs';
 import { debounce } from 'lodash';
 import { DeviceService } from 'core-app/core/browser/device.service';
+import { NgClass } from '@angular/common';
 
 export const rangeSeparator = '-';
 
@@ -78,7 +76,7 @@ export const opBasicRangeDatePickerSelector = 'op-basic-range-date-picker';
       multi: true,
     },
   ],
-  standalone: false,
+  imports: [FormsModule, NgClass],
 })
 export class OpBasicRangeDatePickerComponent implements OnInit, ControlValueAccessor, AfterViewInit {
   @HostBinding('class.op-basic-range-datepicker') className = true;

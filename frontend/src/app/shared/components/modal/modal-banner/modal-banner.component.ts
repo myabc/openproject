@@ -33,13 +33,21 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { InfoIconComponent, AlertIconComponent } from '@openproject/octicons-angular';
+import { OpIconComponent } from '../../icon/icon.component';
 
 @Component({
   selector: 'op-modal-banner',
   templateUrl: './modal-banner.component.html',
   styleUrls: ['./modal-banner.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    InfoIconComponent,
+    AlertIconComponent,
+    OpIconComponent,
+  ],
 })
 export class OpModalBannerComponent {
   @Input() type:'info'|'warning' = 'info';

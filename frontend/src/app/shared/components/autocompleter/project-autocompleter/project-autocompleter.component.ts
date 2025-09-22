@@ -37,7 +37,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { merge, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ID } from '@datorama/akita';
@@ -57,6 +57,9 @@ import {
 } from 'core-app/shared/components/autocompleter/project-autocompleter/project-autocompleter-template.component';
 import { addFiltersToPath } from 'core-app/core/apiv3/helpers/add-filters-to-path';
 import { TOpAutocompleterResource } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 export const projectsAutocompleterSelector = 'op-project-autocompleter';
 
@@ -77,7 +80,19 @@ export interface IProjectAutocompleterData {
     useExisting: forwardRef(() => ProjectAutocompleterComponent),
     multi: true,
   }],
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class ProjectAutocompleterComponent extends OpAutocompleterComponent<IProjectAutocompleterData> implements OnInit, ControlValueAccessor {
   @HostBinding('class.op-project-autocompleter') public className = true;

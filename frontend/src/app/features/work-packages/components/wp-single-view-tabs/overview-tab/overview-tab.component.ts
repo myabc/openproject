@@ -32,11 +32,12 @@ import { WorkPackageResource } from 'core-app/features/hal/resources/work-packag
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
+import { WorkPackageSingleViewComponent } from '../../wp-single-view/wp-single-view.component';
 
 @Component({
   templateUrl: './overview-tab.html',
   selector: 'wp-overview-tab',
-  standalone: false,
+  imports: [WorkPackageSingleViewComponent],
 })
 export class WorkPackageOverviewTabComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

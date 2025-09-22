@@ -33,10 +33,7 @@ import {
 import { DatePickerEditFieldComponent } from 'core-app/shared/components/fields/edit/field-types/date-picker-edit-field.component';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 
-@Component({
-  templateUrl: './combined-date-edit-field.component.html',
-  standalone: false,
-})
+@Component({ templateUrl: './combined-date-edit-field.component.html' })
 export class CombinedDateEditFieldComponent extends DatePickerEditFieldComponent implements OnInit {
   dates = '';
 

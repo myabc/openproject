@@ -69,7 +69,6 @@ import {
   WidgetTimeEntriesProjectComponent,
 } from 'core-app/shared/components/grids/widgets/time-entries/project/time-entries-project.component';
 import { WidgetSubprojectsComponent } from 'core-app/shared/components/grids/widgets/subprojects/subprojects.component';
-import { OpenprojectAttachmentsModule } from 'core-app/shared/components/attachments/openproject-attachments.module';
 import { WidgetMembersComponent } from 'core-app/shared/components/grids/widgets/members/members.component';
 import {
   WidgetProjectStatusComponent,
@@ -88,14 +87,12 @@ import {
 import {
   WidgetProjectFavoritesComponent,
 } from 'core-app/shared/components/grids/widgets/project-favorites/widget-project-favorites.component';
-import { IconModule } from 'core-app/shared/components/icon/icon.module';
 import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openproject-enterprise.module';
 
 @NgModule({
   imports: [
     FormsModule,
     DragDropModule,
-
     OpSharedModule,
     OpenprojectModalModule,
     OpenprojectWorkPackagesModule,
@@ -103,22 +100,10 @@ import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openpr
     OpenprojectCalendarModule,
     OpenprojectTimeEntriesModule,
     OpenprojectEnterpriseModule,
-
-    OpenprojectAttachmentsModule,
-
     DynamicModule,
-
     // Support for inline editig fields
     OpenprojectFieldsModule,
-    IconModule,
-  ],
-  providers: [
-    GridWidgetsService,
-    GridInitializationService,
-  ],
-  declarations: [
     GridComponent,
-
     // Widgets
     WidgetCustomTextComponent,
     WidgetDocumentsComponent,
@@ -137,17 +122,18 @@ import { OpenprojectEnterpriseModule } from 'core-app/features/enterprise/openpr
     WidgetProjectFavoritesComponent,
     WidgetTimeEntriesCurrentUserComponent,
     WidgetTimeEntriesProjectComponent,
-
     // Widget menus
     WidgetMenuComponent,
     WidgetWpTableMenuComponent,
     WidgetWpGraphMenuComponent,
     WidgetTimeEntriesCurrentUserMenuComponent,
     TimeEntriesCurrentUserConfigurationModalComponent,
-
     AddGridWidgetModalComponent,
-
     WidgetHeaderComponent,
+  ],
+  providers: [
+    GridWidgetsService,
+    GridInitializationService,
   ],
   exports: [
     GridComponent,

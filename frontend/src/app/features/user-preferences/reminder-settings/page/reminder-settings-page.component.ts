@@ -3,7 +3,7 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
 import { take } from 'rxjs/internal/operators/take';
 import { UserPreferencesService } from 'core-app/features/user-preferences/state/user-preferences.service';
-import { UntypedFormArray, UntypedFormBuilder } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   DailyRemindersSettings,
   ImmediateRemindersSettings,
@@ -19,6 +19,10 @@ import { filter, withLatestFrom } from 'rxjs/operators';
 import { filterObservable } from 'core-app/shared/helpers/rxjs/filterWith';
 import { INotificationSetting } from 'core-app/features/user-preferences/state/notification-setting.model';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { ImmediateReminderSettingsComponent } from '../immediate-reminders/immediate-reminder-settings.component';
+import { ReminderSettingsDailyTimeComponent } from '../reminder-time/reminder-settings-daily-time.component';
+import { WorkdaysSettingsComponent } from '../workdays/workdays-settings.component';
+import { EmailAlertsSettingsComponent } from '../email-alerts/email-alerts-settings.component';
 
 interface IReminderSettingsFormValue {
   immediateReminders:ImmediateRemindersSettings,
@@ -32,7 +36,14 @@ interface IReminderSettingsFormValue {
   templateUrl: './reminder-settings-page.component.html',
   styleUrls: ['./reminder-settings-page.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    ImmediateReminderSettingsComponent,
+    ReminderSettingsDailyTimeComponent,
+    WorkdaysSettingsComponent,
+    EmailAlertsSettingsComponent,
+  ],
 })
 export class ReminderSettingsPageComponent extends UntilDestroyedMixin implements OnInit {
   @Input() userId:string;

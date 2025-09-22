@@ -31,6 +31,10 @@ import moment from 'moment';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
+import { OpBasicSingleDatePickerComponent } from '../../../../datepicker/basic-single-date-picker/basic-single-date-picker.component';
+import { FormsModule } from '@angular/forms';
+
+import { AutofocusDirective } from '../../../../../directives/focus/autofocus.directive';
 
 @Component({
   template: `
@@ -46,7 +50,11 @@ import { TimezoneService } from 'core-app/core/datetime/timezone.service';
      />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpBasicSingleDatePickerComponent,
+    FormsModule,
+    AutofocusDirective
+  ],
 })
 export class DateEditFieldComponent extends EditFieldComponent implements OnInit {
   @InjectField() readonly timezoneService:TimezoneService;

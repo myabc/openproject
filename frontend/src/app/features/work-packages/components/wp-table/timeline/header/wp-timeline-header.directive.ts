@@ -43,7 +43,6 @@ import {
 @Component({
   selector: timelineHeaderSelector,
   templateUrl: './wp-timeline-header.html',
-  standalone: false,
 })
 export class WorkPackageTimelineHeaderController implements OnInit {
   public $element:JQuery;

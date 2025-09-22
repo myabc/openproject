@@ -23,9 +23,9 @@ describe('GitHubTabComponent.', () => {
   beforeEach(async () => {
     await TestBed
       .configureTestingModule({
-        declarations: [
+        imports: [
           TabPrsComponent,
-          TabHeaderComponent,
+          TabHeaderComponent
         ],
         providers: [
           { provide: I18nService, useValue: I18nServiceStub },

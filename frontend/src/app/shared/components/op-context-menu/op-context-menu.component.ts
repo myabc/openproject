@@ -5,10 +5,11 @@ import {
   OpContextMenuLocalsToken,
 } from 'core-app/shared/components/op-context-menu/op-context-menu.types';
 import { OPContextMenuService } from 'core-app/shared/components/op-context-menu/op-context-menu.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   templateUrl: './op-context-menu.html',
-  standalone: false,
+  imports: [NgClass],
 })
 export class OPContextMenuComponent {
   public items:OpContextMenuItem[];

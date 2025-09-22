@@ -37,13 +37,32 @@ import {
   StorageFileListItem,
 } from 'core-app/shared/components/storages/storage-file-list-item/storage-file-list-item';
 import SpotDropAlignmentOption from 'core-app/spot/drop-alignment-options';
+import { OpSpotModule } from '../../../../spot/spot.module';
+import { NgClass } from '@angular/common';
+import { FileMediaIconComponent, FileDirectoryFillIconComponent, OpFileCsvIconComponent, OpFileDocIconComponent, OpFilePresentationIconComponent, OpFileSheetIconComponent, OpFileTextIconComponent, OpPdfIconComponent, ServerIconComponent, FileIconComponent, ChevronRightIconComponent } from '@openproject/octicons-angular';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[op-storage-file-list-item]',
   templateUrl: './storage-file-list-item.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpSpotModule,
+    NgClass,
+    FileMediaIconComponent,
+    FileDirectoryFillIconComponent,
+    OpFileCsvIconComponent,
+    OpFileDocIconComponent,
+    OpFilePresentationIconComponent,
+    OpFileSheetIconComponent,
+    OpFileTextIconComponent,
+    OpPdfIconComponent,
+    ServerIconComponent,
+    FileIconComponent,
+    OpPrincipalComponent,
+    ChevronRightIconComponent,
+  ],
 })
 export class StorageFileListItemComponent {
   @Input() public content:StorageFileListItem;

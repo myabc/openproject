@@ -32,6 +32,7 @@ import { TransitionService } from '@uirouter/core';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ResizeDelta } from 'core-app/shared/components/resizer/resizer.component';
 import { fromEvent } from 'rxjs';
+import { ResizerComponent } from '../resizer.component';
 
 @Component({
   selector: 'wp-resizer',
@@ -44,7 +45,7 @@ import { fromEvent } from 'rxjs';
              (move)="resizeMove($event)" />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ResizerComponent],
 })
 export class WpResizerComponent extends UntilDestroyedMixin implements OnInit, AfterViewInit, OnDestroy {
   @Input() elementClass:string;

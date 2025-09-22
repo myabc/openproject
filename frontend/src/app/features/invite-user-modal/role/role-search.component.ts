@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   combineLatest,
   Observable,
@@ -20,12 +20,23 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
+import { NgSelectComponent, NgOptionTemplateDirective, NgNotFoundTemplateDirective } from '@ng-select/ng-select';
+import { NgOptionHighlightDirective } from '@ng-select/ng-option-highlight';
+import { AsyncPipe } from '@angular/common';
 
 /* eslint-disable-next-line change-detection-strategy/on-push */
 @Component({
   selector: 'op-ium-role-search',
   templateUrl: './role-search.component.html',
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgOptionTemplateDirective,
+    NgOptionHighlightDirective,
+    NgNotFoundTemplateDirective,
+    AsyncPipe,
+  ],
 })
 export class RoleSearchComponent extends UntilDestroyedMixin implements OnInit {
   @Input() spotFormBinding:UntypedFormControl;

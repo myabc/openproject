@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IInAppNotificationDetailsResource, INotification } from 'core-app/core/state/in-app-notifications/in-app-notification.model';
+import { InAppNotificationDateAlertComponent } from '../date-alert/in-app-notification-date-alert.component';
+import { InAppNotificationRelativeTimeComponent } from '../relative-time/in-app-notification-relative-time.component';
 
 @Component({
   selector: 'op-in-app-notification-reminder-alert',
@@ -15,7 +17,7 @@ import { IInAppNotificationDetailsResource, INotification } from 'core-app/core/
   styleUrls: ['./in-app-notification-reminder-alert.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [InAppNotificationDateAlertComponent, InAppNotificationRelativeTimeComponent],
 })
 export class InAppNotificationReminderAlertComponent implements OnInit {
   @Input() aggregatedNotifications:INotification[];

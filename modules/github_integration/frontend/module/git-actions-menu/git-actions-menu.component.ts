@@ -49,7 +49,6 @@ import { ISnippet } from 'core-app/features/plugins/linked/openproject-github_in
   styleUrls: [
     './styles/git-actions-menu.sass',
   ],
-  standalone: false,
 })
 export class GitActionsMenuComponent extends OPContextMenuComponent {
   @Input() public workPackage:WorkPackageResource;

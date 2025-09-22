@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { SpotDropModalTeleportationService, TeleportInstance } from './drop-modal-teleportation.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'opce-spot-drop-modal-portal',
   template: '<ng-container *ngTemplateOutlet="template" />',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgTemplateOutlet],
 })
 export class SpotDropModalPortalComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.spot-drop-modal-portal') className = true;

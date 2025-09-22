@@ -11,17 +11,12 @@ import { OpBasicSingleDatePickerComponent } from './basic-single-date-picker/bas
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-  ],
-
-  providers: [
-    I18nService,
-  ],
-
-  declarations: [
     OpBasicRangeDatePickerComponent,
     OpBasicSingleDatePickerComponent,
   ],
-
+  providers: [
+    I18nService,
+  ],
   exports: [
     OpBasicRangeDatePickerComponent,
     OpBasicSingleDatePickerComponent,

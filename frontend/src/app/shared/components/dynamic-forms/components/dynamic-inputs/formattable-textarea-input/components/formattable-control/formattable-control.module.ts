@@ -5,13 +5,11 @@ import { OpenprojectEditorModule } from 'core-app/shared/components/editor/openp
 import { FormattableEditFieldModule } from 'core-app/shared/components/fields/edit/field-types/formattable-edit-field/formattable-edit-field.module';
 
 @NgModule({
-  declarations: [
-    FormattableControlComponent,
-  ],
   imports: [
     CommonModule,
     OpenprojectEditorModule,
     FormattableEditFieldModule,
+    FormattableControlComponent,
   ],
   exports: [
     FormattableControlComponent,

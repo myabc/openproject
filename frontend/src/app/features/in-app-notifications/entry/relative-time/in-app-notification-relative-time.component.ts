@@ -10,6 +10,7 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { INotification } from 'core-app/core/state/in-app-notifications/in-app-notification.model';
 import { Observable, timer } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-in-app-notification-relative-time',
@@ -17,7 +18,7 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
   styleUrls: ['./in-app-notification-relative-time.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [AsyncPipe],
 })
 export class InAppNotificationRelativeTimeComponent implements OnInit {
   @Input() notification:INotification;

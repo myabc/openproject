@@ -35,10 +35,7 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
 
 // with courtesy of http://stackoverflow.com/a/29722694/3206935
 
-@Directive({
-  selector: '[opFocusWithin]',
-  standalone: false,
-})
+@Directive({ selector: '[opFocusWithin]' })
 export class FocusWithinDirective extends UntilDestroyedMixin implements OnInit {
   @Input() public selector:string;
 

@@ -32,11 +32,13 @@ import { WorkPackageResource } from 'core-app/features/hal/resources/work-packag
 import { randomString } from 'core-app/shared/helpers/random-string';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
+import { NgClass } from '@angular/common';
+import { EditableAttributeFieldComponent } from '../../../../shared/components/fields/edit/field/editable-attribute-field.component';
 
 @Component({
   selector: 'wp-subject',
   templateUrl: './wp-subject.html',
-  standalone: false,
+  imports: [NgClass, EditableAttributeFieldComponent],
 })
 export class WorkPackageSubjectComponent extends UntilDestroyedMixin implements OnInit {
   @Input('workPackage') workPackage:WorkPackageResource;

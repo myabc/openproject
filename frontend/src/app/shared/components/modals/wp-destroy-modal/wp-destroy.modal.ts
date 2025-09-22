@@ -45,10 +45,11 @@ import {
   WorkPackageNotificationService,
 } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
 import { WorkPackageService } from 'core-app/features/work-packages/services/work-package.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './wp-destroy.modal.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class WpDestroyModalComponent extends OpModalComponent implements OnInit {
   // When deleting multiple

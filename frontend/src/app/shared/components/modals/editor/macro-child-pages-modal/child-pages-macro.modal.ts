@@ -33,10 +33,11 @@ import { OpModalComponent } from 'core-app/shared/components/modal/modal.compone
 import { OpModalLocalsToken } from 'core-app/shared/components/modal/modal.service';
 import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './child-pages-macro.modal.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class ChildPagesMacroModalComponent extends OpModalComponent implements AfterViewInit {
   public changed = false;

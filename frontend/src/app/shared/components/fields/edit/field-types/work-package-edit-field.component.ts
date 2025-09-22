@@ -36,10 +36,16 @@ import { take } from 'rxjs/operators';
 import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
 import { SelectEditFieldComponent } from './select-edit-field/select-edit-field.component';
 import { CollectionResource } from 'core-app/features/hal/resources/collection-resource';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './work-package-edit-field.component.html',
-  standalone: false,
+  imports: [
+    DynamicComponent,
+    DynamicIoDirective,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageEditFieldComponent extends SelectEditFieldComponent {
   /** Keep a switchmap for search term and loading state */

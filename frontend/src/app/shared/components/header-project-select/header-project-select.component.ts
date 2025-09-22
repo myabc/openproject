@@ -45,6 +45,13 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { ApiV3Filter } from 'core-app/shared/helpers/api-v3/api-v3-filter-builder';
 import { IHALCollection } from 'core-app/core/apiv3/types/hal-collection.type';
 import { ConfigurationService } from 'core-app/core/config/configuration.service';
+import { SpotDropModalComponent } from '../../../spot/components/drop-modal/drop-modal.component';
+import { SpotToggleComponent } from '../../../spot/components/toggle/toggle.component';
+import { FormsModule } from '@angular/forms';
+import { SpotTextFieldComponent } from '../../../spot/components/text-field/text-field.component';
+import { OpHeaderProjectSelectListComponent } from './list/header-project-select-list.component';
+import { OpLoadingProjectListComponent } from '../searchable-project-list/loading-project-list.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'opce-header-project-select',
@@ -55,7 +62,15 @@ import { ConfigurationService } from 'core-app/core/config/configuration.service
   providers: [
     SearchableProjectListService,
   ],
-  standalone: false,
+  imports: [
+    SpotDropModalComponent,
+    SpotToggleComponent,
+    FormsModule,
+    SpotTextFieldComponent,
+    OpHeaderProjectSelectListComponent,
+    OpLoadingProjectListComponent,
+    AsyncPipe,
+  ],
 })
 export class OpHeaderProjectSelectComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.op-project-select') className = true;

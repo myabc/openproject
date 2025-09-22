@@ -28,12 +28,23 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WorkPackageCopyController } from 'core-app/features/work-packages/components/wp-copy/wp-copy.controller';
+import { EditFormComponent } from '../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { WorkPackageTypeStatusComponent } from '../wp-type-status/wp-type-status.component';
+import { WorkPackageSingleViewComponent } from '../wp-single-view/wp-single-view.component';
+import { WorkPackageEditActionsBarComponent } from '../edit-actions-bar/wp-edit-actions-bar.component';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
 
 @Component({
   selector: 'wp-copy-split-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: '../wp-new/wp-new-split-view.html',
-  standalone: false,
+  imports: [
+    EditFormComponent,
+    WorkPackageTypeStatusComponent,
+    WorkPackageSingleViewComponent,
+    WorkPackageEditActionsBarComponent,
+    WpResizerComponent,
+  ],
 })
 export class WorkPackageCopySplitViewComponent extends WorkPackageCopyController {
 }

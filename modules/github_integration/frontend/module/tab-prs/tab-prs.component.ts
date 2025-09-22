@@ -43,12 +43,14 @@ import {
   shareReplay,
 } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { PullRequestComponent } from '../pull-request/pull-request.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-tab-prs',
   templateUrl: './tab-prs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [PullRequestComponent, AsyncPipe],
 })
 export class TabPrsComponent implements OnInit {
   @HostBinding('class.op-github-prs') className = true;

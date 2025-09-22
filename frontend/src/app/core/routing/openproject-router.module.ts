@@ -43,12 +43,10 @@ import {
       useHash: false,
       config: uiRouterConfiguration,
     } as any),
+    ApplicationBaseComponent,
   ],
   providers: [
     FirstRouteService,
-  ],
-  declarations: [
-    ApplicationBaseComponent,
   ],
 })
 export class OpenprojectRouterModule {

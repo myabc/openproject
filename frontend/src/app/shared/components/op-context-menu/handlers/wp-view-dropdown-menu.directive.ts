@@ -37,10 +37,7 @@ import {
 } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-display-representation.service';
 import { WorkPackageViewTimelineService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-timeline.service';
 
-@Directive({
-  selector: '[wpViewDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[wpViewDropdown]' })
 export class WorkPackageViewDropdownMenuDirective extends OpContextMenuTrigger {
   constructor(
     readonly elementRef:ElementRef,

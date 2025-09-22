@@ -52,6 +52,7 @@ import {
 import { QueryRequestParams } from 'core-app/features/work-packages/components/wp-query/url-params-helper';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
 import { CurrentProjectService } from 'core-app/core/current-project/current-project.service';
+import { WorkPackageEmbeddedTableComponent } from '../../features/work-packages/components/wp-table/embedded/wp-embedded-table.component';
 
 @Component({
   selector: 'opce-global-search-work-packages',
@@ -61,7 +62,7 @@ import { CurrentProjectService } from 'core-app/core/current-project/current-pro
     <wp-embedded-table [queryProps]="queryProps"
                        [configuration]="tableConfiguration" />
   `,
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent],
 })
 export class GlobalSearchWorkPackagesComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @Input() public searchTerm:string;

@@ -32,15 +32,26 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { Component, ChangeDetectionStrategy, OnInit, ViewChild } from '@angular/core';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
 import { ValueOption } from 'core-app/shared/components/fields/edit/field-types/select-edit-field/select-edit-field.component';
-import { NgSelectComponent } from '@ng-select/ng-select';
+import { NgSelectComponent, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { UserResource } from 'core-app/features/hal/resources/user-resource';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
+import { EditFieldControlsComponent } from '../field-controls/edit-field-controls.component';
 
 @Component({
   templateUrl: './multi-select-edit-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgOptionTemplateDirective,
+    NgStyle,
+    NgFooterTemplateDirective,
+    EditFieldControlsComponent,
+  ],
 })
 export class MultiSelectEditFieldComponent extends EditFieldComponent implements OnInit {
   @ViewChild(NgSelectComponent, { static: true }) public ngSelectComponent:NgSelectComponent;

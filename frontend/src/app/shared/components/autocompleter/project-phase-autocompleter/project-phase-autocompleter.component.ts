@@ -35,11 +35,21 @@ import { ProjectPhaseResource } from 'core-app/features/hal/resources/project-ph
 import { HalLink } from 'core-app/features/hal/hal-link/hal-link';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   templateUrl: './project-phase-autocompleter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgStyle,
+  ],
 })
 // It would have been cleaner to extend the OpAutocompleter component as there is no intention to create a
 // Project phase here. But the OpAutocompleter does not satisfy the interface the template of the

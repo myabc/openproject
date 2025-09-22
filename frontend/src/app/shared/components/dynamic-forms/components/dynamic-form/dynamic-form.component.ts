@@ -8,7 +8,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { FormlyForm } from '@ngx-formly/core';
+import { FormlyForm, FormlyModule } from '@ngx-formly/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import {
@@ -18,7 +18,7 @@ import {
 import { HalSource } from 'core-app/features/hal/resources/hal-resource';
 import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import { DynamicFieldsService } from 'core-app/shared/components/dynamic-forms/services/dynamic-fields/dynamic-fields.service';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.service';
@@ -131,7 +131,11 @@ import idFromLink from 'core-app/features/hal/helpers/id-from-link';
     DynamicFormService,
     DynamicFieldsService,
   ],
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    FormlyModule,
+  ],
 })
 export class DynamicFormComponent extends UntilDestroyedMixin implements OnChanges {
   /** Backend form URL (e.g. https://community.openproject.org/api/v3/projects/dev-large/form) */

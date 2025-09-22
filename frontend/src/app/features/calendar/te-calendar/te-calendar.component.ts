@@ -12,7 +12,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { FullCalendarComponent } from '@fullcalendar/angular';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { States } from 'core-app/core/states/states.service';
 import moment, { Moment } from 'moment';
 import { StateService } from '@uirouter/core';
@@ -55,6 +55,7 @@ import { DayResourceService } from 'core-app/core/state/days/day.service';
 import allLocales from '@fullcalendar/core/locales-all';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { AsyncPipe } from '@angular/common';
 
 interface TimeEntrySchema extends SchemaResource {
   activity:IFieldSchema;
@@ -109,7 +110,7 @@ const ADD_ENTRY_PROHIBITED_CLASS_NAME = '-prohibited';
     TurboRequestsService,
     PathHelperService,
   ],
-  standalone: false,
+  imports: [FullCalendarModule, AsyncPipe],
 })
 export class TimeEntryCalendarComponent implements AfterViewInit, OnDestroy {
   @ViewChild(FullCalendarComponent) ucCalendar:FullCalendarComponent;

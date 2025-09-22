@@ -40,10 +40,11 @@ import {
 import { QuerySharingChange } from 'core-app/shared/components/modals/share-modal/query-sharing-form.component';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/query-space/isolated-query-space';
+import { QuerySharingFormComponent } from './query-sharing-form.component';
 
 @Component({
   templateUrl: './query-sharing.modal.html',
-  standalone: false,
+  imports: [QuerySharingFormComponent],
 })
 export class QuerySharingModalComponent extends OpModalComponent implements OnInit {
   public query:QueryResource;

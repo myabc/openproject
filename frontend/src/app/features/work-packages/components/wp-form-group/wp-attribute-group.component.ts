@@ -35,13 +35,20 @@ import {
   FieldDescriptor,
   GroupDescriptor,
 } from 'core-app/features/work-packages/components/wp-single-view/wp-single-view.component';
+import { NgClass } from '@angular/common';
+import { WorkPackageReplacementLabelComponent } from '../wp-edit/wp-edit-field/wp-replacement-label.component';
+import { EditableAttributeFieldComponent } from '../../../../shared/components/fields/edit/field/editable-attribute-field.component';
 
 @Component({
   selector: 'wp-attribute-group',
   templateUrl: './wp-attribute-group.template.html',
   styleUrls: ['./wp-attribute-group.component.sass'],
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    NgClass,
+    WorkPackageReplacementLabelComponent,
+    EditableAttributeFieldComponent,
+  ],
 })
 export class WorkPackageFormAttributeGroupComponent extends UntilDestroyedMixin {
   @HostBinding('class.wp-attribute-group') className = true;

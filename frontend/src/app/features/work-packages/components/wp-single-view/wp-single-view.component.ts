@@ -64,6 +64,16 @@ import { ProjectStoragesResourceService } from 'core-app/core/state/project-stor
 import { IProjectStorage } from 'core-app/core/state/project-storages/project-storage.model';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { EditableAttributeFieldComponent } from '../../../../shared/components/fields/edit/field/editable-attribute-field.component';
+import { WorkPackageStatusButtonComponent } from '../wp-buttons/wp-status-button/wp-status-button.component';
+import { UserLinkComponent } from '../../../../shared/components/user-link/user-link.component';
+import { OpDateTimeComponent } from '../../../../shared/components/date/op-date-time.component';
+import { WpCustomActionsComponent } from '../wp-custom-actions/wp-custom-actions.component';
+import { WorkPackageReplacementLabelComponent } from '../wp-edit/wp-edit-field/wp-replacement-label.component';
+import { DynamicComponent, DynamicIoDirective } from 'ng-dynamic-component';
+import { WorkPackageIsolatedQuerySpaceDirective } from '../../directives/query-space/wp-isolated-query-space.directive';
+import { StorageComponent } from '../../../../shared/components/storages/storage/storage.component';
 
 export interface FieldDescriptor {
   name:string;
@@ -96,7 +106,20 @@ export const overflowingContainerAttribute = 'overflowingIdentifier';
   templateUrl: './wp-single-view.component.html',
   selector: 'wp-single-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    EditableAttributeFieldComponent,
+    WorkPackageStatusButtonComponent,
+    UserLinkComponent,
+    OpDateTimeComponent,
+    WpCustomActionsComponent,
+    WorkPackageReplacementLabelComponent,
+    DynamicComponent,
+    DynamicIoDirective,
+    WorkPackageIsolatedQuerySpaceDirective,
+    StorageComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageSingleViewComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

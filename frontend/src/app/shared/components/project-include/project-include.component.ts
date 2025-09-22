@@ -64,6 +64,14 @@ import { IProjectData } from 'core-app/shared/components/searchable-project-list
 import { insertInList } from './insert-in-list';
 import { recursiveSort } from './recursive-sort';
 import { calculatePositions } from 'core-app/shared/components/project-include/calculate-positions';
+import { SpotDropModalComponent } from '../../../spot/components/drop-modal/drop-modal.component';
+import { SpotToggleComponent } from '../../../spot/components/toggle/toggle.component';
+import { FormsModule } from '@angular/forms';
+import { SpotTextFieldComponent } from '../../../spot/components/text-field/text-field.component';
+import { OpProjectIncludeListComponent } from './list/project-include-list.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { OpLoadingProjectListComponent } from '../searchable-project-list/loading-project-list.component';
+import { SpotCheckboxComponent } from '../../../spot/components/checkbox/checkbox.component';
 
 @Component({
   selector: 'op-project-include',
@@ -73,7 +81,17 @@ import { calculatePositions } from 'core-app/shared/components/project-include/c
   providers: [
     SearchableProjectListService,
   ],
-  standalone: false,
+  imports: [
+    SpotDropModalComponent,
+    SpotToggleComponent,
+    FormsModule,
+    SpotTextFieldComponent,
+    OpProjectIncludeListComponent,
+    NgClass,
+    OpLoadingProjectListComponent,
+    SpotCheckboxComponent,
+    AsyncPipe,
+  ],
 })
 export class OpProjectIncludeComponent extends UntilDestroyedMixin implements OnInit {
   @HostBinding('class.op-project-include') className = true;

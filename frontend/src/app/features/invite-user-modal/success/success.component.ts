@@ -18,7 +18,6 @@ import { PrincipalType } from '../invite-user.component';
   templateUrl: './success.component.html',
   styleUrls: ['./success.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class SuccessComponent {
   @Input() principal:HalResource;

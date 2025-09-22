@@ -43,10 +43,7 @@ import { ViewerBridgeService } from 'core-app/features/bim/bcf/bcf-viewer-bridge
 import { WorkPackageFiltersService } from 'core-app/features/work-packages/components/filters/wp-filters/wp-filters.service';
 import { OpContextMenuItem } from 'core-app/shared/components/op-context-menu/op-context-menu.types';
 
-@Directive({
-  selector: '[opBcfViewDropdown]',
-  standalone: false,
-})
+@Directive({ selector: '[opBcfViewDropdown]' })
 export class BcfViewToggleDropdownDirective extends OpContextMenuTrigger {
   constructor(readonly elementRef:ElementRef,
     readonly opContextMenu:OPContextMenuService,

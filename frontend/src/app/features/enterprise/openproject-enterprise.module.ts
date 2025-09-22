@@ -35,11 +35,9 @@ import { EnterpriseBannerFrameComponent } from 'core-app/features/enterprise/ent
   imports: [
     OpSharedModule,
     OpenprojectModalModule,
-  ],
-  exports: [
     EnterpriseBannerFrameComponent,
   ],
-  declarations: [
+  exports: [
     EnterpriseBannerFrameComponent,
   ],
 })

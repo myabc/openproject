@@ -10,11 +10,12 @@ import {
   FormGroupDirective,
   NgControl,
 } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'spot-selector-field',
   templateUrl: './selector-field.component.html',
-  standalone: false,
+  imports: [NgClass],
 })
 export class SpotSelectorFieldComponent {
   @HostBinding('class.spot-form-field') className = true;

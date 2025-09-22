@@ -8,7 +8,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { BannersService } from 'core-app/core/enterprise/banners.service';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
@@ -26,12 +26,21 @@ import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import { ICapability } from 'core-app/core/state/capabilities/capability.model';
 import { firstValueFrom } from 'rxjs';
 import { IAPIFilter } from 'core-app/shared/components/autocompleter/op-autocompleter/typings';
+import { SpotFormFieldComponent } from '../../../spot/components/form-field/form-field.component';
+import { ProjectAutocompleterComponent } from '../../../shared/components/autocompleter/project-autocompleter/project-autocompleter.component';
+import { OpOptionListComponent } from '../../../shared/components/option-list/option-list.component';
 
 @Component({
   selector: 'op-ium-project-selection',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './project-selection.component.html',
-  standalone: false,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SpotFormFieldComponent,
+    ProjectAutocompleterComponent,
+    OpOptionListComponent,
+  ],
 })
 export class ProjectSelectionComponent implements OnInit {
   @Input() type:PrincipalType;

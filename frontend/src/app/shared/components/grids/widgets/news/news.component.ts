@@ -10,11 +10,20 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { ApiV3ListParameters } from 'core-app/core/apiv3/paths/apiv3-list-resource.interface';
 import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
+import { WidgetHeaderComponent } from '../header/header.component';
+import { WidgetMenuComponent } from '../menu/widget-menu.component';
+import { OpSharedModule } from '../../../../shared.module';
+import { OpPrincipalComponent } from '../../../principal/principal.component';
 
 @Component({
   templateUrl: './news.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    WidgetHeaderComponent,
+    WidgetMenuComponent,
+    OpSharedModule,
+    OpPrincipalComponent,
+  ],
 })
 export class WidgetNewsComponent extends AbstractWidgetComponent implements OnInit {
   public text = {

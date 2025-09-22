@@ -71,7 +71,7 @@ import interactionPlugin, {
   EventReceiveArg,
   EventResizeDoneArg,
 } from '@fullcalendar/interaction';
-import { FullCalendarComponent } from '@fullcalendar/angular';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { ConfigurationService } from 'core-app/core/config/configuration.service';
 import { WorkPackageViewFiltersService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-filters.service';
@@ -134,6 +134,12 @@ import {
   personIconData,
   toDOMString,
 } from '@openproject/octicons-angular';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { AddExistingPaneComponent } from '../add-work-packages/add-existing-pane.component';
+import { TeamPlannerViewSelectMenuDirective } from '../view-select/view-select-menu.directive';
+import { OpPrincipalComponent } from '../../../../shared/components/principal/principal.component';
+import { AddAssigneeComponent } from '../assignee/add-assignee.component';
+import { WorkPackageSingleCardComponent } from '../../../work-packages/components/wp-card-view/wp-single-card/wp-single-card.component';
 
 export type TeamPlannerViewOptionKey = 'resourceTimelineWorkWeek'|'resourceTimelineWeek'|'resourceTimelineTwoWeeks'|'resourceTimelineFourWeeks'|'resourceTimelineEightWeeks';
 export type TeamPlannerViewOptions = { [K in TeamPlannerViewOptionKey]:RawOptionsFromRefiners<Required<ViewOptionRefiners>> };
@@ -143,7 +149,16 @@ export type TeamPlannerViewOptions = { [K in TeamPlannerViewOptionKey]:RawOption
   templateUrl: './team-planner.component.html',
   styleUrls: ['./team-planner.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgClass,
+    AddExistingPaneComponent,
+    TeamPlannerViewSelectMenuDirective,
+    FullCalendarModule,
+    OpPrincipalComponent,
+    AddAssigneeComponent,
+    WorkPackageSingleCardComponent,
+    AsyncPipe,
+  ],
 })
 export class TeamPlannerComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @ViewChild(FullCalendarComponent) ucCalendar:FullCalendarComponent;

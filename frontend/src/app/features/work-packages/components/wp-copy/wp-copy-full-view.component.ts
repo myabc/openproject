@@ -28,13 +28,28 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WorkPackageCopyController } from 'core-app/features/work-packages/components/wp-copy/wp-copy.controller';
+import { OpBreadcrumbsComponent } from '../../../../shared/components/breadcrumbs/op-breadcrumbs.component';
+import { EditFormComponent } from '../../../../shared/components/fields/edit/edit-form/edit-form.component';
+import { WorkPackageTypeStatusComponent } from '../wp-type-status/wp-type-status.component';
+import { ZenModeButtonComponent } from '../wp-buttons/zen-mode-toggle-button/zen-mode-toggle-button.component';
+import { WorkPackageCreateSettingsMenuDirective } from '../../../../shared/components/op-context-menu/handlers/wp-create-settings-menu.directive';
+import { WorkPackageSingleViewComponent } from '../wp-single-view/wp-single-view.component';
+import { WorkPackageEditActionsBarComponent } from '../edit-actions-bar/wp-edit-actions-bar.component';
 
 @Component({
   selector: 'wp-copy-full-view',
   host: { class: 'work-packages-page--ui-view' },
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: '../wp-new/wp-new-full-view.html',
-  standalone: false,
+  imports: [
+    OpBreadcrumbsComponent,
+    EditFormComponent,
+    WorkPackageTypeStatusComponent,
+    ZenModeButtonComponent,
+    WorkPackageCreateSettingsMenuDirective,
+    WorkPackageSingleViewComponent,
+    WorkPackageEditActionsBarComponent,
+  ],
 })
 export class WorkPackageCopyFullViewComponent extends WorkPackageCopyController {
   public successState = 'work-packages.show';

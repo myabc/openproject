@@ -31,6 +31,7 @@ import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { WorkPackageSplitViewComponent } from './wp-split-view.component';
 
 /**
  * An entry component to be rendered by Rails which opens an isolated query space
@@ -46,7 +47,7 @@ import { populateInputsFromDataset } from 'core-app/shared/components/dataset-in
      />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [WorkPackageSplitViewComponent],
 })
 export class WorkPackageSplitViewEntryComponent {
   @Input() workPackageId:string;

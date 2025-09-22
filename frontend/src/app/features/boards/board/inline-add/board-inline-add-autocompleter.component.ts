@@ -51,6 +51,7 @@ import { ApiV3FilterBuilder } from 'core-app/shared/helpers/api-v3/api-v3-filter
 import { OpAutocompleterComponent } from 'core-app/shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import { HalResourceService } from 'core-app/features/hal/services/hal-resource.service';
+import { OpAutocompleterComponent as OpAutocompleterComponent_1 } from '../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 
 @Component({
   selector: 'board-inline-add-autocompleter',
@@ -58,7 +59,7 @@ import { HalResourceService } from 'core-app/features/hal/services/hal-resource.
   // Allow styling the embedded ng-select
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./board-inline-add-autocompleter.sass'],
-  standalone: false,
+  imports: [OpAutocompleterComponent_1],
 })
 export class BoardInlineAddAutocompleterComponent implements AfterViewInit {
   readonly text = {

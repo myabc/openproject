@@ -26,7 +26,6 @@
 
 import { Injector, NgModule, } from '@angular/core';
 import { OpSharedModule } from 'core-app/shared/shared.module';
-import { OpenprojectTabsModule } from 'core-app/shared/components/tabs/openproject-tabs.module';
 import {
   WorkPackageTabsService
 } from 'core-app/features/work-packages/components/wp-tabs/services/wp-tabs/wp-tabs.service';
@@ -70,12 +69,6 @@ export function initializeGithubIntegrationPlugin(injector:Injector) {
 @NgModule({
   imports: [
     OpSharedModule,
-    OpenprojectTabsModule,
-  ],
-  providers: [
-    GithubPullRequestResourceService,
-  ],
-  declarations: [
     GitHubTabComponent,
     TabHeaderComponent,
     TabPrsComponent,
@@ -84,6 +77,9 @@ export function initializeGithubIntegrationPlugin(injector:Injector) {
     PullRequestComponent,
     PullRequestMacroComponent,
     PullRequestStateComponent,
+  ],
+  providers: [
+    GithubPullRequestResourceService,
   ],
   exports: [
     GitHubTabComponent,

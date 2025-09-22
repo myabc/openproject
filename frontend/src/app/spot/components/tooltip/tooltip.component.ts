@@ -5,12 +5,13 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import SpotDropAlignmentOption from '../../drop-alignment-options';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'spot-tooltip',
   templateUrl: './tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass],
 })
 export class SpotTooltipComponent {
   @HostBinding('class.spot-tooltip') public className = true;

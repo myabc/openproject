@@ -7,11 +7,12 @@ import { WpGraphConfigurationService } from 'core-app/shared/components/work-pac
 import { WorkPackageStatesInitializationService } from 'core-app/features/work-packages/components/wp-list/wp-states-initialization.service';
 import { QuerySpacedTabComponent } from 'core-app/shared/components/work-package-graphs/configuration-modal/tabs/abstract-query-spaced-tab.component';
 import { WorkPackageFiltersService } from 'core-app/features/work-packages/components/filters/wp-filters/wp-filters.service';
+import { OpenprojectWorkPackagesModule } from '../../../../../features/work-packages/openproject-work-packages.module';
 
 @Component({
   selector: 'op-filters-tab-inner',
   templateUrl: './filters-tab-inner.component.html',
-  standalone: false,
+  imports: [OpenprojectWorkPackagesModule],
 })
 export class WpGraphConfigurationFiltersTabInnerComponent extends QuerySpacedTabComponent implements TabComponent {
   public filters:QueryFilterInstanceResource[] = [];

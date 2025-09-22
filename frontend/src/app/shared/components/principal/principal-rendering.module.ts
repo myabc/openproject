@@ -6,15 +6,13 @@ import { PrincipalRendererService } from './principal-renderer.service';
 @NgModule({
   imports: [
     CommonModule,
+    OpPrincipalComponent,
   ],
   exports: [
     OpPrincipalComponent,
   ],
   providers: [
     PrincipalRendererService,
-  ],
-  declarations: [
-    OpPrincipalComponent,
   ],
 })
 export class OpenprojectPrincipalRenderingModule {

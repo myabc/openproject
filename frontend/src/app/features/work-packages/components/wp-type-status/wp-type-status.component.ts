@@ -28,11 +28,12 @@
 
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import { Component, Input } from '@angular/core';
+import { EditableAttributeFieldComponent } from '../../../../shared/components/fields/edit/field/editable-attribute-field.component';
 
 @Component({
   selector: 'wp-type-status',
   templateUrl: './wp-type-status.html',
-  standalone: false,
+  imports: [EditableAttributeFieldComponent],
 })
 export class WorkPackageTypeStatusComponent {
   @Input('workPackage') workPackage:WorkPackageResource;

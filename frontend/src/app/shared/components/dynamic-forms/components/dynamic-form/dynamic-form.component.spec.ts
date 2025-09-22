@@ -48,7 +48,10 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
   template: `
     <op-dynamic-form [formControl]="control" />`,
   providers: [],
-  standalone: false,
+  imports: [CommonModule,
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgOptionHighlightDirective,],
 })
 class DynamicFormsTestingComponent {
   control = new UntypedFormControl('');
@@ -298,53 +301,51 @@ describe('DynamicFormComponent', () => {
 
     await TestBed
       .configureTestingModule({
-    declarations: [
-        DynamicFormComponent,
-        SpotFormFieldComponent,
-        TextInputComponent,
-        IntegerInputComponent,
-        SelectInputComponent,
-        BooleanInputComponent,
-        DynamicFormsTestingComponent,
-        DynamicFieldGroupWrapperComponent,
-        DynamicFieldWrapperComponent,
-        // Skip adding DateInputComponent and FormattableTextareaInputComponent
-        // to keep it simple (inheritance test issues).
-    ],
-    imports: [CommonModule,
-        ReactiveFormsModule,
-        FormlyModule.forRoot({
+        imports: [
+          CommonModule,
+          ReactiveFormsModule,
+          FormlyModule.forRoot({
             types: [
-                { name: 'textInput', component: TextInputComponent },
-                { name: 'integerInput', component: IntegerInputComponent },
-                { name: 'selectInput', component: SelectInputComponent },
-                { name: 'booleanInput', component: BooleanInputComponent },
-                { name: 'dateInput', component: DateInputComponent },
-                { name: 'formattableInput', component: FormattableTextareaInputComponent },
+              { name: 'textInput', component: TextInputComponent },
+              { name: 'integerInput', component: IntegerInputComponent },
+              { name: 'selectInput', component: SelectInputComponent },
+              { name: 'booleanInput', component: BooleanInputComponent },
+              { name: 'dateInput', component: DateInputComponent },
+              { name: 'formattableInput', component: FormattableTextareaInputComponent },
             ],
             wrappers: [
-                {
-                    name: 'op-dynamic-field-group-wrapper',
-                    component: DynamicFieldGroupWrapperComponent,
-                },
-                {
-                    name: 'op-dynamic-field-wrapper',
-                    component: DynamicFieldWrapperComponent,
-                },
+              {
+                name: 'op-dynamic-field-group-wrapper',
+                component: DynamicFieldGroupWrapperComponent,
+              },
+              {
+                name: 'op-dynamic-field-wrapper',
+                component: DynamicFieldWrapperComponent,
+              },
             ],
-        }),
-        NgSelectModule,
-        NgOptionHighlightDirective],
-    providers: [
-        DynamicFieldsService,
-        { provide: I18nService, useValue: I18nServiceStub },
-        { provide: PathHelperService, useValue: IPathHelperServiceStub },
-        { provide: ToastService, useValue: toastServiceSpy },
-        { provide: ConfirmDialogService, useValue: confirmDialogServiceSpy },
-        provideHttpClient(withInterceptorsFromDi()),
-        provideHttpClientTesting(),
-    ]
-})
+          }),
+          NgSelectModule,
+          NgOptionHighlightDirective,
+          DynamicFormComponent,
+          TextInputComponent,
+          IntegerInputComponent,
+          SelectInputComponent,
+          BooleanInputComponent,
+          DynamicFormsTestingComponent,
+          DynamicFieldGroupWrapperComponent,
+          DynamicFieldWrapperComponent,
+          SpotFormFieldComponent
+        ],
+        providers: [
+          DynamicFieldsService,
+          { provide: I18nService, useValue: I18nServiceStub },
+          { provide: PathHelperService, useValue: IPathHelperServiceStub },
+          { provide: ToastService, useValue: toastServiceSpy },
+          { provide: ConfirmDialogService, useValue: confirmDialogServiceSpy },
+          provideHttpClient(withInterceptorsFromDi()),
+          provideHttpClientTesting(),
+        ]
+      })
       // Set component providers
       .overrideComponent(
         DynamicFormComponent,

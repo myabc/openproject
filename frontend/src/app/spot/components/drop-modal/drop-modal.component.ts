@@ -17,12 +17,14 @@ import { SpotDropModalTeleportationService } from './drop-modal-teleportation.se
 import { filter, take } from 'rxjs/operators';
 import { debounce } from 'lodash';
 import { autoUpdate, computePosition, flip, limitShift, Placement, shift } from '@floating-ui/dom';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'spot-drop-modal',
   templateUrl: './drop-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [CdkTrapFocus, NgClass],
 })
 export class SpotDropModalComponent implements OnDestroy {
   @HostBinding('class.spot-drop-modal') public className = true;

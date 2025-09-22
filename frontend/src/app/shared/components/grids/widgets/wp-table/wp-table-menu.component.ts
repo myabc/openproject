@@ -34,11 +34,12 @@ import { WidgetWpSetMenuComponent } from 'core-app/shared/components/grids/widge
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { CurrentUserService } from 'core-app/core/current-user/current-user.service';
 import { firstValueFrom } from 'rxjs';
+import { OpSharedModule } from '../../../../shared.module';
 
 @Component({
   selector: 'widget-wp-table-menu',
   templateUrl: '../menu/widget-menu.component.html',
-  standalone: false,
+  imports: [OpSharedModule],
 })
 export class WidgetWpTableMenuComponent extends WidgetWpSetMenuComponent {
   @InjectField() currentUser:CurrentUserService;

@@ -27,6 +27,7 @@
 
 import { Component } from '@angular/core';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   template: `
@@ -41,7 +42,7 @@ import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-
            [attr.lang]="locale"
            [id]="handler.htmlId" />
   `,
-  standalone: false,
+  imports: [FormsModule],
 })
 export class FloatEditFieldComponent extends EditFieldComponent {
   public locale = I18n.locale;

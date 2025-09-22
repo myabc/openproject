@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { IsolatedQuerySpace } from 'core-app/features/work-packages/directives/query-space/isolated-query-space';
+import { FormsModule } from '@angular/forms';
 
 export interface QuerySharingChange {
   isStarred:boolean;
@@ -14,7 +15,7 @@ export interface QuerySharingChange {
 @Component({
   selector: 'query-sharing-form',
   templateUrl: './query-sharing-form.html',
-  standalone: false,
+  imports: [FormsModule],
 })
 export class QuerySharingFormComponent {
   @Input() public isSave:boolean;

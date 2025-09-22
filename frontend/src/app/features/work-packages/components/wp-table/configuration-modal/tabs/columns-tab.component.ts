@@ -10,10 +10,12 @@ import {
 import {
   DraggableOption,
 } from 'core-app/shared/components/autocompleter/draggable-autocomplete/draggable-autocomplete.component';
+import { DraggableAutocompleteComponent } from '../../../../../../shared/components/autocompleter/draggable-autocomplete/draggable-autocomplete.component';
+import { EnterpriseBannerFrameComponent } from '../../../../../enterprise/enterprise-banner-frame.component';
 
 @Component({
   templateUrl: './columns-tab.component.html',
-  standalone: false,
+  imports: [DraggableAutocompleteComponent, EnterpriseBannerFrameComponent],
 })
 export class WpTableConfigurationColumnsTabComponent implements TabComponent, OnInit {
   public availableColumnsOptions = this.wpTableColumns.all.map((c) => this.column2Like(c));

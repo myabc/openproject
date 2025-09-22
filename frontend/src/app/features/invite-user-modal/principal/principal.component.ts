@@ -9,12 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  AbstractControl,
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs/internal/operators/take';
 import { map } from 'rxjs/operators';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
@@ -28,6 +23,12 @@ import { ProjectResource } from 'core-app/features/hal/resources/project-resourc
 import { HalResource } from 'core-app/features/hal/resources/hal-resource';
 import { PrincipalType } from '../invite-user.component';
 import { RoleResource } from 'core-app/features/hal/resources/role-resource';
+import { SpotFormFieldComponent } from '../../../spot/components/form-field/form-field.component';
+import { PrincipalSearchComponent } from './principal-search.component';
+import { SpotFormBindingDirective } from '../../../spot/components/form-field/form-binding.directive';
+import { DynamicFormComponent as DynamicFormComponent_1 } from '../../../shared/components/dynamic-forms/components/dynamic-form/dynamic-form.component';
+import { RoleSearchComponent } from '../role/role-search.component';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 function extractCustomFieldsFromSchema(schema:IOPFormSettings['_embedded']['schema']) {
   return Object.keys(schema)
@@ -48,7 +49,16 @@ function extractCustomFieldsFromSchema(schema:IOPFormSettings['_embedded']['sche
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    SpotFormFieldComponent,
+    PrincipalSearchComponent,
+    SpotFormBindingDirective,
+    DynamicFormComponent_1,
+    RoleSearchComponent,
+  ],
 })
 export class PrincipalComponent implements OnInit {
   @Input() principalData:PrincipalData;

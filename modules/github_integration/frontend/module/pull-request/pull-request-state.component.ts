@@ -32,8 +32,10 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 export type PullRequestState = 'opened'|'closed'|'referenced'|'ready_for_review'|'merged'|'draft'|'deployed';
 
@@ -44,7 +46,10 @@ export type PullRequestState = 'opened'|'closed'|'referenced'|'ready_for_review'
     './pull-request-state.component.sass',
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    NgClass
+  ],
 })
 export class PullRequestStateComponent implements OnInit {
   @Input() state:PullRequestState;

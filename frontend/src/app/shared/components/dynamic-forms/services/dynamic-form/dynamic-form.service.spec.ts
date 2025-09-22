@@ -117,15 +117,15 @@ describe('DynamicFormService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         DynamicFormService,
         DynamicFieldsService,
         FormsService,
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ]
+    });
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
     dynamicFormService = TestBed.inject(DynamicFormService);

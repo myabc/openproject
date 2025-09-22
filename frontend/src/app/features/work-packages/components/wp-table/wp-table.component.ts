@@ -66,6 +66,14 @@ import {
 import { States } from 'core-app/core/states/states.service';
 import { QueryGroupByResource } from 'core-app/features/hal/resources/query-group-by-resource';
 import { WorkPackageViewBaselineService } from 'core-app/features/work-packages/routing/wp-view-base/view-services/wp-view-baseline.service';
+import { NgClass } from '@angular/common';
+import { SortHeaderDirective } from './sort-header/sort-header.directive';
+import { OpColumnsContextMenu } from '../../../../shared/components/op-context-menu/handlers/op-columns-context-menu.directive';
+import { WorkPackagesTableConfigMenuComponent } from './config-menu/config-menu.component';
+import { WorkPackageTableSumsRowController } from './wp-table-sums-row/wp-table-sums-row.directive';
+import { WorkPackageInlineCreateComponent } from '../wp-inline-create/wp-inline-create.component';
+import { WpResizerComponent } from '../../../../shared/components/resizer/resizer/wp-resizer.component';
+import { WorkPackageTimelineTableController as WorkPackageTimelineTableController_1 } from './timeline/container/wp-timeline-container.directive';
 
 export interface WorkPackageFocusContext {
   /** Work package that was focused */
@@ -80,7 +88,16 @@ export interface WorkPackageFocusContext {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'wp-table',
-  standalone: false,
+  imports: [
+    NgClass,
+    SortHeaderDirective,
+    OpColumnsContextMenu,
+    WorkPackagesTableConfigMenuComponent,
+    WorkPackageTableSumsRowController,
+    WorkPackageInlineCreateComponent,
+    WpResizerComponent,
+    WorkPackageTimelineTableController_1,
+  ],
 })
 export class WorkPackagesTableComponent extends UntilDestroyedMixin implements OnInit, TableEventComponent {
   @Input() projectIdentifier:string;

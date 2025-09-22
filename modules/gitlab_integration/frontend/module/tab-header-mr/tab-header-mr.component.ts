@@ -30,6 +30,8 @@
 import { Component, Input } from '@angular/core';
 import { WorkPackageResource } from "core-app/features/hal/resources/work-package-resource";
 import { I18nService } from "core-app/core/i18n/i18n.service";
+import { GitActionsMenuDirective } from '../git-actions-menu/git-actions-menu.directive';
+import { OpIconComponent } from 'core-app/shared/components/icon/icon.component';
 
 @Component({
   selector: 'tab-header-mr',
@@ -37,7 +39,10 @@ import { I18nService } from "core-app/core/i18n/i18n.service";
   styleUrls: [
     './styles/tab-header-mr.sass'
   ],
-  standalone: false,
+  imports: [
+    OpIconComponent,
+    GitActionsMenuDirective
+  ],
 })
 export class TabHeaderMrsComponent {
   @Input() public workPackage:WorkPackageResource;

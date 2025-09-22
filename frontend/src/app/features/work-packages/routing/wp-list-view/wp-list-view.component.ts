@@ -56,6 +56,11 @@ import { StateService } from '@uirouter/core';
 import { KeepTabService } from 'core-app/features/work-packages/components/wp-single-view-tabs/keep-tab/keep-tab.service';
 import { WorkPackageViewBaselineService } from '../wp-view-base/view-services/wp-view-baseline.service';
 import { combineLatest } from 'rxjs';
+import { OpBaselineLegendsComponent } from '../../components/wp-baseline/baseline-legends/baseline-legends.component';
+import { WorkPackagesTableComponent } from '../../components/wp-table/wp-table.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { WorkPackagesGridComponent } from '../../components/wp-grid/wp-grid.component';
+import { WorkPackageTablePaginationComponent } from '../../components/wp-table/table-pagination/wp-table-pagination.component';
 
 @Component({
   selector: 'wp-list-view',
@@ -68,7 +73,14 @@ import { combineLatest } from 'rxjs';
     DragAndDropService,
     CausedUpdatesService,
   ],
-  standalone: false,
+  imports: [
+    OpBaselineLegendsComponent,
+    WorkPackagesTableComponent,
+    NgClass,
+    WorkPackagesGridComponent,
+    WorkPackageTablePaginationComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageListViewComponent extends UntilDestroyedMixin implements OnInit {
   text = {

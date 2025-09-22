@@ -8,7 +8,6 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrentUserModule } from 'core-app/core/current-user/current-user.module';
 import { OpenprojectModalModule } from 'core-app/shared/components/modal/modal.module';
-import { InviteUserButtonModule } from 'core-app/features/invite-user-modal/button/invite-user-button.module';
 import { DynamicFormsModule } from 'core-app/shared/components/dynamic-forms/dynamic-forms.module';
 import { OpSharedModule } from 'core-app/shared/shared.module';
 import { OpInviteUserModalService } from 'core-app/features/invite-user-modal/invite-user-modal.service';
@@ -30,13 +29,7 @@ import { SuccessComponent } from './success/success.component';
     ReactiveFormsModule,
     TextFieldModule,
     DynamicFormsModule,
-    InviteUserButtonModule,
     CurrentUserModule,
-  ],
-  exports: [
-    InviteUserButtonModule,
-  ],
-  declarations: [
     InviteUserModalComponent,
     ProjectSelectionComponent,
     PrincipalComponent,
@@ -45,6 +38,7 @@ import { SuccessComponent } from './success/success.component';
     SuccessComponent,
     SummaryComponent,
   ],
+  exports: [],
   providers: [
     OpInviteUserModalService,
   ],

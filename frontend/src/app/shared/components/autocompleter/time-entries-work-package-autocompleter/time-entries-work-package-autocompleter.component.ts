@@ -27,7 +27,7 @@
 //++
 
 import { ChangeDetectionStrategy, Component, forwardRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { OpInviteUserModalService } from 'core-app/features/invite-user-modal/invite-user-modal.service';
 import {
   OpAutocompleterComponent,
@@ -44,6 +44,9 @@ import { HalResourceSortingService } from 'core-app/features/hal/services/hal-re
 import {
   TimeEntriesWorkPackageAutocompleterTemplateComponent,
 } from 'core-app/shared/components/autocompleter/time-entries-work-package-autocompleter/time-entries-work-package-autocompleter-template.component';
+import { NgSelectComponent, NgHeaderTemplateDirective, NgLabelTemplateDirective, NgOptionTemplateDirective, NgFooterTemplateDirective } from '@ng-select/ng-select';
+import { NgClass, NgTemplateOutlet, NgStyle, AsyncPipe } from '@angular/common';
+import { OpPrincipalComponent } from '../../principal/principal.component';
 
 export type TimeEntryWorkPackageAutocompleterMode = 'all'|'recent';
 
@@ -63,7 +66,19 @@ const RECENT_TIME_ENTRIES_MAGIC_NUMBER = 30;
     // as otherwise the close event will be shared across all instances
     OpInviteUserModalService,
   ],
-  standalone: false,
+  imports: [
+    NgSelectComponent,
+    FormsModule,
+    NgClass,
+    NgHeaderTemplateDirective,
+    NgTemplateOutlet,
+    NgLabelTemplateDirective,
+    NgOptionTemplateDirective,
+    NgFooterTemplateDirective,
+    NgStyle,
+    OpPrincipalComponent,
+    AsyncPipe,
+  ],
 })
 export class TimeEntriesWorkPackageAutocompleterComponent extends OpAutocompleterComponent implements OnInit, ControlValueAccessor {
   public mode:TimeEntryWorkPackageAutocompleterMode = 'all';

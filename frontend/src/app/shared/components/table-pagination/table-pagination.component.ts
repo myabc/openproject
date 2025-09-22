@@ -39,12 +39,13 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { PaginationInstance } from 'core-app/shared/components/table-pagination/pagination-instance';
 import { PaginationService } from 'core-app/shared/components/table-pagination/pagination-service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: '[tablePagination]',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './table-pagination.component.html',
-  standalone: false,
+  imports: [NgClass],
 })
 export class TablePaginationComponent extends UntilDestroyedMixin implements OnInit {
   @Input() totalEntries:string;

@@ -33,12 +33,13 @@ import { WorkPackageResource } from 'core-app/features/hal/resources/work-packag
 import { forkJoin } from 'rxjs';
 import { BcfViewpointItem } from 'core-app/features/bim/bcf/api/viewpoints/bcf-viewpoint-item.interface';
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @Component({
   templateUrl: './bcf-wp-attribute-group.component.html',
   styleUrls: ['./bcf-wp-attribute-group.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgxGalleryModule],
 })
 export class BcfNewWpAttributeGroupComponent extends BcfWpAttributeGroupComponent implements AfterViewInit {
   galleryViewpoints:BcfViewpointItem[] = [];

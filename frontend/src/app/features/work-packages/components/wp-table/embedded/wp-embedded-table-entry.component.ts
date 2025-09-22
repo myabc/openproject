@@ -5,6 +5,7 @@ import { populateInputsFromDataset } from 'core-app/shared/components/dataset-in
 import {
   WorkPackageIsolatedQuerySpaceDirective,
 } from 'core-app/features/work-packages/directives/query-space/wp-isolated-query-space.directive';
+import { WorkPackageEmbeddedTableComponent } from './wp-embedded-table.component';
 
 export const wpTableEntrySelector = 'wp-embedded-table-entry';
 
@@ -16,7 +17,7 @@ export const wpTableEntrySelector = 'wp-embedded-table-entry';
                          [initialLoadingIndicator]="initialLoadingIndicator"
                          [configuration]="configuration" />
   `,
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent],
 })
 export class WorkPackageEmbeddedTableEntryComponent {
   @Input() public queryProps:unknown;

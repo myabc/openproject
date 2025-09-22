@@ -38,6 +38,9 @@ import {
   IGithubCheckRunResource,
   IGithubPullRequest,
 } from 'core-app/features/plugins/linked/openproject-github_integration/state/github-pull-request.model';
+import { OpDateTimeComponent } from '../../../../../shared/components/date/op-date-time.component';
+import { PullRequestStateComponent } from './pull-request-state.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'op-github-pull-request',
@@ -47,7 +50,11 @@ import {
     './pr-check.component.sass',
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpDateTimeComponent,
+    PullRequestStateComponent,
+    NgClass,
+  ],
 })
 
 export class PullRequestComponent {

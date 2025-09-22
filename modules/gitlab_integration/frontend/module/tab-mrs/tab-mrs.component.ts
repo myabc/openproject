@@ -34,12 +34,13 @@ import { CollectionResource } from "core-app/features/hal/resources/collection-r
 import { I18nService } from "core-app/core/i18n/i18n.service";
 import {IGitlabMergeRequestResource} from "core-app/features/plugins/linked/openproject-gitlab_integration/typings";
 import {ApiV3Service} from "core-app/core/apiv3/api-v3.service";
+import { MergeRequestComponent } from '../merge-request/merge-request.component';
 
 @Component({
   selector: 'tab-mrs',
   templateUrl: './tab-mrs.template.html',
   host: { class: 'op-mrs' },
-  standalone: false,
+  imports: [MergeRequestComponent],
 })
 export class TabMrsComponent implements OnInit {
   @Input() public workPackage:WorkPackageResource;

@@ -42,13 +42,15 @@ import { OpModalService } from 'core-app/shared/components/modal/modal.service';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { merge, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap } from 'rxjs/operators';
+import { WorkPackageReminderContextMenuDirective } from './wp-reminder-context-menu.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'wp-reminder-button',
   templateUrl: './wp-reminder-button.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [WorkPackageReminderContextMenuDirective, AsyncPipe],
 })
 export class WorkPackageReminderButtonComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackage:WorkPackageResource;

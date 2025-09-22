@@ -44,10 +44,7 @@ import { WpTableConfigurationModalComponent } from 'core-app/features/work-packa
 import { QUERY_SORT_BY_ASC, QUERY_SORT_BY_DESC } from 'core-app/features/hal/resources/query-sort-by-resource';
 import { ConfirmDialogService } from 'core-app/shared/components/modals/confirm-dialog/confirm-dialog.service';
 
-@Directive({
-  selector: '[opColumnsContextMenu]',
-  standalone: false,
-})
+@Directive({ selector: '[opColumnsContextMenu]' })
 export class OpColumnsContextMenu extends OpContextMenuTrigger {
   @Input('opColumnsContextMenu-column') public column:QueryColumn;
 

@@ -45,13 +45,14 @@ import { ToastService } from 'core-app/shared/components/toaster/toast.service';
 import { InjectField } from 'core-app/shared/helpers/angular/inject-field.decorator';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
 import { TurboRequestsService } from 'core-app/core/turbo/turbo-requests.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'op-wp-timer-button',
   templateUrl: './wp-timer-button.component.html',
   styleUrls: ['./wp-timer-button.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [AsyncPipe],
 })
 export class WorkPackageTimerButtonComponent extends UntilDestroyedMixin {
   @Input() public workPackage:WorkPackageResource;

@@ -13,11 +13,12 @@ import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destr
 import { Observable } from 'rxjs';
 import { BoardFiltersService } from 'core-app/features/boards/board/board-filter/board-filters.service';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
+import { WorkPackageFilterContainerComponent } from '../../../work-packages/components/filters/filter-container/filter-container.directive';
 
 @Component({
   selector: 'board-filter',
   templateUrl: './board-filter.component.html',
-  standalone: false,
+  imports: [WorkPackageFilterContainerComponent],
 })
 export class BoardFilterComponent extends UntilDestroyedMixin implements AfterViewInit {
   /** Current active */

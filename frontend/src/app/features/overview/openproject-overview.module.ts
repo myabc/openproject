@@ -34,13 +34,9 @@ import { OverviewComponent } from 'core-app/features/overview/overview.component
 @NgModule({
   imports: [
     OpSharedModule,
-
     OpenprojectGridsModule,
-  ],
-  providers: [
-  ],
-  declarations: [
     OverviewComponent,
   ],
+  providers: [],
 })
 export class OpenprojectOverviewModule {} // eslint-disable-line @typescript-eslint/no-extraneous-class

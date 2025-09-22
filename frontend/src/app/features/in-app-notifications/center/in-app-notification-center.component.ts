@@ -44,12 +44,21 @@ import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import {
   ColorsService,
 } from 'core-app/shared/components/colors/colors.service';
+import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from '@angular/cdk/scrolling';
+import { InAppNotificationEntryComponent } from '../entry/in-app-notification-entry.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './in-app-notification-center.component.html',
   styleUrls: ['./in-app-notification-center.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    CdkVirtualScrollViewport,
+    CdkFixedSizeVirtualScroll,
+    CdkVirtualForOf,
+    InAppNotificationEntryComponent,
+    AsyncPipe,
+  ],
 })
 export class InAppNotificationCenterComponent implements OnInit {
   maxSize = NOTIFICATIONS_MAX_SIZE;

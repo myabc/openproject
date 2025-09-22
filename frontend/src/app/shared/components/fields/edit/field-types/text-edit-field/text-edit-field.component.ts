@@ -28,10 +28,13 @@
 
 import { Component } from '@angular/core';
 import { EditFieldComponent } from 'core-app/shared/components/fields/edit/edit-field.component';
+import { FormsModule } from '@angular/forms';
+
+import { AutofocusDirective } from '../../../../../directives/focus/autofocus.directive';
 
 @Component({
   templateUrl: '../text-edit-field.component.html',
-  standalone: false,
+  imports: [FormsModule, AutofocusDirective],
 })
 export class TextEditFieldComponent extends EditFieldComponent {
   // ToDo: Work package specific

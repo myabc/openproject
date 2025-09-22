@@ -26,11 +26,22 @@ import {
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { firstValueFrom } from 'rxjs';
 import { QueryRequestParams } from 'core-app/features/work-packages/components/wp-query/url-params-helper';
+import { NgClass } from '@angular/common';
+import { WorkPackageFilterContainerComponent } from '../../filters/filter-container/filter-container.directive';
+import { WorkPackagesTableComponent } from '../wp-table.component';
+import { WorkPackagesGridComponent } from '../../wp-grid/wp-grid.component';
+import { WorkPackageTablePaginationComponent } from '../table-pagination/wp-table-pagination.component';
 
 @Component({
   selector: 'wp-embedded-table',
   templateUrl: './wp-embedded-table.html',
-  standalone: false,
+  imports: [
+    NgClass,
+    WorkPackageFilterContainerComponent,
+    WorkPackagesTableComponent,
+    WorkPackagesGridComponent,
+    WorkPackageTablePaginationComponent,
+  ],
 })
 export class WorkPackageEmbeddedTableComponent extends WorkPackageEmbeddedBaseComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input('queryId') public queryId?:string;

@@ -56,6 +56,9 @@ import { TimezoneService } from 'core-app/core/datetime/timezone.service';
 import { IAttachment } from 'core-app/core/state/attachments/attachment.model';
 import isNewResource from 'core-app/features/hal/helpers/is-new-resource';
 import { HttpErrorResponse } from '@angular/common/http';
+import { OpAttachmentListComponent } from './attachment-list/attachment-list.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { OpAddAttachmentIconComponent } from '@openproject/octicons-angular';
 
 function containsFiles(dataTransfer:DataTransfer):boolean {
   return dataTransfer.types.indexOf('Files') >= 0;
@@ -66,7 +69,12 @@ function containsFiles(dataTransfer:DataTransfer):boolean {
   templateUrl: './attachments.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    OpAttachmentListComponent,
+    NgClass,
+    OpAddAttachmentIconComponent,
+    AsyncPipe,
+  ],
 })
 export class OpAttachmentsComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @HostBinding('attr.data-test-selector') public testSelector = 'op-attachments';

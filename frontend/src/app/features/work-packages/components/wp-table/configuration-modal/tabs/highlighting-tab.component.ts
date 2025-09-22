@@ -15,11 +15,17 @@ import { NgSelectComponent } from '@ng-select/ng-select';
 import { States } from 'core-app/core/states/states.service';
 import { enterpriseDocsUrl } from 'core-app/core/setup/globals/constants.const';
 import { repositionDropdownBugfix } from 'core-app/shared/components/autocompleter/op-autocompleter/autocompleter.helper';
+import { EnterpriseBannerFrameComponent } from '../../../../../enterprise/enterprise-banner-frame.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   templateUrl: './highlighting-tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    EnterpriseBannerFrameComponent,
+    FormsModule,
+    NgSelectComponent,
+  ],
 })
 export class WpTableConfigurationHighlightingTabComponent implements TabComponent {
   // Display mode

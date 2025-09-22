@@ -32,11 +32,12 @@ import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { WorkPackageResource } from 'core-app/features/hal/resources/work-package-resource';
 import { UntilDestroyedMixin } from 'core-app/shared/helpers/angular/until-destroyed.mixin';
 import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
+import { WorkPackageRelationsComponent } from '../../wp-relations/wp-relations.component';
 
 @Component({
   templateUrl: './relations-tab.html',
   selector: 'wp-relations-tab',
-  standalone: false,
+  imports: [WorkPackageRelationsComponent],
 })
 export class WorkPackageRelationsTabComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public workPackageId?:string;

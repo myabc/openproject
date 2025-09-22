@@ -8,7 +8,8 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 export interface SpotToggleOption<T> {
   value:T;
@@ -24,7 +25,7 @@ export interface SpotToggleOption<T> {
     multi: true,
   }],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass, FormsModule],
 })
 export class SpotToggleComponent<T> implements ControlValueAccessor {
   // TODO: These old styles will need to be replaced

@@ -31,13 +31,15 @@ import {
   WorkPackageTableConfigurationObject,
 } from 'core-app/features/work-packages/components/wp-table/wp-table-configuration';
 import { populateInputsFromDataset } from 'core-app/shared/components/dataset-inputs';
+import { WorkPackageIsolatedQuerySpaceDirective } from '../../../directives/query-space/wp-isolated-query-space.directive';
+import { WorkPackageEmbeddedTableEntryComponent } from './wp-embedded-table-entry.component';
 
 @Component({
   template: `
     <wp-embedded-table-entry [queryProps]="queryProps"
                              [configuration]="configuration" />
   `,
-  standalone: false,
+  imports: [WorkPackageIsolatedQuerySpaceDirective, WorkPackageEmbeddedTableEntryComponent],
 })
 export class EmbeddedTablesMacroComponent {
   @Input() public queryProps:object;

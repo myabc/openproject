@@ -35,12 +35,19 @@ import { ApiV3Service } from 'core-app/core/apiv3/api-v3.service';
 import { QueryFormResource } from 'core-app/features/hal/resources/query-form-resource';
 import { QueryResource } from 'core-app/features/hal/resources/query-resource';
 import { StateService } from '@uirouter/angular';
+import { NgComponentOutlet } from '@angular/common';
+import { ComponentOutletInjectorDirective } from 'ng-dynamic-component';
+import { ScrollableTabsComponent } from '../../../../../shared/components/tabs/scrollable-tabs/scrollable-tabs.component';
 
 export const WpTableConfigurationModalPrependToken = new InjectionToken<ComponentType<any>>('WpTableConfigurationModalPrependComponent');
 
 @Component({
   templateUrl: './wp-table-configuration.modal.html',
-  standalone: false,
+  imports: [
+    NgComponentOutlet,
+    ComponentOutletInjectorDirective,
+    ScrollableTabsComponent,
+  ],
 })
 export class WpTableConfigurationModalComponent extends OpModalComponent implements OnInit, OnDestroy {
   public text = {

@@ -48,6 +48,7 @@ import { HalEventsService } from 'core-app/features/hal/services/hal-events.serv
 import idFromLink from 'core-app/features/hal/helpers/id-from-link';
 import { WorkPackageNotificationService } from 'core-app/features/work-packages/services/notifications/work-package-notification.service';
 import { GroupDescriptor } from 'core-app/features/work-packages/components/wp-single-view/wp-single-view.component';
+import { WorkPackageEmbeddedTableComponent } from '../../../wp-table/embedded/wp-embedded-table.component';
 
 @Component({
   selector: 'wp-relation-query',
@@ -55,7 +56,7 @@ import { GroupDescriptor } from 'core-app/features/work-packages/components/wp-s
   providers: [
     { provide: WorkPackageInlineCreateService, useClass: WpRelationInlineCreateService },
   ],
-  standalone: false,
+  imports: [WorkPackageEmbeddedTableComponent],
 })
 export class WorkPackageRelationQueryComponent extends WorkPackageRelationQueryBase implements OnInit {
   @Input() public workPackage:WorkPackageResource;

@@ -29,6 +29,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { I18nService } from 'core-app/core/i18n/i18n.service';
 import { BcfViewService } from 'core-app/features/bim/ifc_models/pages/viewer/bcf-view.service';
+import { BcfViewToggleDropdownDirective } from './bcf-view-toggle-dropdown.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   template: `
@@ -47,7 +49,7 @@ import { BcfViewService } from 'core-app/features/bim/ifc_models/pages/viewer/bc
     `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-bcf-view-toggle-button',
-  standalone: false,
+  imports: [BcfViewToggleDropdownDirective, AsyncPipe],
 })
 export class BcfViewToggleButtonComponent {
   view$ = this.bcfView.live$();

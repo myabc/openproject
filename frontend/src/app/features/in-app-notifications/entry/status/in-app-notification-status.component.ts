@@ -7,13 +7,14 @@ import {
 } from '@angular/core';
 import { Highlighting } from 'core-app/features/work-packages/components/wp-fast-table/builders/highlighting/highlighting.functions';
 import { StatusResource } from 'core-app/features/hal/resources/status-resource';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'op-in-app-notification-status',
   styleUrls: ['./in-app-notification-status.component.sass'],
   templateUrl: './in-app-notification-status.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgClass],
 })
 export class InAppNotificationStatusComponent implements OnChanges {
   @Input() status:StatusResource;

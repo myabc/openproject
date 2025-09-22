@@ -47,12 +47,18 @@ import {
   WorkPackageFiltersService,
 } from 'core-app/features/work-packages/components/filters/wp-filters/wp-filters.service';
 import { WorkPackagesListService } from 'core-app/features/work-packages/components/wp-list/wp-list.service';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { QueryFiltersComponent } from '../query-filters/query-filters.component';
 
 @Component({
   templateUrl: './filter-container.directive.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'op-filter-container',
-  standalone: false,
+  imports: [
+    NgClass,
+    QueryFiltersComponent,
+    AsyncPipe,
+  ],
 })
 export class WorkPackageFilterContainerComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @Input('showFilterButton') showFilterButton = false;

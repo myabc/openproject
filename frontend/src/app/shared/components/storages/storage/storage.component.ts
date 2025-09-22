@@ -104,13 +104,27 @@ import {
 import {
   IHalErrorBase, v3ErrorIdentifierMissingEnterpriseToken,
 } from 'core-app/features/hal/resources/error-resource';
+import { OpMarkNextcloudIconComponent, CloudIconComponent, LinkExternalIconComponent, UploadIconComponent, LinkIconComponent } from '@openproject/octicons-angular';
+import { StorageInformationComponent } from '../storage-information/storage-information.component';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { FileLinkListItemComponent } from '../file-link-list-item/file-link-list-item.component';
 
 @Component({
   selector: 'op-storage',
   templateUrl: './storage.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{ provide: OpUploadService, useClass: StorageUploadService }],
-  standalone: false,
+  imports: [
+    OpMarkNextcloudIconComponent,
+    CloudIconComponent,
+    LinkExternalIconComponent,
+    StorageInformationComponent,
+    NgClass,
+    FileLinkListItemComponent,
+    UploadIconComponent,
+    LinkIconComponent,
+    AsyncPipe,
+  ],
 })
 export class StorageComponent extends UntilDestroyedMixin implements OnInit, OnDestroy {
   @Input() public resource:HalResource;

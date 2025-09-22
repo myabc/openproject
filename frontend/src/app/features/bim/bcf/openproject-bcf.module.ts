@@ -66,6 +66,11 @@ export const viewerBridgeServiceFactory = (injector:Injector) => {
   imports: [
     OpSharedModule,
     NgxGalleryModule,
+    BcfWpAttributeGroupComponent,
+    BcfNewWpAttributeGroupComponent,
+    BcfImportButtonComponent,
+    BcfExportButtonComponent,
+    RefreshButtonComponent,
   ],
   providers: [
     {
@@ -76,13 +81,6 @@ export const viewerBridgeServiceFactory = (injector:Injector) => {
     BcfDetectorService,
     BcfPathHelperService,
     ViewpointsService,
-  ],
-  declarations: [
-    BcfWpAttributeGroupComponent,
-    BcfNewWpAttributeGroupComponent,
-    BcfImportButtonComponent,
-    BcfExportButtonComponent,
-    RefreshButtonComponent,
   ],
   exports: [
     BcfImportButtonComponent,

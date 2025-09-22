@@ -36,12 +36,13 @@ import { CurrentUserService } from 'core-app/core/current-user/current-user.serv
 import { CollectionResource } from 'core-app/features/hal/resources/collection-resource';
 import { compareByHref } from 'core-app/shared/helpers/angular/tracking-functions';
 import { MAGIC_FILTER_AUTOCOMPLETE_PAGE_SIZE } from 'core-app/core/apiv3/helpers/get-paginated-results';
+import { OpAutocompleterComponent } from '../../../../../shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
 
 @Component({
   selector: 'op-filter-searchable-multiselect-value',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './filter-searchable-multiselect-value.component.html',
-  standalone: false,
+  imports: [OpAutocompleterComponent],
 })
 export class FilterSearchableMultiselectValueComponent extends UntilDestroyedMixin implements OnInit {
   @Input() public filter:QueryFilterInstanceResource;

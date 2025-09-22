@@ -33,11 +33,13 @@ import {
   ViewChild,
 } from '@angular/core';
 import { IAutocompleterTemplateComponent } from 'core-app/shared/components/autocompleter/op-autocompleter/op-autocompleter.component';
+import { NgStyle } from '@angular/common';
+import { OpSearchHighlightDirective } from '../../../directives/search-highlight.directive';
 
 @Component({
   templateUrl: './project-autocompleter-template.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgStyle, OpSearchHighlightDirective],
 })
 export class ProjectAutocompleterTemplateComponent implements IAutocompleterTemplateComponent {
   @ViewChild('optionTemplate') optionTemplate:TemplateRef<Element>;

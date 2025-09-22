@@ -35,9 +35,9 @@ describe('GitActionsMenuComponent', () => {
 
     await TestBed
       .configureTestingModule({
-        declarations: [
+        imports: [
           GitActionsMenuComponent,
-          OpIconComponent,
+          OpIconComponent
         ],
         providers: [
           { provide: I18nService, useValue: I18nServiceStub },

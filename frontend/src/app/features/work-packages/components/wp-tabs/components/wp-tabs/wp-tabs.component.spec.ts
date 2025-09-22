@@ -34,7 +34,7 @@ describe('WpTabsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WpTabsComponent, ScrollableTabsComponent],
+      imports: [WpTabsComponent, ScrollableTabsComponent],
       providers: [
         { provide: StateService, useValue: { includes: () => false } },
         { provide: UIRouterGlobals, useValue: {} },

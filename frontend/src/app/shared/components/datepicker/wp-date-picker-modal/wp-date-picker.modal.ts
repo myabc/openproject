@@ -30,6 +30,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Inject,
   OnInit,
@@ -39,11 +40,13 @@ import { OpModalComponent } from 'core-app/shared/components/modal/modal.compone
 import { OpModalLocalsToken } from 'core-app/shared/components/modal/modal.service';
 import { OpModalLocalsMap } from 'core-app/shared/components/modal/modal.types';
 import { PathHelperService } from 'core-app/core/path-helper/path-helper.service';
+import { ModalWithTurboContentDirective } from '../../fields/edit/modal-with-turbo-content/modal-with-turbo-content.directive';
 
 @Component({
   templateUrl: './wp-date-picker.modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [ModalWithTurboContentDirective],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OpWpDatePickerModalComponent extends OpModalComponent implements OnInit {
   turboFrameSrc:string;
