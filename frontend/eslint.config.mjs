@@ -155,13 +155,6 @@ export default defineConfig([
     }
   },
   {
-    files: ['**/*.d.ts'],
-    rules: {
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
-    },
-  },
-  {
     files: ['**/*.spec.ts'],
     plugins: { jasmine },
     extends: [
