@@ -213,6 +213,8 @@ export default defineConfig([
       ],
 
       '@stylistic/spaced-comment': 'off',
+
+      '@stylistic/comma-dangle': ['error', 'only-multiline']
     },
   },
   globalIgnores([
